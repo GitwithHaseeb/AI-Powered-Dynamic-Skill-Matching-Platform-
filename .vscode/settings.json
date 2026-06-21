@@ -1,0 +1,6 @@
+{
+  "git.ignoreLimitWarning": true,
+  "python.defaultInterpreterPath": "${workspaceFolder}/backend/venv312/Scripts/python.exe",
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "python.analysis.extraPaths": ["${workspaceFolder}/backend"]
+}

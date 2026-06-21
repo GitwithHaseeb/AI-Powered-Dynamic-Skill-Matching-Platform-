@@ -1,0 +1,120 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Variables for theming */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --border-color: #e5e7eb;
+}
+
+.dark {
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --border-color: #374151;
+}
+
+@layer base {
+  body {
+    @apply transition-colors duration-300;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+}
+
+@layer components {
+  /* Card styles */
+  .card {
+    @apply rounded-xl shadow-sm border transition-colors duration-300;
+    background-color: var(--bg-primary);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+  }
+  
+  /* Form input styles */
+  .form-input {
+    @apply rounded-lg border transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+    background-color: var(--bg-secondary);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+  }
+  
+  .form-input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+  }
+  
+  /* Button styles */
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300;
+  }
+  
+  .btn-secondary {
+    @apply font-medium py-2 px-4 rounded-lg transition-colors duration-300;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+  }
+  
+  .btn-secondary:hover {
+    background-color: color-mix(in srgb, var(--bg-secondary) 80%, transparent);
+  }
+  
+  /* Enhanced dark mode specific styles */
+  /* Slightly elevated from page bg so cards/lists remain visible in dark mode */
+  .dark .bg-white {
+    background-color: var(--bg-secondary);
+  }
+  
+  .dark .text-gray-900 {
+    color: var(--text-primary);
+  }
+  
+  .dark .text-gray-600,
+  .dark .text-gray-700 {
+    color: var(--text-secondary);
+  }
+  
+  .dark .border-gray-200,
+  .dark .border-gray-300 {
+    border-color: var(--border-color);
+  }
+  
+  .dark .bg-gray-50 {
+    background-color: var(--bg-secondary);
+  }
+  
+  .dark .bg-gray-100 {
+    background-color: color-mix(in srgb, var(--bg-secondary) 80%, #000000);
+  }
+  
+  /* Table styles */
+  .dark table {
+    color: var(--text-secondary);
+  }
+  
+  .dark thead {
+    background-color: color-mix(in srgb, var(--bg-secondary) 90%, #000000);
+  }
+  
+  .dark tbody tr {
+    border-color: var(--border-color);
+  }
+  
+  .dark tbody tr:hover {
+    background-color: color-mix(in srgb, var(--bg-secondary) 70%, transparent);
+  }
+  
+  /* Chatbot styles */
+  .dark .chatbot {
+    background-color: var(--bg-primary);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+  }
+}

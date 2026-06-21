@@ -1,0 +1,2732 @@
+Chatbot battery (400 queries) - 2026-05-03T13:01:46.372918+00:00
+As user: admin@demo.local (role=admin, id=69ca8461d997...)
+Context: projects=14 tasks=132 users=131
+Sample placeholders: P1='Online Toy Shop' P2='Online Job Portal' D1='Kosain Ali' SKILL='css' MODULE='Build React UI Module'
+================================================================================
+
+[01/400] EN001
+Q: What are my assigned tasks?
+A: You’re clear — nothing assigned to you right now.
+--------------------------------------------------------------------------------
+
+[02/400] EN002
+Q: Show my pending tasks.
+A: You currently have 0 pending task(s).
+--------------------------------------------------------------------------------
+
+[03/400] EN003
+Q: List all my tasks with status.
+A: You’re clear — nothing assigned to you right now.
+--------------------------------------------------------------------------------
+
+[04/400] EN004
+Q: What is my next deadline?
+A: No deadlines are set on your tasks or projects in the live data.
+--------------------------------------------------------------------------------
+
+[05/400] EN005
+Q: What should I do today?
+A: You are clear for today - no active assigned tasks right now.
+--------------------------------------------------------------------------------
+
+[06/400] EN006
+Q: What do I do today?
+A: You are clear for today - no active assigned tasks right now.
+--------------------------------------------------------------------------------
+
+[07/400] EN007
+Q: What skills do I have?
+A: Your skills: Governance (level 4.0), Security (level 4.0)
+--------------------------------------------------------------------------------
+
+[08/400] EN008
+Q: What are my skills?
+A: Your skills: Governance (level 4.0), Security (level 4.0)
+--------------------------------------------------------------------------------
+
+[09/400] EN009
+Q: Do I have enough skills for css work?
+A: Your profile does not list «css». For «css» work you would usually want that skill on your profile or planned pairing — confirm with your PM/tech lead.
+--------------------------------------------------------------------------------
+
+[10/400] EN010
+Q: What is the status of Online Toy Shop?
+A: Here’s where things stand:
+• Online Toy Shop: status in_progress, progress 70%; deadline 2026-02-07 00:00:00
+--------------------------------------------------------------------------------
+
+[11/400] EN011
+Q: What is the status of the Online Toy Shop project?
+A: Here’s where things stand:
+• Online Toy Shop: status in_progress, progress 70%; deadline 2026-02-07 00:00:00
+--------------------------------------------------------------------------------
+
+[12/400] EN012
+Q: Give me a quick summary of Online Toy Shop.
+A: «Online Toy Shop» — quick summary
+Status: in_progress | Progress: 70% | Deadline: 2026-02-07 00:00:00
+Creator: Abdul Moeed | Tasks: 10 total, 3 still open
+
+Project: «Online Toy Shop»
+Developers working on this project (assigned tasks):
+Ayesha:
+• Auto-linked task for Online Toy Shop (5) — in_progress
+• Implement UI Design (1) — assigned
+Fatima:
+• Auto-linked task for Online Toy Shop (3) — completed
+• Auto-linked task for Online Toy Shop (4) — completed
+• Implement fastapi (1) — completed
+• Implement tailwind (1) — completed
+Salman:
+• Auto-linked task for Online Toy Shop (1) — completed
+• Auto-linked task for Online Toy Shop (2) — completed
+• Implement css (1) — completed
+• Implement node.js (1) — assigned
+--------------------------------------------------------------------------------
+
+[13/400] EN013
+Q: Quick summary for Online Toy Shop
+A: «Online Toy Shop» — quick summary
+Status: in_progress | Progress: 70% | Deadline: 2026-02-07 00:00:00
+Creator: Abdul Moeed | Tasks: 10 total, 3 still open
+
+Project: «Online Toy Shop»
+Developers working on this project (assigned tasks):
+Ayesha:
+• Auto-linked task for Online Toy Shop (5) — in_progress
+• Implement UI Design (1) — assigned
+Fatima:
+• Auto-linked task for Online Toy Shop (3) — completed
+• Auto-linked task for Online Toy Shop (4) — completed
+• Implement fastapi (1) — completed
+• Implement tailwind (1) — completed
+Salman:
+• Auto-linked task for Online Toy Shop (1) — completed
+• Auto-linked task for Online Toy Shop (2) — completed
+• Implement css (1) — completed
+• Implement node.js (1) — assigned
+--------------------------------------------------------------------------------
+
+[14/400] EN014
+Q: What is the deadline for Online Toy Shop?
+A: «Online Toy Shop» deadline: 2026-02-07 00:00:00 (status: in_progress).
+--------------------------------------------------------------------------------
+
+[15/400] EN015
+Q: Who created Online Toy Shop?
+A: «Online Toy Shop» was created by: Abdul Moeed.
+--------------------------------------------------------------------------------
+
+[16/400] EN016
+Q: How many tasks are on Online Toy Shop?
+A: «Online Toy Shop» has 10 tasks — 3 open/in progress, 7 done/submitted.
+--------------------------------------------------------------------------------
+
+[17/400] EN017
+Q: How many tasks are on the Online Toy Shop project?
+A: «Online Toy Shop» has 10 tasks — 3 open/in progress, 7 done/submitted.
+--------------------------------------------------------------------------------
+
+[18/400] EN018
+Q: How many open tasks are on Online Toy Shop?
+A: «Online Toy Shop» has 10 tasks — 3 open/in progress, 7 done/submitted.
+--------------------------------------------------------------------------------
+
+[19/400] EN019
+Q: Open tasks on Online Toy Shop
+A: Open tasks in 'Online Toy Shop':
+• Implement node.js (1) (assigned)
+• Implement UI Design (1) (assigned)
+• Auto-linked task for Online Toy Shop (5) (in_progress)
+--------------------------------------------------------------------------------
+
+[20/400] EN020
+Q: Who is working on Online Toy Shop?
+A: Project: «Online Toy Shop»
+Developers working on this project (assigned tasks):
+Ayesha:
+• Auto-linked task for Online Toy Shop (5) — in_progress
+• Implement UI Design (1) — assigned
+Fatima:
+• Auto-linked task for Online Toy Shop (3) — completed
+• Auto-linked task for Online Toy Shop (4) — completed
+• Implement fastapi (1) — completed
+• Implement tailwind (1) — completed
+Salman:
+• Auto-linked task for Online Toy Shop (1) — completed
+• Auto-linked task for Online Toy Shop (2) — completed
+• Implement css (1) — completed
+• Implement node.js (1) — assigned
+--------------------------------------------------------------------------------
+
+[21/400] EN021
+Q: Who works on Online Toy Shop?
+A: Project: «Online Toy Shop»
+Developers working on this project (assigned tasks):
+Ayesha:
+• Auto-linked task for Online Toy Shop (5) — in_progress
+• Implement UI Design (1) — assigned
+Fatima:
+• Auto-linked task for Online Toy Shop (3) — completed
+• Auto-linked task for Online Toy Shop (4) — completed
+• Implement fastapi (1) — completed
+• Implement tailwind (1) — completed
+Salman:
+• Auto-linked task for Online Toy Shop (1) — completed
+• Auto-linked task for Online Toy Shop (2) — completed
+• Implement css (1) — completed
+• Implement node.js (1) — assigned
+--------------------------------------------------------------------------------
+
+[22/400] EN022
+Q: List team members for Online Toy Shop.
+A: Project: «Online Toy Shop»
+Developers working on this project (assigned tasks):
+Ayesha:
+• Auto-linked task for Online Toy Shop (5) — in_progress
+• Implement UI Design (1) — assigned
+Fatima:
+• Auto-linked task for Online Toy Shop (3) — completed
+• Auto-linked task for Online Toy Shop (4) — completed
+• Implement fastapi (1) — completed
+• Implement tailwind (1) — completed
+Salman:
+• Auto-linked task for Online Toy Shop (1) — completed
+• Auto-linked task for Online Toy Shop (2) — completed
+• Implement css (1) — completed
+• Implement node.js (1) — assigned
+--------------------------------------------------------------------------------
+
+[23/400] EN023
+Q: Team members for Online Toy Shop
+A: Project: «Online Toy Shop»
+Developers working on this project (assigned tasks):
+Ayesha:
+• Auto-linked task for Online Toy Shop (5) — in_progress
+• Implement UI Design (1) — assigned
+Fatima:
+• Auto-linked task for Online Toy Shop (3) — completed
+• Auto-linked task for Online Toy Shop (4) — completed
+• Implement fastapi (1) — completed
+• Implement tailwind (1) — completed
+Salman:
+• Auto-linked task for Online Toy Shop (1) — completed
+• Auto-linked task for Online Toy Shop (2) — completed
+• Implement css (1) — completed
+• Implement node.js (1) — assigned
+--------------------------------------------------------------------------------
+
+[24/400] EN024
+Q: Is Kosain Ali on the Online Toy Shop team?
+A: No, Kosain Ali is not assigned to the 'Online Toy Shop' project team.
+--------------------------------------------------------------------------------
+
+[25/400] EN025
+Q: Is Kosain Ali part of the Online Toy Shop project team?
+A: No, Kosain Ali is not assigned to the 'Online Toy Shop' project team.
+--------------------------------------------------------------------------------
+
+[26/400] EN026
+Q: Who is responsible for Build React UI Module on Online Toy Shop?
+A: Right now that work sits with: Fatima, Salman, Ayesha, Rahim, Manahil, Eman, Maham, Hina.
+--------------------------------------------------------------------------------
+
+[27/400] EN027
+Q: Who handles the API integration for Online Toy Shop?
+A: Right now that work sits with: Fatima, Salman, Ayesha, Maham, Haseeb Developer, Hina.
+--------------------------------------------------------------------------------
+
+[28/400] EN028
+Q: Who handles Build React UI Module for Online Toy Shop?
+A: Right now that work sits with: Fatima, Salman, Ayesha, Rahim, Manahil, Eman, Maham, Hina.
+--------------------------------------------------------------------------------
+
+[29/400] EN029
+Q: What skills does Kosain Ali have?
+A: Kosain Ali: Python (level 2.0), FastAPI (level 2.0), MongoDB (level 2.0), REST APIs (level 2.0), Git (level 2.0)
+--------------------------------------------------------------------------------
+
+[30/400] EN030
+Q: Which developer knows css?
+A: Developers with «css» on profile: Abdullah Butt, Fatima, Salman.
+--------------------------------------------------------------------------------
+
+[31/400] EN031
+Q: Who knows css?
+A: Developers with «css» on profile: Abdullah Butt, Fatima, Salman.
+--------------------------------------------------------------------------------
+
+[32/400] EN032
+Q: Who has css skill?
+A: Developers with «css» on profile: Abdullah Butt, Fatima, Salman.
+--------------------------------------------------------------------------------
+
+[33/400] EN033
+Q: Does Kosain Ali have a Build React UI Module task?
+A: No — Kosain Ali isn’t on that. Team member has it. Also on it: Fatima, Salman, Ayesha.
+--------------------------------------------------------------------------------
+
+[34/400] EN034
+Q: Does Kosain Ali have an css related task?
+A: No — Kosain Ali isn’t on that. Fatima has it. Also on it: Salman, Ayesha, Team member.
+--------------------------------------------------------------------------------
+
+[35/400] EN035
+Q: Did Kosain Ali complete Build React UI Module?
+A: The closest live match is task «Build React UI Module»: **assigned**, assignee **Team member** (from your MongoDB-backed task list).
+--------------------------------------------------------------------------------
+
+[36/400] EN036
+Q: Is Kosain Ali doing Build React UI Module?
+A: The closest live match is task «Build React UI Module»: **assigned**, assignee **Team member** (from your MongoDB-backed task list).
+--------------------------------------------------------------------------------
+
+[37/400] EN037
+Q: Has Kosain Ali been assigned Build React UI Module?
+A: No — Kosain Ali isn’t on that. Team member has it. Also on it: Fatima, Salman, Ayesha.
+--------------------------------------------------------------------------------
+
+[38/400] EN038
+Q: Is Salman working on Build React UI Module?
+A: Yes — Salman is on that work.
+--------------------------------------------------------------------------------
+
+[39/400] EN039
+Q: Does Salman have a fastapi task assigned?
+A: Yes — Salman is on that work.
+--------------------------------------------------------------------------------
+
+[40/400] EN040
+Q: What is the status of Online Job Portal?
+A: Here’s where things stand:
+• Online Job Portal: status in_progress, progress 90%; deadline 2026-09-24 00:00:00
+--------------------------------------------------------------------------------
+
+[41/400] EN041
+Q: Who created Online Job Portal?
+A: «Online Job Portal» was created by: Ghania Tanveer.
+--------------------------------------------------------------------------------
+
+[42/400] EN042
+Q: How many tasks are on Online Job Portal?
+A: «Online Job Portal» has 10 tasks — 1 open/in progress, 9 done/submitted.
+--------------------------------------------------------------------------------
+
+[43/400] EN043
+Q: Who is working on Online Job Portal?
+A: Project: «Online Job Portal»
+Developers working on this project (assigned tasks):
+Fatima:
+• Auto-linked task for Online Job Portal (1) — completed
+• Auto-linked task for Online Job Portal (2) — completed
+• Implement css (1) — completed
+• Implement nlp (1) — completed
+Salman:
+• Auto-linked task for Online Job Portal (3) — completed
+• Auto-linked task for Online Job Portal (4) — completed
+• Auto-linked task for Online Job Portal (5) — in_progress
+• Implement fastapi (1) — completed
+• Implement mongodb (1) — completed
+• Implement tailwind (1) — completed
+Note: 2 team slot(s) could not be matched to a user profile (IDs are not shown).
+--------------------------------------------------------------------------------
+
+[44/400] EN044
+Q: Overall, how are all our projects going?
+A: Here’s where things stand:
+• Online Toy Shop: status in_progress, progress 70%; deadline 2026-02-07 00:00:00
+• Online Job Portal: status in_progress, progress 90%; deadline 2026-09-24 00:00:00
+• FitTrack - Fitness Tracking App: status completed, progress 100%; deadline 2026-08-08 00:00:00
+• Wanderlust - AI Travel Planner: status in_progress, progress 80%; deadline 2026-10-02 00:00:00
+• Software Requirements Specification (SRS): status in_progress, progress 80%; deadline 2026-08-08 00:00:00
+• KidsToy - Online Toy Shop: status in_progress, progress 20%; deadline 2027-07-09 00:00:00
+• Software Requirements Specification (SRS): status in_progress, progress 70%; deadline 2026-06-21 00:00:00
+• Project Description: TaskFlow Pro: status in_progress, progress 0%; deadline 2026-06-12 00:00:00
+• Security: status in_progress, progress 43%; deadline 2026-04-15 00:00:00
+• Demo — Skill Mapping Portal: status in_progress, progress 40%; deadline 2026-07-15 06:19:39.656000
+• Demo — Analytics Mobile App: status planning, progress 10%; deadline 2026-08-14 06:19:39.656000
+• Demo — Skill Mapping Portal: status in_progress, progress 40%; deadline 2026-07-15 06:19:50.386000
+--------------------------------------------------------------------------------
+
+[45/400] EN045
+Q: What is overall project performance?
+A: Overall project performance looks stable: 13 running projects, 83/132 tasks completed/submitted (62.9%).
+--------------------------------------------------------------------------------
+
+[46/400] EN046
+Q: List running projects
+A: Projects in your live data:
+• Online Toy Shop: in_progress, progress 70%; deadline 2026-02-07 00:00:00
+• Online Job Portal: in_progress, progress 90%; deadline 2026-09-24 00:00:00
+• Wanderlust - AI Travel Planner: in_progress, progress 80%; deadline 2026-10-02 00:00:00
+• Software Requirements Specification (SRS): in_progress, progress 80%; deadline 2026-08-08 00:00:00
+• KidsToy - Online Toy Shop: in_progress, progress 20%; deadline 2027-07-09 00:00:00
+• Software Requirements Specification (SRS): in_progress, progress 70%; deadline 2026-06-21 00:00:00
+• Project Description: TaskFlow Pro: in_progress, progress 0%; deadline 2026-06-12 00:00:00
+• Security: in_progress, progress 43%; deadline 2026-04-15 00:00:00
+• Demo — Skill Mapping Portal: in_progress, progress 40%; deadline 2026-07-15 06:19:39.656000
+• Demo — Analytics Mobile App: planning, progress 10%; deadline 2026-08-14 06:19:39.656000
+• Demo — Skill Mapping Portal: in_progress, progress 40%; deadline 2026-07-15 06:19:50.386000
+• Demo — Analytics Mobile App: planning, progress 10%; deadline 2026-08-14 06:19:50.386000
+• QuickBite - Online Food Delivery Platform: in_progress, progress 33%; deadline 2026-09-04 00:00:00
+--------------------------------------------------------------------------------
+
+[47/400] EN047
+Q: Show running projects
+A: Projects in your live data:
+• Online Toy Shop: in_progress, progress 70%; deadline 2026-02-07 00:00:00
+• Online Job Portal: in_progress, progress 90%; deadline 2026-09-24 00:00:00
+• Wanderlust - AI Travel Planner: in_progress, progress 80%; deadline 2026-10-02 00:00:00
+• Software Requirements Specification (SRS): in_progress, progress 80%; deadline 2026-08-08 00:00:00
+• KidsToy - Online Toy Shop: in_progress, progress 20%; deadline 2027-07-09 00:00:00
+• Software Requirements Specification (SRS): in_progress, progress 70%; deadline 2026-06-21 00:00:00
+• Project Description: TaskFlow Pro: in_progress, progress 0%; deadline 2026-06-12 00:00:00
+• Security: in_progress, progress 43%; deadline 2026-04-15 00:00:00
+• Demo — Skill Mapping Portal: in_progress, progress 40%; deadline 2026-07-15 06:19:39.656000
+• Demo — Analytics Mobile App: planning, progress 10%; deadline 2026-08-14 06:19:39.656000
+• Demo — Skill Mapping Portal: in_progress, progress 40%; deadline 2026-07-15 06:19:50.386000
+• Demo — Analytics Mobile App: planning, progress 10%; deadline 2026-08-14 06:19:50.386000
+• QuickBite - Online Food Delivery Platform: in_progress, progress 33%; deadline 2026-09-04 00:00:00
+--------------------------------------------------------------------------------
+
+[48/400] EN048
+Q: Who is the most active developer?
+A: Right now the most active developer looks like Salman (active load 23, completed 25).
+--------------------------------------------------------------------------------
+
+[49/400] EN049
+Q: Who has completed the most tasks?
+A: Salman has the highest completed-task count right now (25 done, 23 active).
+--------------------------------------------------------------------------------
+
+[50/400] EN050
+Q: Which developer completed the most tasks?
+A: Salman has the highest completed-task count right now (25 done, 23 active).
+--------------------------------------------------------------------------------
+
+[51/400] EN051
+Q: What is Kosain Ali working on right now?
+A: No assigned tasks show for **Kosain Ali** in the live data right now.
+--------------------------------------------------------------------------------
+
+[52/400] EN052
+Q: What projects is Kosain Ali assigned to?
+A: No assigned tasks show for **Kosain Ali** in the live data right now.
+--------------------------------------------------------------------------------
+
+[53/400] EN053
+Q: Tell me open tasks in the Online Toy Shop project
+A: Open tasks in 'Online Toy Shop':
+• Implement node.js (1) (assigned)
+• Implement UI Design (1) (assigned)
+• Auto-linked task for Online Toy Shop (5) (in_progress)
+--------------------------------------------------------------------------------
+
+[54/400] EN054
+Q: Any open tasks on Online Toy Shop?
+A: Open tasks in 'Online Toy Shop':
+• Implement node.js (1) (assigned)
+• Implement UI Design (1) (assigned)
+• Auto-linked task for Online Toy Shop (5) (in_progress)
+--------------------------------------------------------------------------------
+
+[55/400] EN055
+Q: Who should I contact about Build React UI Module on Online Toy Shop?
+A: Who’s on “on Online Toy Shop”:
+• Implement fastapi (1) — Fatima
+• Implement css (1) — Salman
+• Implement tailwind (1) — Fatima
+• Implement node.js (1) — Salman
+• Implement UI Design (1) — Ayesha
+• Implement tailwind (1) — Salman
+• Implement fastapi (1) — Salman
+• Implement css (1) — Fatima
+--------------------------------------------------------------------------------
+
+[56/400] EN056
+Q: Is there a deadline for Online Job Portal?
+A: «Online Job Portal» deadline: 2026-09-24 00:00:00 (status: in_progress).
+--------------------------------------------------------------------------------
+
+[57/400] EN057
+Q: Compare workload for Kosain Ali and Salman
+A: Open (non-done) assigned tasks in the live data: **Kosain Ali** = 0, **Salman** = 11. Higher open count means heavier current load.
+--------------------------------------------------------------------------------
+
+[58/400] EN058
+Q: Does Adnan know css?
+A: No — css isn’t on Adnan’s profile. (Open tasks still mention it.)
+--------------------------------------------------------------------------------
+
+[59/400] EN059
+Q: Who on the team knows fastapi?
+A: Developers with «fastapi» on profile: Abdul Rehman, Abdullah Butt, Adnan, Ahsan Ali, Aima, Ali Ameen, Aneela Azhar, Areeba, Arooj, Awais, Ayesha, Demo Manager, Eman, Fatima, Fayeez Naeem.
+--------------------------------------------------------------------------------
+
+[60/400] EN060
+Q: Project health snapshot for Online Toy Shop
+A: «Online Toy Shop» — Health: 3 open / 7 done-ish out of 10 tasks; progress field 70%.
+--------------------------------------------------------------------------------
+
+[61/400] EN061
+Q: Task progress for Online Toy Shop
+A: «Online Toy Shop» has 10 tasks — 3 open/in progress, 7 done/submitted.
+--------------------------------------------------------------------------------
+
+[62/400] EN062
+Q: Who owns testing on Online Toy Shop?
+A: I can’t see an assigned task for Testing right now. Want me to list nearby tasks?
+--------------------------------------------------------------------------------
+
+[63/400] EN063
+Q: Who owns UI work on Online Toy Shop?
+A: Right now that work sits with: Fatima, Salman, Ayesha.
+--------------------------------------------------------------------------------
+
+[64/400] EN064
+Q: Is Online Toy Shop behind schedule?
+A: «Online Toy Shop» — Schedule signal: Yes — the project deadline is in the past and open tasks remain.
+--------------------------------------------------------------------------------
+
+[65/400] EN065
+Q: How is Online Job Portal going?
+A: Here’s where things stand:
+• Online Job Portal: status in_progress, progress 90%; deadline 2026-09-24 00:00:00
+--------------------------------------------------------------------------------
+
+[66/400] EN066
+Q: List tasks related to css
+A: Tasks related to «css» (live):
+• Implement fastapi (1) — Fatima (completed)
+• Implement css (1) — Salman (completed)
+• Implement tailwind (1) — Fatima (completed)
+• Implement node.js (1) — Salman (assigned)
+• Implement UI Design (1) — Ayesha (assigned)
+• Implement tailwind (1) — Salman (completed)
+• Implement fastapi (1) — Salman (completed)
+• Implement css (1) — Fatima (completed)
+• Implement mongodb (1) — Salman (completed)
+• Implement nlp (1) — Fatima (completed)
+• Implement fastapi (1) — Salman (completed)
+• Implement mongodb (1) — Salman (completed)
+• Implement Figma (1) — Salman (completed)
+• Implement css (1) — Fatima (completed)
+• Implement css (1) — Fatima (completed)
+• Implement mongodb (1) — Salman (completed)
+• Implement Figma Design (1) — Fatima (assigned)
+• Implement tailwind (1) — Salman (completed)
+• Implement fastapi (1) — Salman (completed)
+• Implement fastapi (1) — Salman (completed)
+--------------------------------------------------------------------------------
+
+[67/400] EN067
+Q: Who is least busy among developers?
+A: By open assigned tasks, **Abdul Rehman** looks least busy right now (0 open).
+--------------------------------------------------------------------------------
+
+[68/400] EN068
+Q: Show developers with css on profile
+A: Developers with «css» on profile: Abdullah Butt, Fatima, Salman.
+--------------------------------------------------------------------------------
+
+[69/400] EN069
+Q: Does Online Toy Shop need more backend help?
+A: The closest live match is project «Online Toy Shop»: status **in_progress**, progress 70%, deadline **2026-02-07 00:00:00**.
+--------------------------------------------------------------------------------
+
+[70/400] EN070
+Q: Summarize Online Job Portal in one screen
+A: «Online Job Portal» — quick summary
+Status: in_progress | Progress: 90% | Deadline: 2026-09-24 00:00:00
+Creator: Ghania Tanveer | Tasks: 10 total, 1 still open
+
+Project: «Online Job Portal»
+Developers working on this project (assigned tasks):
+Fatima:
+• Auto-linked task for Online Job Portal (1) — completed
+• Auto-linked task for Online Job Portal (2) — completed
+• Implement css (1) — completed
+• Implement nlp (1) — completed
+Salman:
+• Auto-linked task for Online Job Portal (3) — completed
+• Auto-linked task for Online Job Portal (4) — completed
+• Auto-linked task for Online Job Portal (5) — in_progress
+• Implement fastapi (1) — completed
+• Implement mongodb (1) — completed
+• Implement tailwind (1) — completed
+Note: 2 team slot(s) could not be matched to a user profile (IDs are not shown).
+--------------------------------------------------------------------------------
+
+[71/400] EN071
+Q: Who created FitTrack - Fitness Tracking App?
+A: «FitTrack - Fitness Tracking App» was created by: Ghania Tanveer.
+--------------------------------------------------------------------------------
+
+[72/400] EN072
+Q: How many developers are on Online Toy Shop?
+A: The closest live match is project «Online Toy Shop»: status **in_progress**, progress 70%, deadline **2026-02-07 00:00:00**.
+--------------------------------------------------------------------------------
+
+[73/400] EN073
+Q: Is Implement React UI Module still open on Online Toy Shop?
+A: The closest live match is project «Online Toy Shop»: status **in_progress**, progress 70%, deadline **2026-02-07 00:00:00**.
+--------------------------------------------------------------------------------
+
+[74/400] EN074
+Q: Who completed Implement React UI Module on Online Toy Shop?
+A: Who’s on “on Online Toy Shop”:
+• Implement fastapi (1) — Fatima
+• Implement css (1) — Salman
+• Implement tailwind (1) — Fatima
+• Implement node.js (1) — Salman
+• Implement UI Design (1) — Ayesha
+• Implement tailwind (1) — Salman
+• Implement fastapi (1) — Salman
+• Implement css (1) — Fatima
+--------------------------------------------------------------------------------
+
+[75/400] EN075
+Q: Is Kosain Ali available for new tasks?
+A: In the live data, **Kosain Ali** has **0** active (non-done) assigned task(s), so they **look relatively free** — confirm capacity with your PM before assigning new work.
+--------------------------------------------------------------------------------
+
+[76/400] EN076
+Q: What is Salman's next deadline?
+A: No deadlines are set on your tasks or projects in the live data.
+--------------------------------------------------------------------------------
+
+[77/400] EN077
+Q: Any blockers on Online Toy Shop?
+A: «Online Toy Shop» — Blockers: none explicitly flagged in task statuses.
+--------------------------------------------------------------------------------
+
+[78/400] EN078
+Q: List completed tasks on Online Toy Shop
+A: The closest live match is project «Online Toy Shop»: status **in_progress**, progress 70%, deadline **2026-02-07 00:00:00**.
+--------------------------------------------------------------------------------
+
+[79/400] EN079
+Q: Who submitted work on Build React UI Module?
+A: People on done/submitted «Build React UI Module» tasks (assignee field): Fatima, Maham, Manahil, Rahim, Salman, Team member.
+--------------------------------------------------------------------------------
+
+[80/400] EN080
+Q: Routing: who picks up fastapi tasks?
+A: Live routing signal (assignee + task overlap): Salman (17 tasks touch «fastapi»), Fatima (10 tasks touch «fastapi»), Fatima (5 tasks touch «fastapi»), Ayesha (1 tasks touch «fastapi»), Haseeb Developer (1 tasks touch «fastapi»).
+--------------------------------------------------------------------------------
+
+[81/400] EN081
+Q: Skill match: Kosain Ali vs css requirements
+A: **Kosain Ali**'s profile does not clearly list «css».
+--------------------------------------------------------------------------------
+
+[82/400] EN082
+Q: Should we assign Build React UI Module to Salman?
+A: **Salman** currently has **11** open assigned tasks; profile lists overlapping skills for that area. Use that plus skill fit as a signal — PM makes the final call.
+--------------------------------------------------------------------------------
+
+[83/400] EN083
+Q: Who is faster on css, Kosain Ali or Salman?
+A: On «css», **Salman** currently edges ahead in the live data (combined score 3.9 vs **Kosain Ali** at 0.0 — profile proficiency plus completed tasks mentioning that skill).
+--------------------------------------------------------------------------------
+
+[84/400] EN084
+Q: Cross-check: Adnan and Implement React UI Module
+A: No — Adnan isn’t on that. Team member has it. Also on it: Fatima, Salman, Ayesha.
+--------------------------------------------------------------------------------
+
+[85/400] EN085
+Q: Verify team for FitTrack - Fitness Tracking App
+A: Project: «FitTrack - Fitness Tracking App»
+Developers working on this project (assigned tasks):
+Fatima:
+• Auto-linked task for FitTrack - Fitness Tracking App (1) — completed
+• Implement css (1) — completed
+Salman:
+• Auto-linked task for FitTrack - Fitness Tracking App (2) — completed
+• Auto-linked task for FitTrack - Fitness Tracking App (3) — completed
+• Auto-linked task for FitTrack - Fitness Tracking App (4) — completed
+• Implement fastapi (1) — completed
+• Implement Figma (1) — completed
+• Implement mongodb (1) — completed
+Note: 2 team slot(s) could not be matched to a user profile (IDs are not shown).
+--------------------------------------------------------------------------------
+
+[86/400] EN086
+Q: Headcount on Online Job Portal
+A: The closest live match is project «Online Job Portal»: status **in_progress**, progress 90%, deadline **2026-09-24 00:00:00**.
+--------------------------------------------------------------------------------
+
+[87/400] EN087
+Q: Active vs done tasks on Online Toy Shop
+A: «Online Toy Shop» — **active/open:** 3 · **done/submitted:** 7 (**10** tasks total in the live data).
+--------------------------------------------------------------------------------
+
+[88/400] EN088
+Q: Who has the lightest load?
+A: By open assigned tasks, **Abdul Rehman** looks least busy right now (0 open).
+--------------------------------------------------------------------------------
+
+[89/400] EN089
+Q: Who has the heaviest load?
+A: By open assigned tasks, **Salman** has the heaviest load right now (11 open).
+--------------------------------------------------------------------------------
+
+[90/400] EN090
+Q: Jury question: status of Online Toy Shop?
+A: Here’s where things stand:
+• Online Toy Shop: status in_progress, progress 70%; deadline 2026-02-07 00:00:00
+--------------------------------------------------------------------------------
+
+[91/400] EN091
+Q: Jury question: who built Online Job Portal?
+A: The closest live match is project «Online Job Portal»: status **in_progress**, progress 90%, deadline **2026-09-24 00:00:00**.
+--------------------------------------------------------------------------------
+
+[92/400] EN092
+Q: Explain Online Toy Shop timeline
+A: «Online Toy Shop» — Deadline: 2026-02-07 00:00:00 | status: in_progress | open tasks: 3/10.
+--------------------------------------------------------------------------------
+
+[93/400] EN093
+Q: Risk: is Online Toy Shop at risk?
+A: «Online Toy Shop» — Risk read: elevated (deadline pressure + open work).
+--------------------------------------------------------------------------------
+
+[94/400] EN094
+Q: Milestone check for Online Job Portal
+A: «Online Job Portal» — Deadline: 2026-09-24 00:00:00 | status: in_progress | open tasks: 1/10.
+--------------------------------------------------------------------------------
+
+[95/400] EN095
+Q: Do I have enough skills for node.js work?
+A: Your profile does not list «node.js». For «node.js» work you would usually want that skill on your profile or planned pairing — confirm with your PM/tech lead.
+--------------------------------------------------------------------------------
+
+[96/400] EN096
+Q: What is the status of the Online Job Portal project?
+A: Here’s where things stand:
+• Online Job Portal: status in_progress, progress 90%; deadline 2026-09-24 00:00:00
+--------------------------------------------------------------------------------
+
+[97/400] EN097
+Q: Give me a quick summary of Online Job Portal.
+A: «Online Job Portal» — quick summary
+Status: in_progress | Progress: 90% | Deadline: 2026-09-24 00:00:00
+Creator: Ghania Tanveer | Tasks: 10 total, 1 still open
+
+Project: «Online Job Portal»
+Developers working on this project (assigned tasks):
+Fatima:
+• Auto-linked task for Online Job Portal (1) — completed
+• Auto-linked task for Online Job Portal (2) — completed
+• Implement css (1) — completed
+• Implement nlp (1) — completed
+Salman:
+• Auto-linked task for Online Job Portal (3) — completed
+• Auto-linked task for Online Job Portal (4) — completed
+• Auto-linked task for Online Job Portal (5) — in_progress
+• Implement fastapi (1) — completed
+• Implement mongodb (1) — completed
+• Implement tailwind (1) — completed
+Note: 2 team slot(s) could not be matched to a user profile (IDs are not shown).
+--------------------------------------------------------------------------------
+
+[98/400] EN098
+Q: Quick summary for Online Job Portal
+A: «Online Job Portal» — quick summary
+Status: in_progress | Progress: 90% | Deadline: 2026-09-24 00:00:00
+Creator: Ghania Tanveer | Tasks: 10 total, 1 still open
+
+Project: «Online Job Portal»
+Developers working on this project (assigned tasks):
+Fatima:
+• Auto-linked task for Online Job Portal (1) — completed
+• Auto-linked task for Online Job Portal (2) — completed
+• Implement css (1) — completed
+• Implement nlp (1) — completed
+Salman:
+• Auto-linked task for Online Job Portal (3) — completed
+• Auto-linked task for Online Job Portal (4) — completed
+• Auto-linked task for Online Job Portal (5) — in_progress
+• Implement fastapi (1) — completed
+• Implement mongodb (1) — completed
+• Implement tailwind (1) — completed
+Note: 2 team slot(s) could not be matched to a user profile (IDs are not shown).
+--------------------------------------------------------------------------------
+
+[99/400] EN099
+Q: What is the deadline for Online Job Portal?
+A: «Online Job Portal» deadline: 2026-09-24 00:00:00 (status: in_progress).
+--------------------------------------------------------------------------------
+
+[100/400] EN100
+Q: How many tasks are on the Online Job Portal project?
+A: «Online Job Portal» has 10 tasks — 1 open/in progress, 9 done/submitted.
+--------------------------------------------------------------------------------
+
+[101/400] EN101
+Q: How many open tasks are on Online Job Portal?
+A: «Online Job Portal» has 10 tasks — 1 open/in progress, 9 done/submitted.
+--------------------------------------------------------------------------------
+
+[102/400] EN102
+Q: Open tasks on Online Job Portal
+A: Open tasks in 'Online Job Portal':
+• Auto-linked task for Online Job Portal (5) (in_progress)
+--------------------------------------------------------------------------------
+
+[103/400] EN103
+Q: Who works on Online Job Portal?
+A: Project: «Online Job Portal»
+Developers working on this project (assigned tasks):
+Fatima:
+• Auto-linked task for Online Job Portal (1) — completed
+• Auto-linked task for Online Job Portal (2) — completed
+• Implement css (1) — completed
+• Implement nlp (1) — completed
+Salman:
+• Auto-linked task for Online Job Portal (3) — completed
+• Auto-linked task for Online Job Portal (4) — completed
+• Auto-linked task for Online Job Portal (5) — in_progress
+• Implement fastapi (1) — completed
+• Implement mongodb (1) — completed
+• Implement tailwind (1) — completed
+Note: 2 team slot(s) could not be matched to a user profile (IDs are not shown).
+--------------------------------------------------------------------------------
+
+[104/400] EN104
+Q: List team members for Online Job Portal.
+A: Project: «Online Job Portal»
+Developers working on this project (assigned tasks):
+Fatima:
+• Auto-linked task for Online Job Portal (1) — completed
+• Auto-linked task for Online Job Portal (2) — completed
+• Implement css (1) — completed
+• Implement nlp (1) — completed
+Salman:
+• Auto-linked task for Online Job Portal (3) — completed
+• Auto-linked task for Online Job Portal (4) — completed
+• Auto-linked task for Online Job Portal (5) — in_progress
+• Implement fastapi (1) — completed
+• Implement mongodb (1) — completed
+• Implement tailwind (1) — completed
+Note: 2 team slot(s) could not be matched to a user profile (IDs are not shown).
+--------------------------------------------------------------------------------
+
+[105/400] EN105
+Q: Team members for Online Job Portal
+A: Project: «Online Job Portal»
+Developers working on this project (assigned tasks):
+Fatima:
+• Auto-linked task for Online Job Portal (1) — completed
+• Auto-linked task for Online Job Portal (2) — completed
+• Implement css (1) — completed
+• Implement nlp (1) — completed
+Salman:
+• Auto-linked task for Online Job Portal (3) — completed
+• Auto-linked task for Online Job Portal (4) — completed
+• Auto-linked task for Online Job Portal (5) — in_progress
+• Implement fastapi (1) — completed
+• Implement mongodb (1) — completed
+• Implement tailwind (1) — completed
+Note: 2 team slot(s) could not be matched to a user profile (IDs are not shown).
+--------------------------------------------------------------------------------
+
+[106/400] EN106
+Q: Is Salman on the Online Job Portal team?
+A: Yes, Salman is assigned to the 'Online Job Portal' team. I can see 6 task(s) for them in this project.
+--------------------------------------------------------------------------------
+
+[107/400] EN107
+Q: Is Salman part of the Online Job Portal project team?
+A: Yes, Salman is assigned to the 'Online Job Portal' team. I can see 6 task(s) for them in this project.
+--------------------------------------------------------------------------------
+
+[108/400] EN108
+Q: Who is responsible for Implement React UI Module on Online Job Portal?
+A: Right now that work sits with: Fatima, Salman, Ayesha, Rahim, Ibrahim, Maham, Umar, Manahil, Eman, Hina.
+--------------------------------------------------------------------------------
+
+[109/400] EN109
+Q: Who handles the API integration for Online Job Portal?
+A: Right now that work sits with: Fatima, Salman, Ayesha, Maham, Haseeb Developer, Hina.
+--------------------------------------------------------------------------------
+
+[110/400] EN110
+Q: Who handles Implement React UI Module for Online Job Portal?
+A: Right now that work sits with: Fatima, Salman, Ayesha, Rahim, Ibrahim, Maham, Umar, Manahil, Eman, Hina.
+--------------------------------------------------------------------------------
+
+[111/400] EN111
+Q: What skills does Salman have?
+A: Salman: React (level 3.5), Node.js (level 3.5), MongoDB (level 5.0), CI/CD (level 3.0), css (level 2.5), fastapi (level 2.5), Figma (level 2.5), Visual Design (level 2.5)
+--------------------------------------------------------------------------------
+
+[112/400] EN112
+Q: Which developer knows node.js?
+A: Developers with «node.js» on profile: Abdul Rehman, Abdullah Butt, Adnan, Ahsan Ali, Aima, Ali Ameen, Areeba, Arooj, Awais, Ayesha, Demo Manager, Eman, Fatima, Fayeez Naeem, Haseeb Developer.
+--------------------------------------------------------------------------------
+
+[113/400] EN113
+Q: Who knows node.js?
+A: Developers with «node.js» on profile: Abdul Rehman, Abdullah Butt, Adnan, Ahsan Ali, Aima, Ali Ameen, Areeba, Arooj, Awais, Ayesha, Demo Manager, Eman, Fatima, Fayeez Naeem, Haseeb Developer.
+--------------------------------------------------------------------------------
+
+[114/400] EN114
+Q: Who has node.js skill?
+A: Developers with «node.js» on profile: Abdul Rehman, Abdullah Butt, Adnan, Ahsan Ali, Aima, Ali Ameen, Areeba, Arooj, Awais, Ayesha, Demo Manager, Eman, Fatima, Fayeez Naeem, Haseeb Developer.
+--------------------------------------------------------------------------------
+
+[115/400] EN115
+Q: Does Salman have a Implement React UI Module task?
+A: Yes — Salman is on that work.
+--------------------------------------------------------------------------------
+
+[116/400] EN116
+Q: Does Salman have an node.js related task?
+A: Yes — Salman is on that work.
+--------------------------------------------------------------------------------
+
+[117/400] EN117
+Q: Did Salman complete Implement React UI Module?
+A: The closest live match is task «Implement React UI Module»: **completed**, assignee **Team member** (from your MongoDB-backed task list).
+--------------------------------------------------------------------------------
+
+[118/400] EN118
+Q: Is Salman doing Implement React UI Module?
+A: Yes — Salman is on that work.
+--------------------------------------------------------------------------------
+
+[119/400] EN119
+Q: Has Salman been assigned Implement React UI Module?
+A: Yes — Salman is on that work.
+--------------------------------------------------------------------------------
+
+[120/400] EN120
+Q: Is Adnan working on Implement React UI Module?
+A: No — Adnan isn’t on that. Team member has it. Also on it: Fatima, Salman, Ayesha.
+--------------------------------------------------------------------------------
+
+[121/400] EN121
+Q: Does Adnan have a UI Design task assigned?
+A: No — Adnan isn’t on that. Team member has it. Also on it: Fatima, Salman, Ayesha.
+--------------------------------------------------------------------------------
+
+[122/400] EN122
+Q: What is the status of FitTrack - Fitness Tracking App?
+A: Here’s where things stand:
+• FitTrack - Fitness Tracking App: status completed, progress 100%; deadline 2026-08-08 00:00:00
+--------------------------------------------------------------------------------
+
+[123/400] EN123
+Q: How many tasks are on FitTrack - Fitness Tracking App?
+A: «FitTrack - Fitness Tracking App» has 8 tasks — 0 open/in progress, 8 done/submitted.
+--------------------------------------------------------------------------------
+
+[124/400] EN124
+Q: Who is working on FitTrack - Fitness Tracking App?
+A: Project: «FitTrack - Fitness Tracking App»
+Developers working on this project (assigned tasks):
+Fatima:
+• Auto-linked task for FitTrack - Fitness Tracking App (1) — completed
+• Implement css (1) — completed
+Salman:
+• Auto-linked task for FitTrack - Fitness Tracking App (2) — completed
+• Auto-linked task for FitTrack - Fitness Tracking App (3) — completed
+• Auto-linked task for FitTrack - Fitness Tracking App (4) — completed
+• Implement fastapi (1) — completed
+• Implement Figma (1) — completed
+• Implement mongodb (1) — completed
+Note: 2 team slot(s) could not be matched to a user profile (IDs are not shown).
+--------------------------------------------------------------------------------
+
+[125/400] EN125
+Q: What is Salman working on right now?
+A: **Salman** — current assigned work from live data:
+
+FitTrack - Fitness Tracking App:
+• Implement fastapi (1) (completed)
+• Implement mongodb (1) (completed)
+• Implement Figma (1) (completed)
+• Auto-linked task for FitTrack - Fitness Tracking App (2) (completed)
+• Auto-linked task for FitTrack - Fitness Tracking App (3) (completed)
+• Auto-linked task for FitTrack - Fitness Tracking App (4) (completed)
+
+KidsToy - Online Toy Shop:
+• Implement Tailwind (1) (assigned)
+• Implement Visual Design (1) (completed)
+• Implement UI Design (1) (assigned)
+• Implement Figma Design (1) (assigned)
+• Implement React (1) (assigned)
+• Auto-linked task for KidsToy - Online Toy Shop (1) (completed)
+• Auto-linked task for KidsToy - Online Toy Shop (2) (in_progress)
+• Auto-linked task for KidsToy - Online Toy Shop (3) (in_progress)
+• Auto-linked task for KidsToy - Online Toy Shop (4) (in_progress)
+• Auto-linked task for KidsToy - Online Toy Shop (5) (in_progress)
+
+Online Job Portal:
+• Implement tailwind (1) (completed)
+• Implement fastapi (1) (completed)
+• Implement mongodb (1) (completed)
+• Auto-linked task for Online Job Portal (3) (completed)
+• Auto-linked task for Online Job Portal (4) (completed)
+• Auto-linked task for Online Job Portal (5) (in_progress)
+
+Online Toy Shop:
+• Implement css (1) (completed)
+• Auto-linked task for Online Toy Shop (1) (completed)
+
+Software Requirements Specification (SRS):
+• Implement mongodb (1) (completed)
+• Implement tailwind (1) (completed)
+• Implement fastapi (1) (completed)
+• Auto-linked task for Software Requirements Specification (SRS) (3) (completed)
+• Auto-linked task for Software Requirements Specification (SRS) (4) (completed)
+• Auto-linked task for Software Requirements Specification (SRS) (5) (in_progress)
+
+Wanderlust - AI Travel Planner:
+• Implement fastapi (1) (completed)
+• Implement UX Design (1) (completed)
+• Implement tailwind (1) (completed)
+• Auto-linked task for Wanderlust - AI Travel Planner (3) (completed)
+• Auto-linked task for Wanderlust - AI Travel Planner (4) (completed)
+• Auto-linked task for Wanderlust - AI Travel Planner (5) (in_progress)
+--------------------------------------------------------------------------------
+
+[126/400] EN126
+Q: What projects is Salman assigned to?
+A: **Salman** — current assigned work from live data:
+
+FitTrack - Fitness Tracking App:
+• Implement fastapi (1) (completed)
+• Implement mongodb (1) (completed)
+• Implement Figma (1) (completed)
+• Auto-linked task for FitTrack - Fitness Tracking App (2) (completed)
+• Auto-linked task for FitTrack - Fitness Tracking App (3) (completed)
+• Auto-linked task for FitTrack - Fitness Tracking App (4) (completed)
+
+KidsToy - Online Toy Shop:
+• Implement Tailwind (1) (assigned)
+• Implement Visual Design (1) (completed)
+• Implement UI Design (1) (assigned)
+• Implement Figma Design (1) (assigned)
+• Implement React (1) (assigned)
+• Auto-linked task for KidsToy - Online Toy Shop (1) (completed)
+• Auto-linked task for KidsToy - Online Toy Shop (2) (in_progress)
+• Auto-linked task for KidsToy - Online Toy Shop (3) (in_progress)
+• Auto-linked task for KidsToy - Online Toy Shop (4) (in_progress)
+• Auto-linked task for KidsToy - Online Toy Shop (5) (in_progress)
+
+Online Job Portal:
+• Implement tailwind (1) (completed)
+• Implement fastapi (1) (completed)
+• Implement mongodb (1) (completed)
+• Auto-linked task for Online Job Portal (3) (completed)
+• Auto-linked task for Online Job Portal (4) (completed)
+• Auto-linked task for Online Job Portal (5) (in_progress)
+
+Online Toy Shop:
+• Implement css (1) (completed)
+• Auto-linked task for Online Toy Shop (1) (completed)
+
+Software Requirements Specification (SRS):
+• Implement mongodb (1) (completed)
+• Implement tailwind (1) (completed)
+• Implement fastapi (1) (completed)
+• Auto-linked task for Software Requirements Specification (SRS) (3) (completed)
+• Auto-linked task for Software Requirements Specification (SRS) (4) (completed)
+• Auto-linked task for Software Requirements Specification (SRS) (5) (in_progress)
+
+Wanderlust - AI Travel Planner:
+• Implement fastapi (1) (completed)
+• Implement UX Design (1) (completed)
+• Implement tailwind (1) (completed)
+• Auto-linked task for Wanderlust - AI Travel Planner (3) (completed)
+• Auto-linked task for Wanderlust - AI Travel Planner (4) (completed)
+• Auto-linked task for Wanderlust - AI Travel Planner (5) (in_progress)
+--------------------------------------------------------------------------------
+
+[127/400] EN127
+Q: Tell me open tasks in the Online Job Portal project
+A: Open tasks in 'Online Job Portal':
+• Auto-linked task for Online Job Portal (5) (in_progress)
+--------------------------------------------------------------------------------
+
+[128/400] EN128
+Q: Any open tasks on Online Job Portal?
+A: Open tasks in 'Online Job Portal':
+• Auto-linked task for Online Job Portal (5) (in_progress)
+--------------------------------------------------------------------------------
+
+[129/400] EN129
+Q: Who should I contact about Implement React UI Module on Online Job Portal?
+A: Who’s on “on Online Job Portal”:
+• Implement fastapi (1) — Fatima
+• Implement css (1) — Salman
+• Implement tailwind (1) — Fatima
+• Implement node.js (1) — Salman
+• Implement UI Design (1) — Ayesha
+• Implement tailwind (1) — Salman
+• Implement fastapi (1) — Salman
+• Implement css (1) — Fatima
+--------------------------------------------------------------------------------
+
+[130/400] EN130
+Q: Is there a deadline for FitTrack - Fitness Tracking App?
+A: «FitTrack - Fitness Tracking App» deadline: 2026-08-08 00:00:00 (status: completed).
+--------------------------------------------------------------------------------
+
+[131/400] EN131
+Q: Compare workload for Salman and Adnan
+A: Open (non-done) assigned tasks in the live data: **Salman** = 11, **Adnan** = 0. Higher open count means heavier current load.
+--------------------------------------------------------------------------------
+
+[132/400] EN132
+Q: Does Ayesha know node.js?
+A: Yep — node.js shows up on Ayesha’s profile.
+--------------------------------------------------------------------------------
+
+[133/400] EN133
+Q: Who on the team knows UI Design?
+A: Developers with «UI Design» on profile: Abdul Rehman, Abdullah Butt, Adnan, Ahsan Ali, Aima, Ali Ameen, Areeba, Arooj, Awais, Ayesha, Demo Manager, Eman, Fatima, Fayeez Naeem, Haseeb Developer.
+--------------------------------------------------------------------------------
+
+[134/400] EN134
+Q: Project health snapshot for Online Job Portal
+A: «Online Job Portal» — Health: 1 open / 9 done-ish out of 10 tasks; progress field 90%.
+--------------------------------------------------------------------------------
+
+[135/400] EN135
+Q: Task progress for Online Job Portal
+A: «Online Job Portal» has 10 tasks — 1 open/in progress, 9 done/submitted.
+--------------------------------------------------------------------------------
+
+[136/400] EN136
+Q: Who owns testing on Online Job Portal?
+A: I can’t see an assigned task for Testing right now. Want me to list nearby tasks?
+--------------------------------------------------------------------------------
+
+[137/400] EN137
+Q: Who owns UI work on Online Job Portal?
+A: Right now that work sits with: Salman, Fatima.
+--------------------------------------------------------------------------------
+
+[138/400] EN138
+Q: Is Online Job Portal behind schedule?
+A: «Online Job Portal» — Schedule signal: Not clearly behind on this snapshot (deadline not passed, or no open work).
+--------------------------------------------------------------------------------
+
+[139/400] EN139
+Q: How is FitTrack - Fitness Tracking App going?
+A: Here’s where things stand:
+• FitTrack - Fitness Tracking App: status completed, progress 100%; deadline 2026-08-08 00:00:00
+--------------------------------------------------------------------------------
+
+[140/400] EN140
+Q: List tasks related to node.js
+A: Tasks related to «node.js» (live):
+• Implement fastapi (1) — Fatima (completed)
+• Implement css (1) — Salman (completed)
+• Implement tailwind (1) — Fatima (completed)
+• Implement node.js (1) — Salman (assigned)
+• Implement UI Design (1) — Ayesha (assigned)
+• Auto-linked task for Online Toy Shop (2) — Salman (completed)
+• Implement figma (1) — Rahim (completed)
+• Implement figma (1) — Manahil (completed)
+• Implement figma (1) — Eman (assigned)
+• Implement ux design (1) — Maham (assigned)
+• Implement ux design (1) — Hina (assigned)
+• Implement ux design (2) — Hina (assigned)
+• Implement react.js (2) — Maham (assigned)
+• Implement css (2) — Eman (assigned)
+• Implement figma (2) — Manahil (completed)
+• Implement responsive design (2) — Rahim (completed)
+• Implement API Integration (2) — Hina (assigned)
+• Implement Authentication (2) — Maham (assigned)
+--------------------------------------------------------------------------------
+
+[141/400] EN141
+Q: Show developers with node.js on profile
+A: Developers with «node.js» on profile: Abdul Rehman, Abdullah Butt, Adnan, Ahsan Ali, Aima, Ali Ameen, Areeba, Arooj, Awais, Ayesha, Eman, Fatima, Fayeez Naeem, Haseeb Developer, Hina, Ibrahim, Iqra, Khadija, Maham, Manahil, Rahim, Salman, Shaheer Ali, Umar, Zain.
+--------------------------------------------------------------------------------
+
+[142/400] EN142
+Q: Does Online Job Portal need more backend help?
+A: The closest live match is project «Online Job Portal»: status **in_progress**, progress 90%, deadline **2026-09-24 00:00:00**.
+--------------------------------------------------------------------------------
+
+[143/400] EN143
+Q: Summarize FitTrack - Fitness Tracking App in one screen
+A: «FitTrack - Fitness Tracking App» — quick summary
+Status: completed | Progress: 100% | Deadline: 2026-08-08 00:00:00
+Creator: Ghania Tanveer | Tasks: 8 total, 0 still open
+
+Project: «FitTrack - Fitness Tracking App»
+Developers working on this project (assigned tasks):
+Fatima:
+• Auto-linked task for FitTrack - Fitness Tracking App (1) — completed
+• Implement css (1) — completed
+Salman:
+• Auto-linked task for FitTrack - Fitness Tracking App (2) — completed
+• Auto-linked task for FitTrack - Fitness Tracking App (3) — completed
+• Auto-linked task for FitTrack - Fitness Tracking App (4) — completed
+• Implement fastapi (1) — completed
+• Implement Figma (1) — completed
+• Implement mongodb (1) — completed
+Note: 2 team slot(s) could not be matched to a user profile (IDs are not shown).
+--------------------------------------------------------------------------------
+
+[144/400] EN144
+Q: Who created Wanderlust - AI Travel Planner?
+A: «Wanderlust - AI Travel Planner» was created by: Ghania Tanveer.
+--------------------------------------------------------------------------------
+
+[145/400] EN145
+Q: How many developers are on Online Job Portal?
+A: The closest live match is project «Online Job Portal»: status **in_progress**, progress 90%, deadline **2026-09-24 00:00:00**.
+--------------------------------------------------------------------------------
+
+[146/400] EN146
+Q: Is Implement fastapi (1) still open on Online Job Portal?
+A: The closest live match is project «Online Job Portal»: status **in_progress**, progress 90%, deadline **2026-09-24 00:00:00**.
+--------------------------------------------------------------------------------
+
+[147/400] EN147
+Q: Who completed Implement fastapi (1) on Online Job Portal?
+A: The closest live match is project «Online Job Portal»: status **in_progress**, progress 90%, deadline **2026-09-24 00:00:00**.
+--------------------------------------------------------------------------------
+
+[148/400] EN148
+Q: Is Salman available for new tasks?
+A: **Salman** currently has **11** active (non-done) assigned task(s) in the live data — they **look busy**; check with your PM before adding more.
+--------------------------------------------------------------------------------
+
+[149/400] EN149
+Q: What is Adnan's next deadline?
+A: No deadlines are set on your tasks or projects in the live data.
+--------------------------------------------------------------------------------
+
+[150/400] EN150
+Q: Any blockers on Online Job Portal?
+A: «Online Job Portal» — Blockers: none explicitly flagged in task statuses.
+--------------------------------------------------------------------------------
+
+[151/400] EN151
+Q: List completed tasks on Online Job Portal
+A: The closest live match is project «Online Job Portal»: status **in_progress**, progress 90%, deadline **2026-09-24 00:00:00**.
+--------------------------------------------------------------------------------
+
+[152/400] EN152
+Q: Who submitted work on Implement React UI Module?
+A: People on done/submitted «Implement React UI Module» tasks (assignee field): Fatima, Maham, Manahil, Rahim, Salman, Team member.
+--------------------------------------------------------------------------------
+
+[153/400] EN153
+Q: Routing: who picks up UI Design tasks?
+A: Live routing signal (assignee + task overlap): Salman (19 tasks touch «ui design»), Hina (3 tasks touch «ui design»), Maham (3 tasks touch «ui design»), Eman (2 tasks touch «ui design»), Manahil (2 tasks touch «ui design»).
+--------------------------------------------------------------------------------
+
+[154/400] EN154
+Q: Skill match: Salman vs node.js requirements
+A: **Salman** lists **Node.js** at **3.5** — use that as the live skill signal vs «node.js» needs.
+--------------------------------------------------------------------------------
+
+[155/400] EN155
+Q: Should we assign Implement React UI Module to Adnan?
+A: **Adnan** currently has **0** open assigned tasks; profile does not clearly list that area yet. Use that plus skill fit as a signal — PM makes the final call.
+--------------------------------------------------------------------------------
+
+[156/400] EN156
+Q: Who is faster on node.js, Salman or Adnan?
+A: On «node.js», **Salman** currently edges ahead in the live data (combined score 3.6 vs **Adnan** at 0.0 — profile proficiency plus completed tasks mentioning that skill).
+--------------------------------------------------------------------------------
+
+[157/400] EN157
+Q: Cross-check: Ayesha and Implement fastapi (1)
+A: No — Ayesha isn’t on that. Fatima has it. Also on it: Salman, Ayesha, Team member.
+--------------------------------------------------------------------------------
+
+[158/400] EN158
+Q: Verify team for Wanderlust - AI Travel Planner
+A: Project: «Wanderlust - AI Travel Planner»
+Developers working on this project (assigned tasks):
+Fatima:
+• Auto-linked task for Wanderlust - AI Travel Planner (1) — completed
+• Auto-linked task for Wanderlust - AI Travel Planner (2) — completed
+• Implement css (1) — completed
+• Implement Visual Design (1) — assigned
+Salman:
+• Auto-linked task for Wanderlust - AI Travel Planner (3) — completed
+• Auto-linked task for Wanderlust - AI Travel Planner (4) — completed
+• Auto-linked task for Wanderlust - AI Travel Planner (5) — in_progress
+• Implement fastapi (1) — completed
+• Implement tailwind (1) — completed
+• Implement UX Design (1) — completed
+Note: 2 team slot(s) could not be matched to a user profile (IDs are not shown).
+--------------------------------------------------------------------------------
+
+[159/400] EN159
+Q: Headcount on FitTrack - Fitness Tracking App
+A: The closest live match is project «FitTrack - Fitness Tracking App»: status **completed**, progress 100%, deadline **2026-08-08 00:00:00**.
+--------------------------------------------------------------------------------
+
+[160/400] EN160
+Q: Active vs done tasks on Online Job Portal
+A: «Online Job Portal» — **active/open:** 1 · **done/submitted:** 9 (**10** tasks total in the live data).
+--------------------------------------------------------------------------------
+
+[161/400] EN161
+Q: Jury question: status of Online Job Portal?
+A: Here’s where things stand:
+• Online Job Portal: status in_progress, progress 90%; deadline 2026-09-24 00:00:00
+--------------------------------------------------------------------------------
+
+[162/400] EN162
+Q: Jury question: who built FitTrack - Fitness Tracking App?
+A: The closest live match is project «FitTrack - Fitness Tracking App»: status **completed**, progress 100%, deadline **2026-08-08 00:00:00**.
+--------------------------------------------------------------------------------
+
+[163/400] EN163
+Q: Explain Online Job Portal timeline
+A: «Online Job Portal» — Deadline: 2026-09-24 00:00:00 | status: in_progress | open tasks: 1/10.
+--------------------------------------------------------------------------------
+
+[164/400] EN164
+Q: Risk: is Online Job Portal at risk?
+A: «Online Job Portal» — Risk read: moderate/low on available signals.
+--------------------------------------------------------------------------------
+
+[165/400] EN165
+Q: Milestone check for FitTrack - Fitness Tracking App
+A: «FitTrack - Fitness Tracking App» — Deadline: 2026-08-08 00:00:00 | status: completed | open tasks: 0/8.
+--------------------------------------------------------------------------------
+
+[166/400] EN166
+Q: Do I have enough skills for tailwind work?
+A: Your profile does not list «tailwind». For «tailwind» work you would usually want that skill on your profile or planned pairing — confirm with your PM/tech lead.
+--------------------------------------------------------------------------------
+
+[167/400] EN167
+Q: What is the status of the FitTrack - Fitness Tracking App project?
+A: Here’s where things stand:
+• FitTrack - Fitness Tracking App: status completed, progress 100%; deadline 2026-08-08 00:00:00
+--------------------------------------------------------------------------------
+
+[168/400] EN168
+Q: Give me a quick summary of FitTrack - Fitness Tracking App.
+A: «FitTrack - Fitness Tracking App» — quick summary
+Status: completed | Progress: 100% | Deadline: 2026-08-08 00:00:00
+Creator: Ghania Tanveer | Tasks: 8 total, 0 still open
+
+Project: «FitTrack - Fitness Tracking App»
+Developers working on this project (assigned tasks):
+Fatima:
+• Auto-linked task for FitTrack - Fitness Tracking App (1) — completed
+• Implement css (1) — completed
+Salman:
+• Auto-linked task for FitTrack - Fitness Tracking App (2) — completed
+• Auto-linked task for FitTrack - Fitness Tracking App (3) — completed
+• Auto-linked task for FitTrack - Fitness Tracking App (4) — completed
+• Implement fastapi (1) — completed
+• Implement Figma (1) — completed
+• Implement mongodb (1) — completed
+Note: 2 team slot(s) could not be matched to a user profile (IDs are not shown).
+--------------------------------------------------------------------------------
+
+[169/400] EN169
+Q: Quick summary for FitTrack - Fitness Tracking App
+A: «FitTrack - Fitness Tracking App» — quick summary
+Status: completed | Progress: 100% | Deadline: 2026-08-08 00:00:00
+Creator: Ghania Tanveer | Tasks: 8 total, 0 still open
+
+Project: «FitTrack - Fitness Tracking App»
+Developers working on this project (assigned tasks):
+Fatima:
+• Auto-linked task for FitTrack - Fitness Tracking App (1) — completed
+• Implement css (1) — completed
+Salman:
+• Auto-linked task for FitTrack - Fitness Tracking App (2) — completed
+• Auto-linked task for FitTrack - Fitness Tracking App (3) — completed
+• Auto-linked task for FitTrack - Fitness Tracking App (4) — completed
+• Implement fastapi (1) — completed
+• Implement Figma (1) — completed
+• Implement mongodb (1) — completed
+Note: 2 team slot(s) could not be matched to a user profile (IDs are not shown).
+--------------------------------------------------------------------------------
+
+[170/400] EN170
+Q: What is the deadline for FitTrack - Fitness Tracking App?
+A: «FitTrack - Fitness Tracking App» deadline: 2026-08-08 00:00:00 (status: completed).
+--------------------------------------------------------------------------------
+
+[171/400] EN171
+Q: How many tasks are on the FitTrack - Fitness Tracking App project?
+A: «FitTrack - Fitness Tracking App» has 8 tasks — 0 open/in progress, 8 done/submitted.
+--------------------------------------------------------------------------------
+
+[172/400] EN172
+Q: How many open tasks are on FitTrack - Fitness Tracking App?
+A: «FitTrack - Fitness Tracking App» has 8 tasks — 0 open/in progress, 8 done/submitted.
+--------------------------------------------------------------------------------
+
+[173/400] EN173
+Q: Open tasks on FitTrack - Fitness Tracking App
+A: There are no open tasks in 'FitTrack - Fitness Tracking App' right now.
+--------------------------------------------------------------------------------
+
+[174/400] EN174
+Q: Who works on FitTrack - Fitness Tracking App?
+A: Project: «FitTrack - Fitness Tracking App»
+Developers working on this project (assigned tasks):
+Fatima:
+• Auto-linked task for FitTrack - Fitness Tracking App (1) — completed
+• Implement css (1) — completed
+Salman:
+• Auto-linked task for FitTrack - Fitness Tracking App (2) — completed
+• Auto-linked task for FitTrack - Fitness Tracking App (3) — completed
+• Auto-linked task for FitTrack - Fitness Tracking App (4) — completed
+• Implement fastapi (1) — completed
+• Implement Figma (1) — completed
+• Implement mongodb (1) — completed
+Note: 2 team slot(s) could not be matched to a user profile (IDs are not shown).
+--------------------------------------------------------------------------------
+
+[175/400] EN175
+Q: List team members for FitTrack - Fitness Tracking App.
+A: Project: «FitTrack - Fitness Tracking App»
+Developers working on this project (assigned tasks):
+Fatima:
+• Auto-linked task for FitTrack - Fitness Tracking App (1) — completed
+• Implement css (1) — completed
+Salman:
+• Auto-linked task for FitTrack - Fitness Tracking App (2) — completed
+• Auto-linked task for FitTrack - Fitness Tracking App (3) — completed
+• Auto-linked task for FitTrack - Fitness Tracking App (4) — completed
+• Implement fastapi (1) — completed
+• Implement Figma (1) — completed
+• Implement mongodb (1) — completed
+Note: 2 team slot(s) could not be matched to a user profile (IDs are not shown).
+--------------------------------------------------------------------------------
+
+[176/400] EN176
+Q: Team members for FitTrack - Fitness Tracking App
+A: Project: «FitTrack - Fitness Tracking App»
+Developers working on this project (assigned tasks):
+Fatima:
+• Auto-linked task for FitTrack - Fitness Tracking App (1) — completed
+• Implement css (1) — completed
+Salman:
+• Auto-linked task for FitTrack - Fitness Tracking App (2) — completed
+• Auto-linked task for FitTrack - Fitness Tracking App (3) — completed
+• Auto-linked task for FitTrack - Fitness Tracking App (4) — completed
+• Implement fastapi (1) — completed
+• Implement Figma (1) — completed
+• Implement mongodb (1) — completed
+Note: 2 team slot(s) could not be matched to a user profile (IDs are not shown).
+--------------------------------------------------------------------------------
+
+[177/400] EN177
+Q: Is Adnan on the FitTrack - Fitness Tracking App team?
+A: No, Adnan is not assigned to the 'FitTrack - Fitness Tracking App' project team.
+--------------------------------------------------------------------------------
+
+[178/400] EN178
+Q: Is Adnan part of the FitTrack - Fitness Tracking App project team?
+A: No, Adnan is not assigned to the 'FitTrack - Fitness Tracking App' project team.
+--------------------------------------------------------------------------------
+
+[179/400] EN179
+Q: Who is responsible for Implement fastapi (1) on FitTrack - Fitness Tracking App?
+A: I couldn't find a direct match yet. I can immediately answer who is working on running projects, project status, assigned tasks, and nearest deadlines.
+--------------------------------------------------------------------------------
+
+[180/400] EN180
+Q: Who handles the API integration for FitTrack - Fitness Tracking App?
+A: Right now that work sits with: Fatima, Salman, Ayesha, Maham, Haseeb Developer, Hina.
+--------------------------------------------------------------------------------
+
+[181/400] EN181
+Q: Who handles Implement fastapi (1) for FitTrack - Fitness Tracking App?
+A: Right now that work sits with: Salman, Fatima.
+--------------------------------------------------------------------------------
+
+[182/400] EN182
+Q: What skills does Adnan have?
+A: Adnan: Angular (level 3.0), JavaScript (level 3.5), FastAPI (level 3.0), MySQL (level 3.5)
+--------------------------------------------------------------------------------
+
+[183/400] EN183
+Q: Which developer knows tailwind?
+A: Developers with «tailwind» on profile: Abdul Rehman, Abdullah Butt, Adnan, Ahsan Ali, Aima, Ali Ameen, Areeba, Arooj, Awais, Ayesha, Demo Manager, Eman, Fatima, Fayeez Naeem, Haseeb Developer.
+--------------------------------------------------------------------------------
+
+[184/400] EN184
+Q: Who knows tailwind?
+A: Developers with «tailwind» on profile: Abdul Rehman, Abdullah Butt, Adnan, Ahsan Ali, Aima, Ali Ameen, Areeba, Arooj, Awais, Ayesha, Demo Manager, Eman, Fatima, Fayeez Naeem, Haseeb Developer.
+--------------------------------------------------------------------------------
+
+[185/400] EN185
+Q: Who has tailwind skill?
+A: Developers with «tailwind» on profile: Abdul Rehman, Abdullah Butt, Adnan, Ahsan Ali, Aima, Ali Ameen, Areeba, Arooj, Awais, Ayesha, Demo Manager, Eman, Fatima, Fayeez Naeem, Haseeb Developer.
+--------------------------------------------------------------------------------
+
+[186/400] EN186
+Q: Does Adnan have a Implement fastapi (1) task?
+A: No — Adnan isn’t on that. Fatima has it. Also on it: Salman, Ayesha, Team member.
+--------------------------------------------------------------------------------
+
+[187/400] EN187
+Q: Does Adnan have an tailwind related task?
+A: No — Adnan isn’t on that. Fatima has it. Also on it: Salman, Ayesha, Team member.
+--------------------------------------------------------------------------------
+
+[188/400] EN188
+Q: Did Adnan complete Implement fastapi (1)?
+A: The closest live match is task «Implement fastapi (1)» (Online Toy Shop): **completed**, assignee **Fatima** (from your MongoDB-backed task list).
+--------------------------------------------------------------------------------
+
+[189/400] EN189
+Q: Is Adnan doing Implement fastapi (1)?
+A: No — Adnan isn’t on that. Fatima has it. Also on it: Salman, Ayesha, Team member.
+--------------------------------------------------------------------------------
+
+[190/400] EN190
+Q: Has Adnan been assigned Implement fastapi (1)?
+A: No — Adnan isn’t on that. Fatima has it. Also on it: Salman, Ayesha, Team member.
+--------------------------------------------------------------------------------
+
+[191/400] EN191
+Q: Is Ayesha working on Implement fastapi (1)?
+A: No — Ayesha isn’t on that. Fatima has it. Also on it: Salman, Ayesha, Team member.
+--------------------------------------------------------------------------------
+
+[192/400] EN192
+Q: Does Ayesha have a mongodb task assigned?
+A: No — Ayesha isn’t on that. Fatima has it. Also on it: Salman, Ayesha, Team member.
+--------------------------------------------------------------------------------
+
+[193/400] EN193
+Q: What is the status of Wanderlust - AI Travel Planner?
+A: Here’s where things stand:
+• Wanderlust - AI Travel Planner: status in_progress, progress 80%; deadline 2026-10-02 00:00:00
+--------------------------------------------------------------------------------
+
+[194/400] EN194
+Q: How many tasks are on Wanderlust - AI Travel Planner?
+A: «Wanderlust - AI Travel Planner» has 10 tasks — 2 open/in progress, 8 done/submitted.
+--------------------------------------------------------------------------------
+
+[195/400] EN195
+Q: Who is working on Wanderlust - AI Travel Planner?
+A: Project: «Wanderlust - AI Travel Planner»
+Developers working on this project (assigned tasks):
+Fatima:
+• Auto-linked task for Wanderlust - AI Travel Planner (1) — completed
+• Auto-linked task for Wanderlust - AI Travel Planner (2) — completed
+• Implement css (1) — completed
+• Implement Visual Design (1) — assigned
+Salman:
+• Auto-linked task for Wanderlust - AI Travel Planner (3) — completed
+• Auto-linked task for Wanderlust - AI Travel Planner (4) — completed
+• Auto-linked task for Wanderlust - AI Travel Planner (5) — in_progress
+• Implement fastapi (1) — completed
+• Implement tailwind (1) — completed
+• Implement UX Design (1) — completed
+Note: 2 team slot(s) could not be matched to a user profile (IDs are not shown).
+--------------------------------------------------------------------------------
+
+[196/400] EN196
+Q: What is Adnan working on right now?
+A: No assigned tasks show for **Adnan** in the live data right now.
+--------------------------------------------------------------------------------
+
+[197/400] EN197
+Q: What projects is Adnan assigned to?
+A: No assigned tasks show for **Adnan** in the live data right now.
+--------------------------------------------------------------------------------
+
+[198/400] EN198
+Q: Tell me open tasks in the FitTrack - Fitness Tracking App project
+A: There are no open tasks in 'FitTrack - Fitness Tracking App' right now.
+--------------------------------------------------------------------------------
+
+[199/400] EN199
+Q: Any open tasks on FitTrack - Fitness Tracking App?
+A: There are no open tasks in 'FitTrack - Fitness Tracking App' right now.
+--------------------------------------------------------------------------------
+
+[200/400] EN200
+Q: Who should I contact about Implement fastapi (1) on FitTrack - Fitness Tracking App?
+A: The closest live match is project «FitTrack - Fitness Tracking App»: status **completed**, progress 100%, deadline **2026-08-08 00:00:00**.
+--------------------------------------------------------------------------------
+
+[201/400] UR001
+Q: Mere assigned tasks kya hain?
+A: Aapke naam pe abhi koi task assign nahi hai.
+--------------------------------------------------------------------------------
+
+[202/400] UR002
+Q: Mere pending tasks dikhao.
+A: Aap ke 0 pending task(s) hain.
+--------------------------------------------------------------------------------
+
+[203/400] UR003
+Q: Meri saari tasks status ke sath batao.
+A: Aapke naam pe abhi koi task assign nahi hai.
+--------------------------------------------------------------------------------
+
+[204/400] UR004
+Q: Mera next deadline kya hai?
+A: Abhi aapke tasks/projects par koi deadline set nahi hai.
+--------------------------------------------------------------------------------
+
+[205/400] UR005
+Q: Aaj mujhe kya karna chahiye?
+A: Aaj ke liye aap clear ho - koi active assigned task nahi hai.
+--------------------------------------------------------------------------------
+
+[206/400] UR006
+Q: Meri skills kya hain?
+A: Aapki skills: Governance (level 4.0), Security (level 4.0)
+--------------------------------------------------------------------------------
+
+[207/400] UR007
+Q: Kya mere paas css ke liye skills kaafi hain?
+A: Aap ki profile pe «css» list nahi hai — routine «css» kaam ke liye skill alignment PM/tech lead se confirm karein.
+--------------------------------------------------------------------------------
+
+[208/400] UR008
+Q: Online Toy Shop ka status kya hai?
+A: Chalo, project status yeh hai:
+• Online Toy Shop: status in_progress, progress 70%; deadline 2026-02-07 00:00:00
+--------------------------------------------------------------------------------
+
+[209/400] UR009
+Q: Online Toy Shop ka short summary batao.
+A: Aap ke sawal se sab se zyada overlap «Online Toy Shop» project se mila: status **in_progress**, progress 70%, deadline **2026-02-07 00:00:00** (live data).
+--------------------------------------------------------------------------------
+
+[210/400] UR010
+Q: Online Toy Shop ki deadline kab hai?
+A: «Online Toy Shop» ki deadline: 2026-02-07 00:00:00 (status: in_progress).
+--------------------------------------------------------------------------------
+
+[211/400] UR011
+Q: Online Toy Shop kis ne banaya?
+A: «Online Toy Shop» create / manage usually is bande ne kiya: Abdul Moeed.
+--------------------------------------------------------------------------------
+
+[212/400] UR012
+Q: Online Toy Shop par kitne tasks hain?
+A: «Online Toy Shop» par total 10 tasks — 3 open/in progress, 7 done/submitted.
+--------------------------------------------------------------------------------
+
+[213/400] UR013
+Q: Online Toy Shop par kitne open tasks hain?
+A: 'Online Toy Shop' mein 'kitne' se match karta koi task nahi mila.
+--------------------------------------------------------------------------------
+
+[214/400] UR014
+Q: Online Toy Shop par kon kaam kar raha hai?
+A: Project: «Online Toy Shop»
+Is project par ye developers tasks par kaam kar rahe hain:
+Ayesha:
+• Auto-linked task for Online Toy Shop (5) — in_progress
+• Implement UI Design (1) — assigned
+Fatima:
+• Auto-linked task for Online Toy Shop (3) — completed
+• Auto-linked task for Online Toy Shop (4) — completed
+• Implement fastapi (1) — completed
+• Implement tailwind (1) — completed
+Salman:
+• Auto-linked task for Online Toy Shop (1) — completed
+• Auto-linked task for Online Toy Shop (2) — completed
+• Implement css (1) — completed
+• Implement node.js (1) — assigned
+--------------------------------------------------------------------------------
+
+[215/400] UR015
+Q: Online Toy Shop ki team members kon kon hain?
+A: Skills/team angle se yeh tasks relevant lagte hain: Build React UI Module, Implement React UI Module, Implement fastapi (1), Implement css (1), Implement tailwind (1), Implement node.js (1).
+--------------------------------------------------------------------------------
+
+[216/400] UR016
+Q: Online Toy Shop ke team members list karo.
+A: Closest task hints from your data: Build React UI Module, Implement React UI Module, Implement fastapi (1), Implement css (1), Implement tailwind (1), Implement node.js (1).
+--------------------------------------------------------------------------------
+
+[217/400] UR017
+Q: Kya Kosain Ali Online Toy Shop team me hai?
+A: Nahi, Kosain Ali 'Online Toy Shop' project team mein assigned nahi hai.
+--------------------------------------------------------------------------------
+
+[218/400] UR018
+Q: Online Toy Shop par Build React UI Module kis ke paas hai?
+A: Abhi Kis ke paas hai ka koi task assign nahi hua. Chaho to related tasks dikha deta hoon.
+--------------------------------------------------------------------------------
+
+[219/400] UR019
+Q: Online Toy Shop me API integration kon kar raha hai?
+A: Api integration ke liye abhi ye log involved hain: Salman, Ayesha, Fatima, Maham, Hina.
+--------------------------------------------------------------------------------
+
+[220/400] UR020
+Q: Kosain Ali ki skills kya hain?
+A: Skills/team angle se yeh tasks relevant lagte hain: Build React UI Module, Implement React UI Module, Implement fastapi (1), Implement css (1), Implement tailwind (1), Implement node.js (1).
+--------------------------------------------------------------------------------
+
+[221/400] UR021
+Q: Kis developer ko css skill hai?
+A: «css» profile pe yeh developers dikhe: Abdullah Butt, Fatima, Salman.
+--------------------------------------------------------------------------------
+
+[222/400] UR022
+Q: Kis developer ko fastapi aati hai?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[223/400] UR023
+Q: Saare projects ka overall scene kaisa hai?
+A: Ye projects aapke live data mein hain:
+• Online Toy Shop: in_progress, progress 70%; deadline 2026-02-07 00:00:00
+• Online Job Portal: in_progress, progress 90%; deadline 2026-09-24 00:00:00
+• FitTrack - Fitness Tracking App: completed, progress 100%; deadline 2026-08-08 00:00:00
+• Wanderlust - AI Travel Planner: in_progress, progress 80%; deadline 2026-10-02 00:00:00
+• Software Requirements Specification (SRS): in_progress, progress 80%; deadline 2026-08-08 00:00:00
+• KidsToy - Online Toy Shop: in_progress, progress 20%; deadline 2027-07-09 00:00:00
+• Software Requirements Specification (SRS): in_progress, progress 70%; deadline 2026-06-21 00:00:00
+• Project Description: TaskFlow Pro: in_progress, progress 0%; deadline 2026-06-12 00:00:00
+• Security: in_progress, progress 43%; deadline 2026-04-15 00:00:00
+• Demo — Skill Mapping Portal: in_progress, progress 40%; deadline 2026-07-15 06:19:39.656000
+• Demo — Analytics Mobile App: planning, progress 10%; deadline 2026-08-14 06:19:39.656000
+• Demo — Skill Mapping Portal: in_progress, progress 40%; deadline 2026-07-15 06:19:50.386000
+• Demo — Analytics Mobile App: planning, progress 10%; deadline 2026-08-14 06:19:50.386000
+• QuickBite - Online Food Delivery Platform: in_progress, progress 33%; deadline 2026-09-04 00:00:00
+--------------------------------------------------------------------------------
+
+[224/400] UR024
+Q: Overall project performance kaisi hai?
+A: Overall project performance theek chal rahi hai: 13 running projects, 83/132 tasks complete/submitted (62.9%).
+--------------------------------------------------------------------------------
+
+[225/400] UR025
+Q: Running projects dikhao.
+A: Projects in your live data:
+• Online Toy Shop: in_progress, progress 70%; deadline 2026-02-07 00:00:00
+• Online Job Portal: in_progress, progress 90%; deadline 2026-09-24 00:00:00
+• Wanderlust - AI Travel Planner: in_progress, progress 80%; deadline 2026-10-02 00:00:00
+• Software Requirements Specification (SRS): in_progress, progress 80%; deadline 2026-08-08 00:00:00
+• KidsToy - Online Toy Shop: in_progress, progress 20%; deadline 2027-07-09 00:00:00
+• Software Requirements Specification (SRS): in_progress, progress 70%; deadline 2026-06-21 00:00:00
+• Project Description: TaskFlow Pro: in_progress, progress 0%; deadline 2026-06-12 00:00:00
+• Security: in_progress, progress 43%; deadline 2026-04-15 00:00:00
+• Demo — Skill Mapping Portal: in_progress, progress 40%; deadline 2026-07-15 06:19:39.656000
+• Demo — Analytics Mobile App: planning, progress 10%; deadline 2026-08-14 06:19:39.656000
+• Demo — Skill Mapping Portal: in_progress, progress 40%; deadline 2026-07-15 06:19:50.386000
+• Demo — Analytics Mobile App: planning, progress 10%; deadline 2026-08-14 06:19:50.386000
+• QuickBite - Online Food Delivery Platform: in_progress, progress 33%; deadline 2026-09-04 00:00:00
+--------------------------------------------------------------------------------
+
+[226/400] UR026
+Q: Sab se zyada active developer kon hai?
+A: Abhi sabse active developer Salman lag rahe hain (active load 23, done 25).
+--------------------------------------------------------------------------------
+
+[227/400] UR027
+Q: Sab se zyada tasks kis ne complete kiye hain?
+A: Sabse zyada completed tasks Salman ke hain (25 done, 23 active).
+--------------------------------------------------------------------------------
+
+[228/400] UR028
+Q: Online Job Portal ka status kya hai?
+A: Chalo, project status yeh hai:
+• Online Job Portal: status in_progress, progress 90%; deadline 2026-09-24 00:00:00
+--------------------------------------------------------------------------------
+
+[229/400] UR029
+Q: Online Job Portal par kitne tasks hain?
+A: «Online Job Portal» par total 10 tasks — 1 open/in progress, 9 done/submitted.
+--------------------------------------------------------------------------------
+
+[230/400] UR030
+Q: Online Job Portal par kon kaam kar raha hai?
+A: Project: «Online Job Portal»
+Is project par ye developers tasks par kaam kar rahe hain:
+Fatima:
+• Auto-linked task for Online Job Portal (1) — completed
+• Auto-linked task for Online Job Portal (2) — completed
+• Implement css (1) — completed
+• Implement nlp (1) — completed
+Salman:
+• Auto-linked task for Online Job Portal (3) — completed
+• Auto-linked task for Online Job Portal (4) — completed
+• Auto-linked task for Online Job Portal (5) — in_progress
+• Implement fastapi (1) — completed
+• Implement mongodb (1) — completed
+• Implement tailwind (1) — completed
+Note: team list mein 2 member(s) ka user profile is directory mein match nahi hua (IDs chat mein show nahi ki gayeen).
+--------------------------------------------------------------------------------
+
+[231/400] UR031
+Q: Kya Salman Online Job Portal team me hai?
+A: Haan, Salman 'Online Job Portal' team mein assigned hai. Un ke 6 task(s) is project mein milay.
+--------------------------------------------------------------------------------
+
+[232/400] UR032
+Q: Online Job Portal ki deadline kab hai?
+A: «Online Job Portal» ki deadline: 2026-09-24 00:00:00 (status: in_progress).
+--------------------------------------------------------------------------------
+
+[233/400] UR033
+Q: FitTrack - Fitness Tracking App kis ne banaya?
+A: «FitTrack - Fitness Tracking App» create / manage usually is bande ne kiya: Ghania Tanveer.
+--------------------------------------------------------------------------------
+
+[234/400] UR034
+Q: Kya Kosain Ali ne Build React UI Module complete kiya?
+A: Aap ke sawal se sab se zyada overlap «Build React UI Module» task se mila: status **assigned**, assignee **Team member** (live MongoDB).
+--------------------------------------------------------------------------------
+
+[235/400] UR035
+Q: Kya Salman ke paas Build React UI Module task hai?
+A: Haan bhai, Salman React pe kaam kar raha hai.
+--------------------------------------------------------------------------------
+
+[236/400] UR036
+Q: Kya Adnan Implement React UI Module handle kar raha hai?
+A: Nahi, Kya ke paas React assign nahi hai. Abhi Team member ke paas hai. Baaki: Fatima, Salman, Ayesha.
+--------------------------------------------------------------------------------
+
+[237/400] UR037
+Q: Kosain Ali css janta hai kya?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[238/400] UR038
+Q: Online Toy Shop py Implement React UI Module kon kar raha hai?
+A: Abhi Kon kar raha hai ka koi task assign nahi hua. Chaho to related tasks dikha deta hoon.
+--------------------------------------------------------------------------------
+
+[239/400] UR039
+Q: Online Toy Shop summary jaldi batao.
+A: Aap ke sawal se sab se zyada overlap «Online Toy Shop» project se mila: status **in_progress**, progress 70%, deadline **2026-02-07 00:00:00** (live data).
+--------------------------------------------------------------------------------
+
+[240/400] UR040
+Q: Online Toy Shop ka health kaisa hai?
+A: «Online Toy Shop» — Health: 3 open / 7 done-ish out of 10 tasks; progress field 70%.
+--------------------------------------------------------------------------------
+
+[241/400] UR041
+Q: Open tasks Online Toy Shop me kitni hain?
+A: Aap ke sawal se sab se zyada overlap «Online Toy Shop» project se mila: status **in_progress**, progress 70%, deadline **2026-02-07 00:00:00** (live data).
+--------------------------------------------------------------------------------
+
+[242/400] UR042
+Q: Kitne tasks complete ho chuke Online Toy Shop me?
+A: 'Kitne' naam team ke users mein nahi mila.
+--------------------------------------------------------------------------------
+
+[243/400] UR043
+Q: Kosain Ali busy hai kya?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[244/400] UR044
+Q: Kosain Ali ka workload kaisa hai?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[245/400] UR045
+Q: Testing ka task Online Toy Shop par kon kar raha hai?
+A: Fatima developer is py working kr ra.
+--------------------------------------------------------------------------------
+
+[246/400] UR046
+Q: UI design Online Toy Shop par kis ke paas hai?
+A: Ui design ke liye abhi ye log involved hain: Fatima, Salman, Ayesha, Rahim, Ibrahim, Maham, Umar, Zain, Manahil, Eman, Hina.
+--------------------------------------------------------------------------------
+
+[247/400] UR047
+Q: Figma task Kosain Ali ke paas hai kya?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[248/400] UR048
+Q: Kya Salman ne Figma design task kiya?
+A: Nahi, Kya Salman ke paas Figma design assign nahi hai. Abhi Fatima ke paas hai. Baaki: Salman, Ayesha, Team member.
+--------------------------------------------------------------------------------
+
+[249/400] UR049
+Q: Kya Kosain Ali ko Build React UI Module assign hai?
+A: Aap ke sawal se sab se zyada overlap «Build React UI Module» task se mila: status **assigned**, assignee **Team member** (live MongoDB).
+--------------------------------------------------------------------------------
+
+[250/400] UR050
+Q: Next deadline Salman ki kya hai?
+A: Abhi aapke tasks/projects par koi deadline set nahi hai.
+--------------------------------------------------------------------------------
+
+[251/400] UR051
+Q: Sab projects list karo.
+A: Ye projects aapke live data mein hain:
+• Online Toy Shop: in_progress, progress 70%; deadline 2026-02-07 00:00:00
+• Online Job Portal: in_progress, progress 90%; deadline 2026-09-24 00:00:00
+• FitTrack - Fitness Tracking App: completed, progress 100%; deadline 2026-08-08 00:00:00
+• Wanderlust - AI Travel Planner: in_progress, progress 80%; deadline 2026-10-02 00:00:00
+• Software Requirements Specification (SRS): in_progress, progress 80%; deadline 2026-08-08 00:00:00
+• KidsToy - Online Toy Shop: in_progress, progress 20%; deadline 2027-07-09 00:00:00
+• Software Requirements Specification (SRS): in_progress, progress 70%; deadline 2026-06-21 00:00:00
+• Project Description: TaskFlow Pro: in_progress, progress 0%; deadline 2026-06-12 00:00:00
+• Security: in_progress, progress 43%; deadline 2026-04-15 00:00:00
+• Demo — Skill Mapping Portal: in_progress, progress 40%; deadline 2026-07-15 06:19:39.656000
+• Demo — Analytics Mobile App: planning, progress 10%; deadline 2026-08-14 06:19:39.656000
+• Demo — Skill Mapping Portal: in_progress, progress 40%; deadline 2026-07-15 06:19:50.386000
+• Demo — Analytics Mobile App: planning, progress 10%; deadline 2026-08-14 06:19:50.386000
+• QuickBite - Online Food Delivery Platform: in_progress, progress 33%; deadline 2026-09-04 00:00:00
+--------------------------------------------------------------------------------
+
+[252/400] UR052
+Q: Hamare projects ka haal batao.
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[253/400] UR053
+Q: Kon kon Online Toy Shop py laga hua hai?
+A: Aap ke sawal se sab se zyada overlap «Online Toy Shop» project se mila: status **in_progress**, progress 70%, deadline **2026-02-07 00:00:00** (live data).
+--------------------------------------------------------------------------------
+
+[254/400] UR054
+Q: Kaun kaun Online Job Portal team me hai?
+A: Skills/team angle se yeh tasks relevant lagte hain: Build React UI Module, Implement React UI Module, Implement fastapi (1), Implement css (1), Implement tailwind (1), Implement node.js (1).
+--------------------------------------------------------------------------------
+
+[255/400] UR055
+Q: Online Toy Shop par backend kon kar raha hai?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[256/400] UR056
+Q: Online Toy Shop par frontend kon kar raha hai?
+A: Frontend ke liye abhi ye log involved hain: Salman, Ayesha, Fatima, Ibrahim, Umar, Maham, Zain, Eman, Hina.
+--------------------------------------------------------------------------------
+
+[257/400] UR057
+Q: MongoDB skill kis developer ko hai?
+A: Woh naam team ke users mein nahi mila.
+--------------------------------------------------------------------------------
+
+[258/400] UR058
+Q: FastAPI kis ko aata hai?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[259/400] UR059
+Q: React experts kon kon hain?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[260/400] UR060
+Q: Project FitTrack - Fitness Tracking App ka status kya hai?
+A: Chalo, project status yeh hai:
+• FitTrack - Fitness Tracking App: status completed, progress 100%; deadline 2026-08-08 00:00:00
+--------------------------------------------------------------------------------
+
+[261/400] UR061
+Q: Online Job Portal me kitne bande hain?
+A: Aap ke sawal se sab se zyada overlap «Online Job Portal» project se mila: status **in_progress**, progress 90%, deadline **2026-09-24 00:00:00** (live data).
+--------------------------------------------------------------------------------
+
+[262/400] UR062
+Q: Kya Online Toy Shop delay par hai?
+A: «Online Toy Shop» — Schedule signal: Yes — the project deadline is in the past and open tasks remain.
+--------------------------------------------------------------------------------
+
+[263/400] UR063
+Q: Mujhe Online Toy Shop ka overview chahiye.
+A: Kis project ka status chahiye? Project ka naam likh dein, ya 'all projects' bol dein.
+--------------------------------------------------------------------------------
+
+[264/400] UR064
+Q: Jury ke liye: Online Toy Shop summary.
+A: The closest live match is project «Online Toy Shop»: status **in_progress**, progress 70%, deadline **2026-02-07 00:00:00**.
+--------------------------------------------------------------------------------
+
+[265/400] UR065
+Q: Viva: Online Toy Shop team kon?
+A: Skills/team angle se yeh tasks relevant lagte hain: Build React UI Module, Implement React UI Module, Implement fastapi (1), Implement css (1), Implement tailwind (1), Implement node.js (1).
+--------------------------------------------------------------------------------
+
+[266/400] UR066
+Q: Kosain Ali aur Salman me se zyada load kis par hai?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[267/400] UR067
+Q: Build React UI Module abhi kis ke naam pe hai?
+A: Aap ke sawal se sab se zyada overlap «Build React UI Module» task se mila: status **assigned**, assignee **Team member** (live MongoDB).
+--------------------------------------------------------------------------------
+
+[268/400] UR068
+Q: Implement React UI Module complete ho gaya kya?
+A: Haan — «Implement React UI Module» ab «completed» state mein hai (assignee: Team member).
+--------------------------------------------------------------------------------
+
+[269/400] UR069
+Q: Kya Adnan Online Toy Shop me assign hai?
+A: Aap ke sawal se sab se zyada overlap «Online Toy Shop» project se mila: status **in_progress**, progress 70%, deadline **2026-02-07 00:00:00** (live data).
+--------------------------------------------------------------------------------
+
+[270/400] UR070
+Q: Skills check: Kosain Ali ke paas fastapi hai?
+A: Skills/team angle se yeh tasks relevant lagte hain: Build React UI Module, Implement React UI Module, Implement fastapi (1), Implement css (1), Implement tailwind (1), Implement node.js (1).
+--------------------------------------------------------------------------------
+
+[271/400] UR071
+Q: Roman Urdu: Online Toy Shop py kaam kon?
+A: 'Roman' naam team ke users mein nahi mila.
+--------------------------------------------------------------------------------
+
+[272/400] UR072
+Q: Hinglish: Online Job Portal status batao na.
+A: Kis project ka status chahiye? Project ka naam likh dein, ya 'all projects' bol dein.
+--------------------------------------------------------------------------------
+
+[273/400] UR073
+Q: Bhai Online Toy Shop deadline extend hui?
+A: Abhi aapke tasks/projects par koi deadline set nahi hai.
+--------------------------------------------------------------------------------
+
+[274/400] UR074
+Q: Online Toy Shop par active tasks batao.
+A: Aapke naam pe abhi koi task assign nahi hai.
+--------------------------------------------------------------------------------
+
+[275/400] UR075
+Q: Done tasks Online Toy Shop me kon kon ne kiye?
+A: Sabse zyada completed tasks Salman ke hain (25 done, 23 active).
+--------------------------------------------------------------------------------
+
+[276/400] UR076
+Q: Assignee list for Online Toy Shop
+A: Project: «Online Toy Shop»
+Developers working on this project (assigned tasks):
+Ayesha:
+• Auto-linked task for Online Toy Shop (5) — in_progress
+• Implement UI Design (1) — assigned
+Fatima:
+• Auto-linked task for Online Toy Shop (3) — completed
+• Auto-linked task for Online Toy Shop (4) — completed
+• Implement fastapi (1) — completed
+• Implement tailwind (1) — completed
+Salman:
+• Auto-linked task for Online Toy Shop (1) — completed
+• Auto-linked task for Online Toy Shop (2) — completed
+• Implement css (1) — completed
+• Implement node.js (1) — assigned
+--------------------------------------------------------------------------------
+
+[277/400] UR077
+Q: PM ne Online Job Portal banaya tha kya?
+A: «Online Job Portal» creator field: **Ghania Tanveer** (role: manager). Haan, PM-type role.
+--------------------------------------------------------------------------------
+
+[278/400] UR078
+Q: Kis bande ne FitTrack - Fitness Tracking App create kiya?
+A: Aap ke sawal se sab se zyada overlap «FitTrack - Fitness Tracking App» project se mila: status **completed**, progress 100%, deadline **2026-08-08 00:00:00** (live data).
+--------------------------------------------------------------------------------
+
+[279/400] UR079
+Q: Team roster Online Toy Shop
+A: Project: «Online Toy Shop»
+Developers working on this project (assigned tasks):
+Ayesha:
+• Auto-linked task for Online Toy Shop (5) — in_progress
+• Implement UI Design (1) — assigned
+Fatima:
+• Auto-linked task for Online Toy Shop (3) — completed
+• Auto-linked task for Online Toy Shop (4) — completed
+• Implement fastapi (1) — completed
+• Implement tailwind (1) — completed
+Salman:
+• Auto-linked task for Online Toy Shop (1) — completed
+• Auto-linked task for Online Toy Shop (2) — completed
+• Implement css (1) — completed
+• Implement node.js (1) — assigned
+--------------------------------------------------------------------------------
+
+[280/400] UR080
+Q: Roster Online Job Portal ka batao.
+A: Project: «Online Job Portal»
+Is project par ye developers tasks par kaam kar rahe hain:
+Fatima:
+• Auto-linked task for Online Job Portal (1) — completed
+• Auto-linked task for Online Job Portal (2) — completed
+• Implement css (1) — completed
+• Implement nlp (1) — completed
+Salman:
+• Auto-linked task for Online Job Portal (3) — completed
+• Auto-linked task for Online Job Portal (4) — completed
+• Auto-linked task for Online Job Portal (5) — in_progress
+• Implement fastapi (1) — completed
+• Implement mongodb (1) — completed
+• Implement tailwind (1) — completed
+Note: team list mein 2 member(s) ka user profile is directory mein match nahi hua (IDs chat mein show nahi ki gayeen).
+--------------------------------------------------------------------------------
+
+[281/400] UR081
+Q: Kya Kosain Ali ne Implement React UI Module submit kiya?
+A: Aap ke sawal se sab se zyada overlap «Implement React UI Module» task se mila: status **completed**, assignee **Team member** (live MongoDB).
+--------------------------------------------------------------------------------
+
+[282/400] UR082
+Q: Abhi Build React UI Module kis ke queue me hai?
+A: Aap ke sawal se sab se zyada overlap «Build React UI Module» task se mila: status **assigned**, assignee **Team member** (live MongoDB).
+--------------------------------------------------------------------------------
+
+[283/400] UR083
+Q: Skill gap Online Toy Shop ke liye kya hai?
+A: «Online Toy Shop» — required skills assignees ki profiles se cover lagti hain.
+--------------------------------------------------------------------------------
+
+[284/400] UR084
+Q: Training kis ko chahiye css me?
+A: «css» mein polish useful: Abdul Rehman, Adnan, Ahsan Ali, Aima, Ali Ameen, Aneela Azhar, Areeba, Arooj, Awais, Ayesha, Eman, Fatima, Fayeez Naeem, Haseeb Developer, Hina.
+--------------------------------------------------------------------------------
+
+[285/400] UR085
+Q: Recommend developer for fastapi
+A: Best profile match for «fastapi» (by listed level): Fatima (5.0), Ali Ameen (4.0), Ali Ameen (4.0), Arooj (4.0), Arooj (4.0).
+--------------------------------------------------------------------------------
+
+[286/400] UR086
+Q: Best match css ke liye kon?
+A: «css» ke liye profile strength (top): Fatima (5.0), Abdullah Butt (3.5), Abdullah Butt (3.5), Salman (2.5).
+--------------------------------------------------------------------------------
+
+[287/400] UR087
+Q: Load balancing: Kosain Ali vs Adnan
+A: Open (non-done) assigned tasks in the live data: **Kosain Ali** = 0, **Adnan** = 0. Higher open count means heavier current load.
+--------------------------------------------------------------------------------
+
+[288/400] UR088
+Q: Kaun fastest hai css me?
+A: Speed/throughput ka objective score is DB mein track nahi — main sirf assignments + completions count dikha sakta hoon.
+--------------------------------------------------------------------------------
+
+[289/400] UR089
+Q: Project priority: Online Toy Shop ya Online Job Portal?
+A: Live snapshot: **Online Toy Shop** has 10 tasks (7 open). **Online Job Portal** has 10 tasks (9 open). Priority is a PM call — this is workload signal only.
+--------------------------------------------------------------------------------
+
+[290/400] UR090
+Q: Sync: Online Toy Shop tasks kitne open?
+A: «Online Toy Shop» has 10 tasks — 3 open/in progress, 7 done/submitted.
+--------------------------------------------------------------------------------
+
+[291/400] UR091
+Q: Daily standup style: Kosain Ali kya kar raha?
+A: Is area ke liye abhi koi assigned task live data mein nahi hai.
+--------------------------------------------------------------------------------
+
+[292/400] UR092
+Q: Blocker hai Online Toy Shop par?
+A: «Online Toy Shop» — Blockers: none explicitly flagged in task statuses.
+--------------------------------------------------------------------------------
+
+[293/400] UR093
+Q: Unblock ke liye kon contact?
+A: Unblock ke liye pehle task assignee + PM se sync karein; blocker field har task par mandatory nahi hai.
+--------------------------------------------------------------------------------
+
+[294/400] UR094
+Q: Handoff: Build React UI Module kis ko dena chahiye?
+A: Live data ke mutabiq «Build React UI Module» abhi **Team member** ko assigned hai (status: assigned). Naya handoff / reassign PM ki decision hoti hai.
+--------------------------------------------------------------------------------
+
+[295/400] UR095
+Q: Code review task kis ke paas?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[296/400] UR096
+Q: Documentation task kon lega?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[297/400] UR097
+Q: Deployment step kis ne kiya?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[298/400] UR098
+Q: Bug fix queue me kon hai?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[299/400] UR099
+Q: QA signoff kis ne diya?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[300/400] UR100
+Q: Staging deploy kis bande ne kiya?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[301/400] UR101
+Q: Production ready hai Online Toy Shop?
+A: «Online Toy Shop» — Production readiness (heuristic): not yet — open tasks remain.
+--------------------------------------------------------------------------------
+
+[302/400] UR102
+Q: Sprint goal Online Job Portal achieve hua?
+A: There is no dedicated sprint/velocity record in this dataset — only live task/project counts. Overall task completion across visible projects: **58.9%**.
+--------------------------------------------------------------------------------
+
+[303/400] UR103
+Q: Velocity Online Toy Shop ki kaisi hai?
+A: Sprint/burndown velocity ka structured track abhi is DB mein attach nahi — main sirf live tasks se snapshot de sakta hoon. Overall completion (tasks): **58.9%**.
+--------------------------------------------------------------------------------
+
+[304/400] UR104
+Q: Burndown nahi pooch raha, sirf status: Online Toy Shop
+A: Sprint/burndown velocity ka structured track abhi is DB mein attach nahi — main sirf live tasks se snapshot de sakta hoon. Overall completion (tasks): **58.9%**.
+--------------------------------------------------------------------------------
+
+[305/400] UR105
+Q: Plain question: Online Toy Shop ka kya scene?
+A: «Online Toy Shop» — Health: 3 open / 7 done-ish out of 10 tasks; progress field 70%.
+--------------------------------------------------------------------------------
+
+[306/400] UR106
+Q: Short answer chahiye: Online Job Portal deadline?
+A: Abhi aapke tasks/projects par koi deadline set nahi hai.
+--------------------------------------------------------------------------------
+
+[307/400] UR107
+Q: One line: Kosain Ali free hai?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[308/400] UR108
+Q: Yes/No: Salman Build React UI Module pe hai?
+A: Aap ke sawal se sab se zyada overlap «Build React UI Module» task se mila: status **assigned**, assignee **Team member** (live MongoDB).
+--------------------------------------------------------------------------------
+
+[309/400] UR109
+Q: Confirm: Adnan Online Toy Shop team me?
+A: Closest task hints from your data: Build React UI Module, Implement React UI Module, Implement fastapi (1), Implement css (1), Implement tailwind (1), Implement node.js (1).
+--------------------------------------------------------------------------------
+
+[310/400] UR110
+Q: Double check: css kis ko aata hai?
+A: «css» profile pe yeh developers dikhe: Abdullah Butt, Fatima, Salman.
+--------------------------------------------------------------------------------
+
+[311/400] UR111
+Q: Triple check: Online Job Portal tasks total?
+A: «Online Job Portal» — **10** tasks total (1 open, 9 done/submitted).
+--------------------------------------------------------------------------------
+
+[312/400] UR112
+Q: Final: most active developer kon?
+A: Abhi sabse active developer Salman lag rahe hain (active load 23, done 25).
+--------------------------------------------------------------------------------
+
+[313/400] UR113
+Q: Last: sab se zyada complete tasks kis ke?
+A: Sabse zyada completed tasks Salman ke hain (25 done, 23 active).
+--------------------------------------------------------------------------------
+
+[314/400] UR114
+Q: Kya mere paas node.js ke liye skills kaafi hain?
+A: Aap ki profile pe «node.js» list nahi hai — routine «node.js» kaam ke liye skill alignment PM/tech lead se confirm karein.
+--------------------------------------------------------------------------------
+
+[315/400] UR115
+Q: Online Job Portal ka short summary batao.
+A: Aap ke sawal se sab se zyada overlap «Online Job Portal» project se mila: status **in_progress**, progress 90%, deadline **2026-09-24 00:00:00** (live data).
+--------------------------------------------------------------------------------
+
+[316/400] UR116
+Q: Online Job Portal kis ne banaya?
+A: «Online Job Portal» create / manage usually is bande ne kiya: Ghania Tanveer.
+--------------------------------------------------------------------------------
+
+[317/400] UR117
+Q: Online Job Portal par kitne open tasks hain?
+A: 'Online Job Portal' mein 'kitne' se match karta koi task nahi mila.
+--------------------------------------------------------------------------------
+
+[318/400] UR118
+Q: Online Job Portal ki team members kon kon hain?
+A: Skills/team angle se yeh tasks relevant lagte hain: Build React UI Module, Implement React UI Module, Implement fastapi (1), Implement css (1), Implement tailwind (1), Implement node.js (1).
+--------------------------------------------------------------------------------
+
+[319/400] UR119
+Q: Online Job Portal ke team members list karo.
+A: Closest task hints from your data: Build React UI Module, Implement React UI Module, Implement fastapi (1), Implement css (1), Implement tailwind (1), Implement node.js (1).
+--------------------------------------------------------------------------------
+
+[320/400] UR120
+Q: Online Job Portal par Implement React UI Module kis ke paas hai?
+A: Abhi Kis ke paas hai ka koi task assign nahi hua. Chaho to related tasks dikha deta hoon.
+--------------------------------------------------------------------------------
+
+[321/400] UR121
+Q: Online Job Portal me API integration kon kar raha hai?
+A: Api integration ke liye abhi ye log involved hain: Salman, Ayesha, Fatima, Maham, Hina.
+--------------------------------------------------------------------------------
+
+[322/400] UR122
+Q: Salman ki skills kya hain?
+A: Skills/team angle se yeh tasks relevant lagte hain: Build React UI Module, Implement React UI Module, Implement fastapi (1), Implement css (1), Implement tailwind (1), Implement node.js (1).
+--------------------------------------------------------------------------------
+
+[323/400] UR123
+Q: Kis developer ko node.js skill hai?
+A: «node.js» profile pe yeh developers dikhe: Abdul Rehman, Abdullah Butt, Adnan, Ahsan Ali, Aima, Ali Ameen, Areeba, Arooj, Awais, Ayesha, Demo Manager, Eman, Fatima, Fayeez Naeem, Haseeb Developer.
+--------------------------------------------------------------------------------
+
+[324/400] UR124
+Q: Kis developer ko UI Design aati hai?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[325/400] UR125
+Q: FitTrack - Fitness Tracking App ka status kya hai?
+A: Chalo, project status yeh hai:
+• FitTrack - Fitness Tracking App: status completed, progress 100%; deadline 2026-08-08 00:00:00
+--------------------------------------------------------------------------------
+
+[326/400] UR126
+Q: FitTrack - Fitness Tracking App par kitne tasks hain?
+A: «FitTrack - Fitness Tracking App» par total 8 tasks — 0 open/in progress, 8 done/submitted.
+--------------------------------------------------------------------------------
+
+[327/400] UR127
+Q: FitTrack - Fitness Tracking App par kon kaam kar raha hai?
+A: Project: «FitTrack - Fitness Tracking App»
+Is project par ye developers tasks par kaam kar rahe hain:
+Fatima:
+• Auto-linked task for FitTrack - Fitness Tracking App (1) — completed
+• Implement css (1) — completed
+Salman:
+• Auto-linked task for FitTrack - Fitness Tracking App (2) — completed
+• Auto-linked task for FitTrack - Fitness Tracking App (3) — completed
+• Auto-linked task for FitTrack - Fitness Tracking App (4) — completed
+• Implement fastapi (1) — completed
+• Implement Figma (1) — completed
+• Implement mongodb (1) — completed
+Note: team list mein 2 member(s) ka user profile is directory mein match nahi hua (IDs chat mein show nahi ki gayeen).
+--------------------------------------------------------------------------------
+
+[328/400] UR128
+Q: Kya Adnan FitTrack - Fitness Tracking App team me hai?
+A: Nahi, Adnan 'FitTrack - Fitness Tracking App' project team mein assigned nahi hai.
+--------------------------------------------------------------------------------
+
+[329/400] UR129
+Q: FitTrack - Fitness Tracking App ki deadline kab hai?
+A: «FitTrack - Fitness Tracking App» ki deadline: 2026-08-08 00:00:00 (status: completed).
+--------------------------------------------------------------------------------
+
+[330/400] UR130
+Q: Wanderlust - AI Travel Planner kis ne banaya?
+A: «Wanderlust - AI Travel Planner» create / manage usually is bande ne kiya: Ghania Tanveer.
+--------------------------------------------------------------------------------
+
+[331/400] UR131
+Q: Kya Salman ne Implement React UI Module complete kiya?
+A: Aap ke sawal se sab se zyada overlap «Implement React UI Module» task se mila: status **completed**, assignee **Team member** (live MongoDB).
+--------------------------------------------------------------------------------
+
+[332/400] UR132
+Q: Kya Adnan ke paas Implement React UI Module task hai?
+A: Nahi, Adnan ke paas React assign nahi hai. Abhi Team member ke paas hai. Baaki: Fatima, Salman, Ayesha.
+--------------------------------------------------------------------------------
+
+[333/400] UR133
+Q: Kya Ayesha Implement fastapi (1) handle kar raha hai?
+A: Nahi, Kya ke paas Ayesha implement fastapi (1) assign nahi hai. Abhi Fatima ke paas hai. Baaki: Salman, Ayesha, Team member.
+--------------------------------------------------------------------------------
+
+[334/400] UR134
+Q: Salman node.js janta hai kya?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[335/400] UR135
+Q: Online Job Portal py Implement fastapi (1) kon kar raha hai?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[336/400] UR136
+Q: Online Job Portal summary jaldi batao.
+A: Aap ke sawal se sab se zyada overlap «Online Job Portal» project se mila: status **in_progress**, progress 90%, deadline **2026-09-24 00:00:00** (live data).
+--------------------------------------------------------------------------------
+
+[337/400] UR137
+Q: Online Job Portal ka health kaisa hai?
+A: «Online Job Portal» — Health: 1 open / 9 done-ish out of 10 tasks; progress field 90%.
+--------------------------------------------------------------------------------
+
+[338/400] UR138
+Q: Open tasks Online Job Portal me kitni hain?
+A: Aap ke sawal se sab se zyada overlap «Online Job Portal» project se mila: status **in_progress**, progress 90%, deadline **2026-09-24 00:00:00** (live data).
+--------------------------------------------------------------------------------
+
+[339/400] UR139
+Q: Kitne tasks complete ho chuke Online Job Portal me?
+A: 'Kitne' naam team ke users mein nahi mila.
+--------------------------------------------------------------------------------
+
+[340/400] UR140
+Q: Salman busy hai kya?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[341/400] UR141
+Q: Salman ka workload kaisa hai?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[342/400] UR142
+Q: Testing ka task Online Job Portal par kon kar raha hai?
+A: Fatima developer is py working kr ra.
+--------------------------------------------------------------------------------
+
+[343/400] UR143
+Q: UI design Online Job Portal par kis ke paas hai?
+A: Ui design ke liye abhi ye log involved hain: Fatima, Salman, Ayesha, Rahim, Ibrahim, Maham, Umar, Zain, Manahil, Eman, Hina.
+--------------------------------------------------------------------------------
+
+[344/400] UR144
+Q: Figma task Salman ke paas hai kya?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[345/400] UR145
+Q: Kya Adnan ne Figma design task kiya?
+A: Nahi, Kya Adnan ke paas Figma design assign nahi hai. Abhi Fatima ke paas hai. Baaki: Salman, Ayesha, Team member.
+--------------------------------------------------------------------------------
+
+[346/400] UR146
+Q: Kya Salman ko Implement React UI Module assign hai?
+A: Aap ke sawal se sab se zyada overlap «Implement React UI Module» task se mila: status **completed**, assignee **Team member** (live MongoDB).
+--------------------------------------------------------------------------------
+
+[347/400] UR147
+Q: Next deadline Adnan ki kya hai?
+A: Abhi aapke tasks/projects par koi deadline set nahi hai.
+--------------------------------------------------------------------------------
+
+[348/400] UR148
+Q: Kon kon Online Job Portal py laga hua hai?
+A: Aap ke sawal se sab se zyada overlap «Online Job Portal» project se mila: status **in_progress**, progress 90%, deadline **2026-09-24 00:00:00** (live data).
+--------------------------------------------------------------------------------
+
+[349/400] UR149
+Q: Kaun kaun FitTrack - Fitness Tracking App team me hai?
+A: Skills/team angle se yeh tasks relevant lagte hain: Build React UI Module, Implement React UI Module, Implement fastapi (1), Implement css (1), Implement tailwind (1), Implement node.js (1).
+--------------------------------------------------------------------------------
+
+[350/400] UR150
+Q: Online Job Portal par backend kon kar raha hai?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[351/400] UR151
+Q: Online Job Portal par frontend kon kar raha hai?
+A: Frontend ke liye abhi ye log involved hain: Salman, Ayesha, Fatima, Ibrahim, Umar, Maham, Zain, Eman, Hina.
+--------------------------------------------------------------------------------
+
+[352/400] UR152
+Q: Project Wanderlust - AI Travel Planner ka status kya hai?
+A: Chalo, project status yeh hai:
+• Wanderlust - AI Travel Planner: status in_progress, progress 80%; deadline 2026-10-02 00:00:00
+--------------------------------------------------------------------------------
+
+[353/400] UR153
+Q: FitTrack - Fitness Tracking App me kitne bande hain?
+A: Aap ke sawal se sab se zyada overlap «FitTrack - Fitness Tracking App» project se mila: status **completed**, progress 100%, deadline **2026-08-08 00:00:00** (live data).
+--------------------------------------------------------------------------------
+
+[354/400] UR154
+Q: Kya Online Job Portal delay par hai?
+A: «Online Job Portal» — Schedule signal: Not clearly behind on this snapshot (deadline not passed, or no open work).
+--------------------------------------------------------------------------------
+
+[355/400] UR155
+Q: Mujhe Online Job Portal ka overview chahiye.
+A: Kis project ka status chahiye? Project ka naam likh dein, ya 'all projects' bol dein.
+--------------------------------------------------------------------------------
+
+[356/400] UR156
+Q: Jury ke liye: Online Job Portal summary.
+A: The closest live match is project «Online Job Portal»: status **in_progress**, progress 90%, deadline **2026-09-24 00:00:00**.
+--------------------------------------------------------------------------------
+
+[357/400] UR157
+Q: Viva: Online Job Portal team kon?
+A: Skills/team angle se yeh tasks relevant lagte hain: Build React UI Module, Implement React UI Module, Implement fastapi (1), Implement css (1), Implement tailwind (1), Implement node.js (1).
+--------------------------------------------------------------------------------
+
+[358/400] UR158
+Q: Salman aur Adnan me se zyada load kis par hai?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[359/400] UR159
+Q: Implement React UI Module abhi kis ke naam pe hai?
+A: Aap ke sawal se sab se zyada overlap «Implement React UI Module» task se mila: status **completed**, assignee **Team member** (live MongoDB).
+--------------------------------------------------------------------------------
+
+[360/400] UR160
+Q: Implement fastapi (1) complete ho gaya kya?
+A: Haan — «Implement fastapi (1)» ab «completed» state mein hai (assignee: Fatima).
+--------------------------------------------------------------------------------
+
+[361/400] UR161
+Q: Kya Ayesha Online Job Portal me assign hai?
+A: Aap ke sawal se sab se zyada overlap «Online Job Portal» project se mila: status **in_progress**, progress 90%, deadline **2026-09-24 00:00:00** (live data).
+--------------------------------------------------------------------------------
+
+[362/400] UR162
+Q: Skills check: Salman ke paas UI Design hai?
+A: Skills/team angle se yeh tasks relevant lagte hain: Build React UI Module, Implement React UI Module, Implement fastapi (1), Implement css (1), Implement tailwind (1), Implement node.js (1).
+--------------------------------------------------------------------------------
+
+[363/400] UR163
+Q: Roman Urdu: Online Job Portal py kaam kon?
+A: 'Roman' naam team ke users mein nahi mila.
+--------------------------------------------------------------------------------
+
+[364/400] UR164
+Q: Hinglish: FitTrack - Fitness Tracking App status batao na.
+A: Kis project ka status chahiye? Project ka naam likh dein, ya 'all projects' bol dein.
+--------------------------------------------------------------------------------
+
+[365/400] UR165
+Q: Bhai Online Job Portal deadline extend hui?
+A: Abhi aapke tasks/projects par koi deadline set nahi hai.
+--------------------------------------------------------------------------------
+
+[366/400] UR166
+Q: Online Job Portal par active tasks batao.
+A: Aapke naam pe abhi koi task assign nahi hai.
+--------------------------------------------------------------------------------
+
+[367/400] UR167
+Q: Done tasks Online Job Portal me kon kon ne kiye?
+A: Sabse zyada completed tasks Salman ke hain (25 done, 23 active).
+--------------------------------------------------------------------------------
+
+[368/400] UR168
+Q: Assignee list for Online Job Portal
+A: Project: «Online Job Portal»
+Developers working on this project (assigned tasks):
+Fatima:
+• Auto-linked task for Online Job Portal (1) — completed
+• Auto-linked task for Online Job Portal (2) — completed
+• Implement css (1) — completed
+• Implement nlp (1) — completed
+Salman:
+• Auto-linked task for Online Job Portal (3) — completed
+• Auto-linked task for Online Job Portal (4) — completed
+• Auto-linked task for Online Job Portal (5) — in_progress
+• Implement fastapi (1) — completed
+• Implement mongodb (1) — completed
+• Implement tailwind (1) — completed
+Note: 2 team slot(s) could not be matched to a user profile (IDs are not shown).
+--------------------------------------------------------------------------------
+
+[369/400] UR169
+Q: PM ne FitTrack - Fitness Tracking App banaya tha kya?
+A: «FitTrack - Fitness Tracking App» creator field: **Ghania Tanveer** (role: manager). Haan, PM-type role.
+--------------------------------------------------------------------------------
+
+[370/400] UR170
+Q: Kis bande ne Wanderlust - AI Travel Planner create kiya?
+A: Aap ke sawal se sab se zyada overlap «Wanderlust - AI Travel Planner» project se mila: status **in_progress**, progress 80%, deadline **2026-10-02 00:00:00** (live data).
+--------------------------------------------------------------------------------
+
+[371/400] UR171
+Q: Team roster Online Job Portal
+A: Project: «Online Job Portal»
+Developers working on this project (assigned tasks):
+Fatima:
+• Auto-linked task for Online Job Portal (1) — completed
+• Auto-linked task for Online Job Portal (2) — completed
+• Implement css (1) — completed
+• Implement nlp (1) — completed
+Salman:
+• Auto-linked task for Online Job Portal (3) — completed
+• Auto-linked task for Online Job Portal (4) — completed
+• Auto-linked task for Online Job Portal (5) — in_progress
+• Implement fastapi (1) — completed
+• Implement mongodb (1) — completed
+• Implement tailwind (1) — completed
+Note: 2 team slot(s) could not be matched to a user profile (IDs are not shown).
+--------------------------------------------------------------------------------
+
+[372/400] UR172
+Q: Roster FitTrack - Fitness Tracking App ka batao.
+A: Project: «FitTrack - Fitness Tracking App»
+Is project par ye developers tasks par kaam kar rahe hain:
+Fatima:
+• Auto-linked task for FitTrack - Fitness Tracking App (1) — completed
+• Implement css (1) — completed
+Salman:
+• Auto-linked task for FitTrack - Fitness Tracking App (2) — completed
+• Auto-linked task for FitTrack - Fitness Tracking App (3) — completed
+• Auto-linked task for FitTrack - Fitness Tracking App (4) — completed
+• Implement fastapi (1) — completed
+• Implement Figma (1) — completed
+• Implement mongodb (1) — completed
+Note: team list mein 2 member(s) ka user profile is directory mein match nahi hua (IDs chat mein show nahi ki gayeen).
+--------------------------------------------------------------------------------
+
+[373/400] UR173
+Q: Kya Salman ne Implement fastapi (1) submit kiya?
+A: Aap ke sawal se sab se zyada overlap «Implement fastapi (1)» task se mila (Online Toy Shop): status **completed**, assignee **Fatima** (live MongoDB).
+--------------------------------------------------------------------------------
+
+[374/400] UR174
+Q: Abhi Implement React UI Module kis ke queue me hai?
+A: Aap ke sawal se sab se zyada overlap «Implement React UI Module» task se mila: status **completed**, assignee **Team member** (live MongoDB).
+--------------------------------------------------------------------------------
+
+[375/400] UR175
+Q: Skill gap Online Job Portal ke liye kya hai?
+A: «Online Job Portal» — required skills assignees ki profiles se cover lagti hain.
+--------------------------------------------------------------------------------
+
+[376/400] UR176
+Q: Training kis ko chahiye node.js me?
+A: «node.js» mein polish useful: Adnan, Aneela Azhar, Fatima, Kosain Ali, Manahil, Rahim, Umar.
+--------------------------------------------------------------------------------
+
+[377/400] UR177
+Q: Recommend developer for UI Design
+A: Best profile match for «UI Design» (by listed level): Rahim (4.5), Abdul Rehman (3.5), Abdul Rehman (3.5), Abdullah Butt (3.5), Abdullah Butt (3.5).
+--------------------------------------------------------------------------------
+
+[378/400] UR178
+Q: Best match node.js ke liye kon?
+A: «node.js» ke liye profile strength (top): Abdul Rehman (3.5), Abdul Rehman (3.5), Abdullah Butt (3.5), Abdullah Butt (3.5), Adnan (3.5).
+--------------------------------------------------------------------------------
+
+[379/400] UR179
+Q: Load balancing: Salman vs Ayesha
+A: Open (non-done) assigned tasks in the live data: **Salman** = 11, **Ayesha** = 0. Higher open count means heavier current load.
+--------------------------------------------------------------------------------
+
+[380/400] UR180
+Q: Kaun fastest hai node.js me?
+A: Speed/throughput ka objective score is DB mein track nahi — main sirf assignments + completions count dikha sakta hoon.
+--------------------------------------------------------------------------------
+
+[381/400] UR181
+Q: Project priority: Online Job Portal ya FitTrack - Fitness Tracking App?
+A: Live snapshot: **Online Job Portal** has 10 tasks (9 open). **FitTrack - Fitness Tracking App** has 8 tasks (8 open). Priority is a PM call — this is workload signal only.
+--------------------------------------------------------------------------------
+
+[382/400] UR182
+Q: Sync: Online Job Portal tasks kitne open?
+A: «Online Job Portal» has 10 tasks — 1 open/in progress, 9 done/submitted.
+--------------------------------------------------------------------------------
+
+[383/400] UR183
+Q: Daily standup style: Salman kya kar raha?
+A: Is area ke liye abhi koi assigned task live data mein nahi hai.
+--------------------------------------------------------------------------------
+
+[384/400] UR184
+Q: Blocker hai Online Job Portal par?
+A: «Online Job Portal» — Blockers: none explicitly flagged in task statuses.
+--------------------------------------------------------------------------------
+
+[385/400] UR185
+Q: Handoff: Implement React UI Module kis ko dena chahiye?
+A: Live data ke mutabiq «Implement React UI Module» abhi **Team member** ko assigned hai (status: completed). Naya handoff / reassign PM ki decision hoti hai.
+--------------------------------------------------------------------------------
+
+[386/400] UR186
+Q: Production ready hai Online Job Portal?
+A: «Online Job Portal» — Production readiness (heuristic): not yet — open tasks remain.
+--------------------------------------------------------------------------------
+
+[387/400] UR187
+Q: Sprint goal FitTrack - Fitness Tracking App achieve hua?
+A: There is no dedicated sprint/velocity record in this dataset — only live task/project counts. Overall task completion across visible projects: **58.9%**.
+--------------------------------------------------------------------------------
+
+[388/400] UR188
+Q: Velocity Online Job Portal ki kaisi hai?
+A: Sprint/burndown velocity ka structured track abhi is DB mein attach nahi — main sirf live tasks se snapshot de sakta hoon. Overall completion (tasks): **58.9%**.
+--------------------------------------------------------------------------------
+
+[389/400] UR189
+Q: Burndown nahi pooch raha, sirf status: Online Job Portal
+A: Sprint/burndown velocity ka structured track abhi is DB mein attach nahi — main sirf live tasks se snapshot de sakta hoon. Overall completion (tasks): **58.9%**.
+--------------------------------------------------------------------------------
+
+[390/400] UR190
+Q: Plain question: Online Job Portal ka kya scene?
+A: «Online Job Portal» — Health: 1 open / 9 done-ish out of 10 tasks; progress field 90%.
+--------------------------------------------------------------------------------
+
+[391/400] UR191
+Q: Short answer chahiye: FitTrack - Fitness Tracking App deadline?
+A: Abhi aapke tasks/projects par koi deadline set nahi hai.
+--------------------------------------------------------------------------------
+
+[392/400] UR192
+Q: One line: Salman free hai?
+A: Abhi direct match nahi mila. Main turant yeh bata sakta hoon: running projects pe kon kaam kar raha hai, project status, assigned tasks, aur nearest deadline.
+--------------------------------------------------------------------------------
+
+[393/400] UR193
+Q: Yes/No: Adnan Implement React UI Module pe hai?
+A: Aap ke sawal se sab se zyada overlap «Implement React UI Module» task se mila: status **completed**, assignee **Team member** (live MongoDB).
+--------------------------------------------------------------------------------
+
+[394/400] UR194
+Q: Confirm: Ayesha Online Job Portal team me?
+A: Closest task hints from your data: Build React UI Module, Implement React UI Module, Implement fastapi (1), Implement css (1), Implement tailwind (1), Implement node.js (1).
+--------------------------------------------------------------------------------
+
+[395/400] UR195
+Q: Double check: node.js kis ko aata hai?
+A: «node.js» profile pe yeh developers dikhe: Abdul Rehman, Abdullah Butt, Adnan, Ahsan Ali, Aima, Ali Ameen, Areeba, Arooj, Awais, Ayesha, Demo Manager, Eman, Fatima, Fayeez Naeem, Haseeb Developer.
+--------------------------------------------------------------------------------
+
+[396/400] UR196
+Q: Triple check: FitTrack - Fitness Tracking App tasks total?
+A: «FitTrack - Fitness Tracking App» — **8** tasks total (0 open, 8 done/submitted).
+--------------------------------------------------------------------------------
+
+[397/400] UR197
+Q: Kya mere paas tailwind ke liye skills kaafi hain?
+A: Aap ki profile pe «tailwind» list nahi hai — routine «tailwind» kaam ke liye skill alignment PM/tech lead se confirm karein.
+--------------------------------------------------------------------------------
+
+[398/400] UR198
+Q: FitTrack - Fitness Tracking App ka short summary batao.
+A: Aap ke sawal se sab se zyada overlap «FitTrack - Fitness Tracking App» project se mila: status **completed**, progress 100%, deadline **2026-08-08 00:00:00** (live data).
+--------------------------------------------------------------------------------
+
+[399/400] UR199
+Q: FitTrack - Fitness Tracking App par kitne open tasks hain?
+A: 'FitTrack - Fitness Tracking App' mein 'kitne' se match karta koi task nahi mila.
+--------------------------------------------------------------------------------
+
+[400/400] UR200
+Q: FitTrack - Fitness Tracking App ki team members kon kon hain?
+A: Skills/team angle se yeh tasks relevant lagte hain: Build React UI Module, Implement React UI Module, Implement fastapi (1), Implement css (1), Implement tailwind (1), Implement node.js (1).
+--------------------------------------------------------------------------------
+
+Done. Review answers above; mismatches usually mean placeholder project/person not in this user's visible scope.

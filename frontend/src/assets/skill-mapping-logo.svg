@@ -1,0 +1,29 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="outerBg" x1="0" y1="0" x2="256" y2="256" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#122038"/>
+      <stop offset="1" stop-color="#0B1527"/>
+    </linearGradient>
+    <linearGradient id="tileBg" x1="56" y1="56" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2A364A" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#1B2538" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="256" height="256" rx="0" fill="url(#outerBg)"/>
+  <circle cx="218" cy="44" r="2" fill="#8EA4C7" fill-opacity="0.25"/>
+  <circle cx="202" cy="212" r="2.5" fill="#8EA4C7" fill-opacity="0.2"/>
+  <circle cx="41" cy="72" r="1.8" fill="#8EA4C7" fill-opacity="0.15"/>
+
+  <rect x="56" y="56" width="144" height="144" rx="30" fill="url(#tileBg)"/>
+
+  <g stroke="#F6FAFF" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="128" y1="89" x2="128" y2="81"/>
+    <line x1="108" y1="95" x2="103" y2="88"/>
+    <line x1="148" y1="95" x2="153" y2="88"/>
+    <line x1="98" y1="112" x2="90" y2="112"/>
+    <line x1="158" y1="112" x2="166" y2="112"/>
+    <path d="M128 98C113.641 98 102 109.641 102 124C102 134.341 108.077 143.254 116.86 147.364C119.447 148.575 121 151.075 121 153.95V157C121 160.866 124.134 164 128 164C131.866 164 135 160.866 135 157V153.95C135 151.075 136.553 148.575 139.14 147.364C147.923 143.254 154 134.341 154 124C154 109.641 142.359 98 128 98Z"/>
+    <line x1="120.5" y1="167.5" x2="135.5" y2="167.5"/>
+  </g>
+</svg>

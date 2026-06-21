@@ -1,0 +1,16 @@
+# Local MongoDB for development / FYP demo (no auth — use only on localhost).
+# Start:  docker compose up -d
+# Then set in backend/.env:  MONGODB_URL=mongodb://127.0.0.1:27017
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo:7
+    container_name: skill_mapping_mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:

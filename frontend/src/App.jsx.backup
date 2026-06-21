@@ -1,0 +1,77 @@
+// src/App.jsx
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Login from './components/Login.jsx';
+import ManagerDashboard from './components/ManagerDashboard.jsx';
+import DeveloperDashboard from './components/DeveloperDashboard.jsx';
+import AnalyticsDashboard from './components/AnalyticsDashboard.jsx';
+import ChatBot from './components/ChatBot.jsx';
+import Header from './components/Header.jsx';
+import { AuthProvider, useAuth } from './context/AuthContext.jsx';
+import { ThemeProvider } from './context/ThemeContext.jsx'; // Add this
+import './index.css';
+import Signup from './components/Signup.jsx';
+import Dashboard from './components/Dashboard.jsx';
+
+function AppContent() {
+  const { user, loading } = useAuth();
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-gray-50 dark:from-gray-900 dark:to-gray-800">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-blue-600 dark:border-blue-400 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <div className="text-lg text-gray-600 dark:text-gray-300">Loading Skill Mapping Platform...</div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+      {user && <Header />}
+      <Routes>
+        <Route 
+          path="/login" 
+          element={!user ? <Login /> : <Navigate to={user.role === 'manager' ? '/manager' : '/developer'} />} 
+        />
+        <Route 
+          path="/signup" 
+          element={!user ? <Signup /> : <Navigate to={user.role === 'manager' ? '/manager' : '/developer'} />} 
+        />
+        <Route 
+          path="/manager" 
+          element={user?.role === 'manager' ? <ManagerDashboard /> : <Navigate to="/login" />} 
+        />
+        <Route 
+          path="/developer" 
+          element={user?.role === 'developer' ? <DeveloperDashboard /> : <Navigate to="/login" />} 
+        />
+        <Route 
+          path="/analytics" 
+          element={user?.role === 'manager' ? <AnalyticsDashboard /> : <Navigate to="/login" />} 
+        />
+        <Route 
+          path="/dashboard" 
+          element={user ? <Dashboard /> : <Navigate to="/login" />} 
+        />
+        <Route path="/" element={<Navigate to="/login" />} />
+      </Routes>
+      {user && <ChatBot />}
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider> {/* Wrap with ThemeProvider */}
+      <AuthProvider>
+        <Router>
+          <AppContent />
+        </Router>
+      </AuthProvider>
+    </ThemeProvider>
+  );
+}
+
+export default App;

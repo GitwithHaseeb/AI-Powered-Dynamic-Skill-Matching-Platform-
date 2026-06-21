@@ -1,0 +1,76 @@
+from fastapi import FastAPI, Depends
+from fastapi.middleware.cors import CORSMiddleware
+from contextlib import asynccontextmanager
+
+from app.config import settings
+from app.database import db
+from app.routes import auth, projects, users, tasks, skills, ml
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Startup
+    await db.connect()
+    print("Database connected")
+    
+    # Create indexes
+    await create_indexes()
+    
+    yield
+    
+    # Shutdown
+    await db.disconnect()
+    print("Database disconnected")
+
+app = FastAPI(
+    title=settings.APP_NAME,
+    version=settings.APP_VERSION,
+    lifespan=lifespan
+)
+
+# CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000", "http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Include routers
+app.include_router(auth.router)
+app.include_router(projects.router)
+app.include_router(users.router)
+app.include_router(tasks.router)
+app.include_router(skills.router)
+app.include_router(ml.router)
+
+
+@app.get("/")
+async def root():
+    return {
+        "message": "Welcome to Skill Mapping Platform API",
+        "version": settings.APP_VERSION,
+        "docs": "/docs"
+    }
+
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy", "database": "connected"}
+
+async def create_indexes():
+    """Create database indexes"""
+    # Create indexes for better performance
+    users_collection = db.get_collection("users")
+    await users_collection.create_index("email", unique=True)
+    await users_collection.create_index("role")
+    await users_collection.create_index("availability")
+    
+    projects_collection = db.get_collection("projects")
+    await projects_collection.create_index("created_by")
+    await projects_collection.create_index("status")
+    await projects_collection.create_index("deadline")
+    
+    tasks_collection = db.get_collection("tasks")
+    await tasks_collection.create_index("assigned_to")
+    await tasks_collection.create_index("project_id")
+    await tasks_collection.create_index("status")

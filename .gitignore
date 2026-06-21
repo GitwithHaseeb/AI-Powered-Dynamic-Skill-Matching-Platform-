@@ -1,0 +1,32 @@
+# Secrets — never commit
+backend/.env
+frontend/.env
+*.pem
+*.key
+
+# Python
+backend/venv/
+backend/venv312/
+**/__pycache__/
+**/*.py[cod]
+backend/.pytest_cache/
+*.egg-info/
+.eggs/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Uploads & local data
+backend/uploads/
+*.log
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+
+# Optional local overrides
+.env.local
+.env.*.local
