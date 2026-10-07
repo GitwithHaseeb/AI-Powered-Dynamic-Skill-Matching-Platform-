@@ -112,22 +112,6 @@ echo.
 echo // Insert sample users
 echo db.users.insertMany([
 echo   {
-echo     name: "ABDUL MOEED",
-echo     email: "abdul.moeed@example.com",
-echo     role: "developer",
-echo     department: "Computer Science",
-echo     cgpa: 3.0,
-echo     contact: "0320-1406301",
-echo     availability: true,
-echo     skills: ["React", "Node.js", "MongoDB", "Python", "AI/ML", "JavaScript", "Express.js"],
-echo     experience_years: 2,
-echo     current_workload: 2,
-echo     performance_history: [4.5, 4.3, 4.7],
-echo     hashed_password: "$2b$12$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36WQoeG6Lruj3vjPGga31lW", // password123
-echo     created_at: new Date(),
-echo     updated_at: new Date()
-echo   },
-echo   {
 echo     name: "MUHAMMAD HASEEB",
 echo     email: "muhammad.haseeb@example.com",
 echo     role: "developer",
@@ -262,7 +246,6 @@ echo    - Double-click: docker-status.bat
 echo.
 echo Demo Accounts:
 echo    Manager: manager@example.com / password123
-echo    Developer: abdul.moeed@example.com / password123
 echo    Developer: muhammad.haseeb@example.com / password123
 echo    Developer: ghania.tanveer@example.com / password123
 echo.

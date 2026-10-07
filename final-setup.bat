@@ -151,22 +151,6 @@ echo.
 echo # Sample users
 echo users = [
 echo     {
-echo         "name": "ABDUL MOEED",
-echo         "email": "abdul.moeed@example.com",
-echo         "role": "developer",
-echo         "department": "Computer Science",
-echo         "cgpa": 3.0,
-echo         "contact": "0320-1406301",
-echo         "availability": True,
-echo         "skills": ["React", "Node.js", "MongoDB", "Python", "AI/ML"],
-echo         "experience_years": 2,
-echo         "current_workload": 2,
-echo         "performance_history": [4.5, 4.3, 4.7],
-echo         "hashed_password": hash_password("password123"),
-echo         "created_at": datetime.datetime.utcnow(),
-echo         "updated_at": datetime.datetime.utcnow()
-echo     },
-echo     {
 echo         "name": "MUHAMMAD HASEEB",
 echo         "email": "muhammad.haseeb@example.com",
 echo         "role": "developer",
@@ -218,7 +202,6 @@ echo print("✓ MongoDB initialized successfully!")
 echo print()
 echo print("Demo accounts created:")
 echo print("  Manager: manager@example.com / password123")
-echo print("  Developer: abdul.moeed@example.com / password123")
 echo print("  Developer: muhammad.haseeb@example.com / password123")
 echo print("  Developer: ghania.tanveer@example.com / password123")
 ) > init_mongodb.py
@@ -312,7 +295,6 @@ echo    - Double-click: docker-status.bat
 echo.
 echo Demo Accounts (use any):
 echo    Manager: manager@example.com / password123
-echo    Developer: abdul.moeed@example.com / password123
 echo    Developer: muhammad.haseeb@example.com / password123
 echo    Developer: ghania.tanveer@example.com / password123
 echo.

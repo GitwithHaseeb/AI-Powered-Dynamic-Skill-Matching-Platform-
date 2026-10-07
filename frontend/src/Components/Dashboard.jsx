@@ -136,7 +136,7 @@ const Dashboard = () => {
   });
 
   const topTeamMembers = useMemo(() => {
-    const preferred = ['abdul moeed', 'muhammad haseeb', 'ghania tanveer'];
+    const preferred = ['muhammad haseeb', 'ghania tanveer'];
     const byName = (teamMembers || []).reduce((acc, m) => {
       const k = String(m?.name || '').trim().toLowerCase();
       if (k) acc.set(k, m);

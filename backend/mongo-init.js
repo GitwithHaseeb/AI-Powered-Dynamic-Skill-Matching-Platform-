@@ -24,22 +24,6 @@ db.tasks.createIndex({ status: 1 });
 // Insert sample users
 db.users.insertMany([
   {
-    name: "ABDUL MOEED",
-    email: "abdul.moeed@example.com",
-    role: "developer",
-    department: "Computer Science",
-    cgpa: 3.0,
-    contact: "0320-1406301",
-    availability: true,
-    skills: ["React", "Node.js", "MongoDB", "Python", "AI/ML", "JavaScript", "Express.js"],
-    experience_years: 2,
-    current_workload: 2,
-    performance_history: [4.5, 4.3, 4.7],
-    hashed_password: "$2b$12$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36WQoeG6Lruj3vjPGga31lW", // password: "password123"
-    created_at: new Date(),
-    updated_at: new Date()
-  },
-  {
     name: "MUHAMMAD HASEEB",
     email: "muhammad.haseeb@example.com",
     role: "developer",

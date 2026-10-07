@@ -90,6 +90,6 @@ echo    - API Docs: http://localhost:8000/docs
 echo.
 echo Demo accounts:
 echo    Manager: manager@example.com / password123
-echo    Developer: abdul.moeed@example.com / password123
+echo    Developer: muhammad.haseeb@example.com / password123
 echo.
 pause

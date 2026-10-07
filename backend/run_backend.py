@@ -28,7 +28,7 @@ try:
     print(f"Admin: http://localhost:8000/redoc")
     print("\\nDemo Credentials:")
     print("  Manager: manager@example.com / password123")
-    print("  Developer: abdul.moeed@example.com / password123")
+    print("  Developer: muhammad.haseeb@example.com / password123")
     print("\\nPress Ctrl+C to stop the server")
     print("=" * 50 + "\\n")
     

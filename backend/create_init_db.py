@@ -25,24 +25,6 @@ for collection in collections:
 # Create sample users
 sample_users = [
     {
-        "_id": "1",
-        "name": "ABDUL MOEED",
-        "email": "abdul.moeed@example.com",
-        "username": "abdulmoeed",
-        "role": "developer",
-        "department": "Computer Science",
-        "cgpa": 3.0,
-        "contact": "0320-1406301",
-        "availability": True,
-        "skills": ["React", "Node.js", "MongoDB", "Python", "AI/ML", "JavaScript", "Express.js"],
-        "experience_years": 2,
-        "current_workload": 2,
-        "performance_history": [4.5, 4.3, 4.7],
-        "hashed_password": "",  # password123
-        "created_at": datetime.utcnow(),
-        "updated_at": datetime.utcnow()
-    },
-    {
         "_id": "2",
         "name": "MUHAMMAD HASEEB",
         "email": "muhammad.haseeb@example.com",

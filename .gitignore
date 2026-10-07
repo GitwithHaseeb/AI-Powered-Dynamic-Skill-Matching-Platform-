@@ -30,3 +30,4 @@ Thumbs.db
 # Optional local overrides
 .env.local
 .env.*.local
+db_backups/
