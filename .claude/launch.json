@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "backend",
+      "runtimeExecutable": "D:/skill-mapping-platform/backend/venv/Scripts/python.exe",
+      "runtimeArgs": ["-m", "uvicorn", "app.main:app", "--host", "127.0.0.1", "--port", "8000", "--app-dir", "D:/skill-mapping-platform/backend", "--env-file", "D:/skill-mapping-platform/backend/.env"],
+      "cwd": "D:/skill-mapping-platform/backend",
+      "port": 8000
+    },
+    {
+      "name": "frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "D:/skill-mapping-platform/frontend"],
+      "cwd": "D:/skill-mapping-platform/frontend",
+      "port": 5173
+    }
+  ]
+}
