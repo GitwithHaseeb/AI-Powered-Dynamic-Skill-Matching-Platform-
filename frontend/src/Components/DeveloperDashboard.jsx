@@ -4,21 +4,7 @@ import TaskList from './TaskList.jsx';
 import SkillProfile from './SkillProfile.jsx';
 import { taskService, projectService, userService } from '../services/api';
 import { useAuth } from '../context/AuthContext.jsx';
-
-/** Strict match: task must be assigned to the logged-in user by id (API uses `id`; some payloads use `_id`). */
-function taskAssignedToUser(task, user) {
-  if (!user || !task) return false;
-  if (task.is_assigned_to_me === true) return true;
-  if (task.is_assigned_to_me === false) return false;
-  const uid = String(user.id ?? user._id ?? '').trim();
-  const aid = String(task.assigned_to ?? '').trim();
-  if (uid && aid && uid === aid) return true;
-  const userEmail = String(user.email ?? '').trim().toLowerCase();
-  if (userEmail && aid.toLowerCase() === userEmail) return true;
-  const userName = String(user.username ?? user.name ?? user.full_name ?? '').trim();
-  if (userName && aid === userName) return true;
-  return false;
-}
+import { taskAssignedToUser } from '../utils/tasks.js';
 
 const DeveloperDashboard = () => {
   const [tasks, setTasks] = useState([]);
@@ -26,7 +12,7 @@ const DeveloperDashboard = () => {
   const [showCompletedTasksModal, setShowCompletedTasksModal] = useState(false);
   /** 'active' = assigned / in progress / submitted (anything not yet completed by PM). */
   const [projectTasksTab, setProjectTasksTab] = useState('active');
-  const [developerStats, setDeveloperStats] = useState({
+  const [, setDeveloperStats] = useState({
     completedTasks: 0,
     currentWorkload: 0,
     skillMatchScore: 0,

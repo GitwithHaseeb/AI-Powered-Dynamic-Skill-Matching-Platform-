@@ -34,11 +34,6 @@ function resolveApiBaseUrl() {
   return u || 'http://127.0.0.1:8000';
 }
 
-/** Relative `/api` in dev = same-origin + Vite proxy (works on 5173, 5175, LAN). */
-function getResolvedApiBase() {
-  return resolveApiBaseUrl();
-}
-
 /**
  * Always use an absolute origin + /api in the browser when proxying so nested routes
  * (e.g. /manager) never mis-resolve and the Vite proxy reliably reaches 127.0.0.1:8000.
@@ -252,12 +247,8 @@ export const authService = {
   },
 
  getCurrentUser: async () => {
-  try {
-    const response = await api.get('/auth/me');
-    return { user: response.data }; // Wrap in user object
-  } catch (err) {
-    throw err;
-  }
+  const response = await api.get('/auth/me');
+  return { user: response.data }; // Wrap in user object
 },
   logout: () => {
     localStorage.removeItem('token');

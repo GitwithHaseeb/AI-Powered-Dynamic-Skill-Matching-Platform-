@@ -8,115 +8,19 @@ import { analyticsService } from '../services/api.js';
 import { taskService } from '../services/api.js';
 import { getApiErrorMessage } from '../services/api.js';
 import { normalizeRole } from '../utils/auth.js';
-
-/** Directory of running projects (admin uses same read-only list as PM/dev). */
-function projectsListPath(role) {
-  const r = normalizeRole(role);
-  if (r === 'developer' || r === 'manager' || r === 'admin') return '/projects';
-  return '/dashboard';
-}
-
-function projectTeamMemberCount(p) {
-  const team = p.assigned_team || p.final_team || [];
-  const ids = Array.isArray(team)
-    ? [...new Set(team.map((x) => (x != null ? String(x) : '')).filter(Boolean))]
-    : [];
-  const fromTeam = ids.length;
-  const ts = typeof p.team_size === 'number' ? Math.max(0, Math.floor(p.team_size)) : 0;
-  if (fromTeam > 0) return fromTeam;
-  return ts;
-}
-
-function formatProjectStatus(status) {
-  if (!status) return '—';
-  const map = {
-    in_progress: 'In Progress',
-    planning: 'Planning',
-    completed: 'Completed',
-    on_hold: 'On Hold',
-  };
-  return map[status] || String(status).replace(/_/g, ' ');
-}
-
-function formatDeadline(d) {
-  if (!d) return '—';
-  try {
-    const x = new Date(d);
-    if (Number.isNaN(x.getTime())) return String(d).slice(0, 10);
-    return x.toLocaleDateString();
-  } catch {
-    return '—';
-  }
-}
-
-function inferDeveloperType(skills = []) {
-  const names = (skills || [])
-    .map((s) => (typeof s === 'string' ? s : s?.skill_name))
-    .filter(Boolean)
-    .map((x) => String(x).toLowerCase());
-
-  const hasAny = (arr) => arr.some((k) => names.some((n) => n.includes(k)));
-  const fe = hasAny(['react', 'vue', 'angular', 'typescript', 'javascript', 'ui', 'material', 'tailwind', 'next']);
-  const be = hasAny(['fastapi', 'django', 'spring', 'node', 'express', 'java', 'python', 'sql', 'mongodb', 'postgres', 'redis', 'api']);
-  const qa = hasAny(['test', 'testing', 'qa', 'selenium', 'cypress', 'junit']);
-  const ui = hasAny(['ui', 'ux', 'figma', 'material', 'design']);
-
-  if (ui && !be) return 'UI Designer';
-  if (qa && !fe && !be) return 'Tester';
-  if (fe && be) return 'Full Stack Developer';
-  if (be) return 'Backend Developer';
-  if (fe) return 'Frontend Developer';
-  if (qa) return 'Tester';
-  return 'Frontend Developer';
-}
-
-function roleBadgeClass(role) {
-  const r = String(role || '').toLowerCase();
-  if (r.includes('full stack')) return 'bg-purple-600 text-white border-purple-500';
-  if (r.includes('frontend')) return 'bg-blue-600 text-white border-blue-500';
-  if (r.includes('backend')) return 'bg-emerald-600 text-white border-emerald-500';
-  if (r.includes('ui')) return 'bg-pink-600 text-white border-pink-500';
-  if (r.includes('tester')) return 'bg-amber-600 text-white border-amber-500';
-  return 'bg-indigo-600 text-white border-indigo-500';
-}
-
-function displayRoleFor(member) {
-  const nameKey = String(member?.name || '').trim().toLowerCase();
-  const manual = {
-    'kosain ali': 'Full Stack Developer',
-    aima: 'Backend Developer',
-  };
-  if (manual[nameKey]) return manual[nameKey];
-  const inferred = inferDeveloperType(member?.skills || []);
-  if (
-    ['Full Stack Developer', 'Frontend Developer', 'Backend Developer', 'UI Designer', 'Tester'].includes(
-      inferred
-    )
-  ) {
-    return inferred;
-  }
-  return 'Frontend Developer';
-}
-
-/** Same rule as DeveloperDashboard: only tasks assigned to the logged-in user. */
-function taskAssignedToUser(task, user) {
-  if (!user || !task) return false;
-  if (task.is_assigned_to_me === true) return true;
-  if (task.is_assigned_to_me === false) return false;
-  const uid = String(user.id ?? user._id ?? '').trim();
-  const aid = String(task.assigned_to ?? '').trim();
-  if (uid && aid && uid === aid) return true;
-  const userEmail = String(user.email ?? '').trim().toLowerCase();
-  if (userEmail && aid.toLowerCase() === userEmail) return true;
-  const userName = String(user.username ?? user.name ?? user.full_name ?? '').trim();
-  if (userName && aid === userName) return true;
-  return false;
-}
+import {
+  projectsListPath,
+  projectTeamMemberCount,
+  formatProjectStatus,
+  formatDeadline,
+  roleBadgeClass,
+  displayRoleFor,
+} from '../utils/dashboard.js';
+import { taskAssignedToUser } from '../utils/tasks.js';
 
 const Dashboard = () => {
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
   const STATS_CACHE_KEY = `dashboard_stats_${normalizeRole(user?.role || 'developer')}`;
-  const [activeTab, setActiveTab] = useState('overview');
   const [projects, setProjects] = useState([]);
   const [completedProjects, setCompletedProjects] = useState([]);
   const [projectsLoading, setProjectsLoading] = useState(true);

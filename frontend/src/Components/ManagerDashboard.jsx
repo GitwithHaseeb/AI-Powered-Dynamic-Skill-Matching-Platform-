@@ -67,7 +67,7 @@ function isProjectCompleted(p) {
 /** Seeded portfolio demos (title starts with "Demo —"); hidden from live dashboards. */
 function isDemoProject(p) {
   const t = String(p?.title || '').trim();
-  return /^demo\s*[—\-]/i.test(t);
+  return /^demo\s*[—-]/i.test(t);
 }
 
 function formatProjectDueDate(deadline) {
@@ -96,7 +96,7 @@ function prettyDeveloperName(name, developerId, fallbackIndex = 0) {
   return 'Developer';
 }
 
-function mergeTeamDetailsRows(rows, projectProgressPct = 0) {
+function mergeTeamDetailsRows(rows) {
   const src = Array.isArray(rows) ? rows : [];
   const byKey = new Map();
   for (const r of src) {
@@ -145,9 +145,7 @@ function mergeTeamDetailsRows(rows, projectProgressPct = 0) {
   for (const r of out) {
     const assigned = Number(r.assigned_tasks || 0);
     const completed = Number(r.completed_tasks || 0);
-    const inprog = Number(r.in_progress_tasks || 0);
     const rej = Number(r.rejections || 0);
-    const projPct = Number(projectProgressPct || 0);
     // Only show progress for developers who actually have tasks on this project.
     r.progress_pct = assigned > 0 ? Math.round((completed / assigned) * 100) : 0;
     // Result must depend on PM rejections (not on whether task links exist).
@@ -1009,13 +1007,7 @@ const ManagerDashboard = ({ variant = 'manager' }) => {
                     </p>
                   ) : null}
                   {(() => {
-                    const projectProgress = Number(
-                      teamDetails?.summary?.project_progress_pct ??
-                        teamDetails?.project_progress_pct ??
-                        teamDetailsProject?.progress ??
-                        0
-                    );
-                    const mergedRows = mergeTeamDetailsRows(teamDetails?.team_details || [], projectProgress);
+                    const mergedRows = mergeTeamDetailsRows(teamDetails?.team_details || []);
                     return (
                   <table className="min-w-full text-sm border border-gray-200 dark:border-gray-700">
                     <thead className="bg-gray-50 dark:bg-gray-800">
