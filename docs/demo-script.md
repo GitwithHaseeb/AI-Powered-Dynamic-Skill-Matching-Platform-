@@ -181,7 +181,7 @@ Use accounts that exist in **your** MongoDB after seed (adjust if you renamed em
 
 **Defense one-liner:** *“Hybrid chatbot: rules for speed and grounding; Ollama for messy language; full user collection + scoped tasks; MongoDB is the single source of truth.”*
 
-**Longer speaking notes:** **`chatbot demo script.md`**
+**Longer speaking notes:** **`chatbot-demo-script.md`**
 
 ### 400-query battery (English + Roman Urdu)
 
@@ -247,4 +247,4 @@ python scripts/run_chatbot_battery.py --email mrehaansaleemceo123@gmail.com --qu
 
 - Backend startup prints the **SDS-compliant** banner and docs URL.
 - If `npm` is not recognized, use `frontend\start-dev.ps1` or prepend `C:\Program Files\nodejs` to `PATH`.
-- For viva: rehearse from **`chatbot demo script.md`** (2–3 minutes).
+- For viva: rehearse from **`chatbot-demo-script.md`** (2–3 minutes).

@@ -1,4 +1,6 @@
 #!/bin/bash
+# Lives in scripts/ — run everything from the repo root.
+cd "$(dirname "$0")/.." || exit 1
 
 echo "Setting up Skill Mapping Platform..."
 

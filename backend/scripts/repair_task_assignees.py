@@ -1,8 +1,8 @@
 """
 Fix task assignees: stale ids, emails, off-team users; optionally spread work across the team.
 
-  .\\venv312\\Scripts\\python.exe repair_task_assignees.py
-  .\\venv312\\Scripts\\python.exe repair_task_assignees.py --spread
+  .\\venv312\\Scripts\\python.exe scripts\\repair_task_assignees.py
+  .\\venv312\\Scripts\\python.exe scripts\\repair_task_assignees.py --spread
 
 Uses the same .env as seed_database (MONGO_URI / MONGODB_URL).
 """
@@ -11,7 +11,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-BACKEND_ROOT = Path(__file__).resolve().parent
+BACKEND_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BACKEND_ROOT))
 
 from dotenv import load_dotenv

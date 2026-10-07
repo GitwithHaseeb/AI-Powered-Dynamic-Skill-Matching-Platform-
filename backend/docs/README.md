@@ -7,7 +7,7 @@ Generated and reference files for demos, chatbot evaluation, and reports.
 | `chatbot_400_queries.txt` | 400 prompts (200 EN + 200 UR), `LABEL<TAB>QUESTION` — **regenerate after seed/DB changes** |
 | `chatbot_400_battery_report.txt` | Optional full Q&A log from the battery runner |
 | `Chatbot_Platform_Report.docx` | Word report — regenerate after refreshing the query list |
-| `_battery_*.txt` | Scratch/run outputs; safe to delete; not hand-edited |
+| `_battery_*.txt` | Scratch/run outputs; git-ignored, safe to delete |
 
 ## Regenerate chatbot battery (use your live admin email)
 

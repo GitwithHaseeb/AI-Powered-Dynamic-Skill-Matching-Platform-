@@ -15,7 +15,7 @@ Assert-Command python
 Assert-Command node
 Assert-Command npm
 
-$root = Split-Path -Parent $MyInvocation.MyCommand.Path
+$root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 $backend = Join-Path $root "backend"
 $frontend = Join-Path $root "frontend"
 

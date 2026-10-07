@@ -613,8 +613,8 @@ python scripts/generate_chatbot_documentation_docx.py
 ## 11. Related documentation
 
 - `README.md` — chatbot section + battery commands
-- `DEMO_SCRIPT.md` — Scenario 6 (chatbot demo) + battery
-- `chatbot demo script.md` — 2–3 minute spoken viva script
+- `docs/demo-script.md` — Scenario 6 (chatbot demo) + battery
+- `docs/chatbot-demo-script.md` — 2–3 minute spoken viva script
 - `backend/docs/README.md` — how to regenerate battery files / docx
 - `backend/docs/chatbot_400_queries.txt` — machine-readable query list (source of Section 9)
 - `backend/docs/Chatbot_Platform_Report.docx` — generated Word report

@@ -37,3 +37,6 @@ db_backups/
 
 # Poster / standee design files (kept locally, not part of the app)
 assets/
+
+# Chatbot battery scratch runs
+backend/docs/_battery_*.txt

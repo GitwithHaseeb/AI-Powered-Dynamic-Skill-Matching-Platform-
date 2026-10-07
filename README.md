@@ -1,5 +1,7 @@
 # Skill Mapping Platform
 
+[![CI](https://github.com/GitwithHaseeb/AI-Powered-Dynamic-Skill-Matching-Platform-/actions/workflows/ci.yml/badge.svg)](https://github.com/GitwithHaseeb/AI-Powered-Dynamic-Skill-Matching-Platform-/actions/workflows/ci.yml)
+
 AI-powered dynamic skill matching for final-year / SDS-style projects: MongoDB-backed **FastAPI** backend, **React + Vite** frontend, JWT auth, team recommendations, tasks, analytics, and a **bilingual (English / Roman Urdu) chatbot** grounded in live data.
 
 **Group:** F25CS093 (reference in codebase / demos)
@@ -11,9 +13,15 @@ AI-powered dynamic skill matching for final-year / SDS-style projects: MongoDB-b
 | Path | Role |
 |------|------|
 | `backend/` | FastAPI app (`app/main.py`), routes, ML/NLP, `requirements.txt`, `docker-compose.yml` (MongoDB) |
+| `backend/tests/` | pytest suite (chatbot coverage, skill matcher, SRS validator with `.docx` fixtures) |
+| `backend/scripts/` | One-off DB maintenance, chatbot battery runner, report generators |
 | `frontend/` | React UI, Vite dev server, `/api` proxy to backend |
-| `DEMO_SCRIPT.md` | Defense / viva checklist |
-| `chatbot demo script.md` | Short spoken script for chatbot demo |
+| `frontend/src/**/*.test.js` | Vitest unit tests |
+| `frontend/e2e/` | Playwright end-to-end tests (API mocked, no backend needed) |
+| `scripts/` | Windows/Unix setup and launch helpers (`RUN.bat` at the root calls `scripts\start-local-demo.bat`) |
+| `docs/demo-script.md` | Defense / viva checklist |
+| `docs/chatbot-demo-script.md` | Short spoken script for chatbot demo |
+| `docs/chatbot.md` | Full chatbot documentation |
 | `backend/docs/README.md` | How to regenerate battery files and demo-project notes |
 | `backend/docs/chatbot_400_queries.txt` | Exported 400-query battery (200 EN + 200 Roman Urdu), regenerated from live MongoDB |
 | `backend/docs/Chatbot_Platform_Report.docx` | Professional Word report on chatbot integration (regenerate after updating the query list) |
@@ -49,11 +57,11 @@ Order matters: **MongoDB reachable** → **backend first** → **frontend second
 |------|----------|---------|
 | 1 | — | `backend/.env` has valid `MONGODB_URL` / `MONGO_URI` (Atlas IP whitelist if using cloud). |
 | 2 | **1 — Backend** | `cd backend` → `.\venv312\Scripts\activate` (or `.\venv\Scripts\activate`) → `pip install -r requirements.txt` once → `python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload` |
-| 3 | Wait | Until you see **`[OK] Connected to MongoDB`** and no traceback. Open `http://127.0.0.1:8000/docs` — should load Swagger. If the process exits immediately, read the **`[ERROR] MongoDB connection failed`** lines and fix `.env` or run `start-with-docker-mongo.bat`. |
+| 3 | Wait | Until you see **`[OK] Connected to MongoDB`** and no traceback. Open `http://127.0.0.1:8000/docs` — should load Swagger. If the process exits immediately, read the **`[ERROR] MongoDB connection failed`** lines and fix `.env` or run `scripts\start-with-docker-mongo.bat`. |
 | 4 | **2 — Frontend** | `cd frontend` → `npm install` once → `npm run dev` |
 | 5 | Browser | Open the **Local** URL Vite prints (e.g. `http://localhost:5173/`). If 5173 is busy, Vite uses 5174+ — that is normal. |
 
-**Port contract (must match):** the Vite proxy in `frontend/vite.config.js` forwards `/api` to **`http://127.0.0.1:8000`**. Your `uvicorn` **must** use **`--port 8000`** (same as `start-local-demo.bat` / `RUN.bat`). If **Windows blocks 8000** (`WinError 10013`), pick another port (e.g. 8080) and change **both** `vite.config.js` proxy `target` and your `uvicorn` command to that port.
+**Port contract (must match):** the Vite proxy in `frontend/vite.config.js` forwards `/api` to **`http://127.0.0.1:8000`**. Your `uvicorn` **must** use **`--port 8000`** (same as `scripts\start-local-demo.bat` / `RUN.bat`). If **Windows blocks 8000** (`WinError 10013`), pick another port (e.g. 8080) and change **both** `vite.config.js` proxy `target` and your `uvicorn` command to that port.
 
 ---
 
@@ -168,7 +176,29 @@ python scripts/backfill_task_descriptions.py
 python scripts/backfill_task_descriptions.py --replace-legacy
 ```
 
-Batch helpers: `start-local-demo.bat`, `start-with-docker-mongo.bat`, `RUN.bat` (see file headers).
+Batch helpers: `RUN.bat` (root), `scripts\start-local-demo.bat`, `scripts\start-with-docker-mongo.bat`, `scripts\setup.bat` (see file headers).
+
+---
+
+## Testing
+
+CI (GitHub Actions, `.github/workflows/ci.yml`) runs all of these on every push to `main` and on pull requests.
+
+```powershell
+# Backend — pytest
+cd backend
+python -m pytest -q
+
+# Frontend — lint, unit tests, build
+cd frontend
+npm run lint
+npm test
+npm run build
+
+# Frontend — Playwright E2E (starts Vite itself; API is mocked)
+npx playwright install chromium   # first time only
+npm run test:e2e
+```
 
 ---
 
@@ -178,7 +208,7 @@ Regenerate the backend walkthrough document:
 
 ```powershell
 cd backend
-python generate_code_explanation_doc.py
+python scripts/generate_code_explanation_doc.py
 ```
 
 Output: `backend/backend_code_explanation.docx` (overwritten when you run the script).

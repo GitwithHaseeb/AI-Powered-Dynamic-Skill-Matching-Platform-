@@ -1,4 +1,6 @@
 @echo off
+REM This script lives in scripts\ — work from the repo root.
+cd /d "%~dp0.."
 echo ===========================================
 echo   Skill Mapping Platform Setup Script
 echo ===========================================
