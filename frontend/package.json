@@ -7,7 +7,11 @@
     "start": "node --max-old-space-size=8192 ./node_modules/vite/bin/vite.js",
     "dev": "node --max-old-space-size=8192 ./node_modules/vite/bin/vite.js",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "test": "vitest run --dir src",
+    "test:watch": "vitest --dir src",
+    "test:e2e": "playwright test"
   },
   "engines": {
     "node": ">=18.0.0"
@@ -24,12 +28,19 @@
     "react-router-dom": "^6.30.3"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@playwright/test": "^1.63.0",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.16",
+    "eslint": "^9.39.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.5.7",
+    "globals": "^17.13.0",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.3.6",
-    "vite": "^5.0.5"
+    "vite": "^5.0.5",
+    "vitest": "^3.2.7"
   }
 }
