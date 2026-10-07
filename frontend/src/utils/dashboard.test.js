@@ -73,12 +73,9 @@ describe('inferDeveloperType', () => {
 });
 
 describe('displayRoleFor', () => {
-  it('uses the manual override when a name is listed', () => {
-    expect(displayRoleFor({ name: '  Aima ', skills: ['React'] })).toBe('Backend Developer');
-  });
-
-  it('otherwise infers from skills', () => {
+  it('infers the role from skills only — the name never changes it', () => {
     expect(displayRoleFor({ name: 'Zain', skills: ['React', 'FastAPI'] })).toBe('Full Stack Developer');
+    expect(displayRoleFor({ name: 'Aima', skills: ['React'] })).toBe('Frontend Developer');
   });
 });
 

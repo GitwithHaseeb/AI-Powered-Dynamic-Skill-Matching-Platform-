@@ -95,11 +95,11 @@ const SkillProfile = ({ showForm, onCloseForm, onOpenForm, onUpdateSkills, userS
   if (showForm) {
     return (
       <div
-        className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+        className="modal-backdrop fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
         onMouseDown={() => onCloseForm?.()}
       >
         <div
-          className="bg-white rounded-2xl shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+          className="modal-panel bg-white rounded-2xl shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
           onMouseDown={(e) => e.stopPropagation()}
         >
           <div className="p-6">

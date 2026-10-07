@@ -17,10 +17,34 @@ import {
   displayRoleFor,
 } from '../utils/dashboard.js';
 import { taskAssignedToUser } from '../utils/tasks.js';
+import AnimatedNumber from './ui/AnimatedNumber.jsx';
+import { CardSkeleton } from './ui/Skeleton.jsx';
+
+/** Top-of-page KPI card. Defined at module level so the count-up isn't reset on every render. */
+const StatCard = ({ title, value, suffix = '', subtitle, icon, color }) => (
+  <div className="lift group relative overflow-hidden bg-white rounded-2xl shadow-card border border-gray-200 p-6">
+    <div
+      aria-hidden="true"
+      className={`absolute -right-8 -top-8 h-24 w-24 rounded-full ${color} opacity-60 transition-transform duration-500 ease-smooth group-hover:scale-150`}
+    />
+    <div className="relative flex items-center">
+      <div className={`w-12 h-12 ${color} rounded-xl flex items-center justify-center mr-4 ring-1 ring-inset ring-black/5`}>
+        {icon}
+      </div>
+      <div>
+        <div className="text-2xl font-bold text-gray-900">
+          {value == null ? <span className="text-gray-400">—</span> : <AnimatedNumber value={value} suffix={suffix} />}
+        </div>
+        <div className="text-sm font-medium text-gray-700 mt-1">{title}</div>
+        {subtitle && <div className="text-xs text-gray-500 mt-1">{subtitle}</div>}
+      </div>
+    </div>
+  </div>
+);
 
 const Dashboard = () => {
   const { user } = useAuth();
-  const STATS_CACHE_KEY = `dashboard_stats_${normalizeRole(user?.role || 'developer')}`;
+  const STATS_CACHE_KEY = `dashboard_stats_v2_${normalizeRole(user?.role || 'developer')}`;
   const [projects, setProjects] = useState([]);
   const [completedProjects, setCompletedProjects] = useState([]);
   const [projectsLoading, setProjectsLoading] = useState(true);
@@ -28,34 +52,30 @@ const Dashboard = () => {
   const [teamMembers, setTeamMembers] = useState([]);
   const [projectStats, setProjectStats] = useState(() => {
     try {
-      const raw = localStorage.getItem(`dashboard_stats_${normalizeRole(user?.role || 'developer')}`);
+      const raw = localStorage.getItem(`dashboard_stats_v2_${normalizeRole(user?.role || 'developer')}`);
       if (raw) return JSON.parse(raw);
     } catch {}
     return {
       completionRate: 0,
-      matchAccuracy: 0,
-      productivityGain: 0,
+      matchAccuracy: null, // null = no AI match scores recorded yet
+      openTasks: 0,
       activeProjects: 0,
     };
   });
 
-  const topTeamMembers = useMemo(() => {
-    const preferred = ['muhammad haseeb', 'ghania tanveer'];
-    const byName = (teamMembers || []).reduce((acc, m) => {
-      const k = String(m?.name || '').trim().toLowerCase();
-      if (k) acc.set(k, m);
-      return acc;
-    }, new Map());
-    const ordered = [];
-    for (const p of preferred) {
-      const hit = byName.get(p);
-      if (hit) ordered.push(hit);
-    }
-    for (const m of teamMembers || []) {
-      if (!ordered.find((x) => x.id === m.id)) ordered.push(m);
-    }
-    return ordered.slice(0, 3);
-  }, [teamMembers]);
+  // Preview: available developers first, then by number of skills, then name — all from the directory data.
+  const topTeamMembers = useMemo(
+    () =>
+      [...(teamMembers || [])]
+        .sort(
+          (a, b) =>
+            (b.availability === 'Full Time') - (a.availability === 'Full Time') ||
+            (b.skills?.length || 0) - (a.skills?.length || 0) ||
+            String(a.name).localeCompare(String(b.name))
+        )
+        .slice(0, 3),
+    [teamMembers]
+  );
 
   useEffect(() => {
     let cancelled = false;
@@ -119,34 +139,22 @@ const Dashboard = () => {
       const scores = mine
         .map((t) => Number(t.match_score))
         .filter((n) => Number.isFinite(n) && n > 0);
-      let matchAccuracy = 0;
+      // Only real AI match scores (per task, else the profile score) — never derived from proficiency.
+      let matchAccuracy = null;
       if (scores.length > 0) {
         matchAccuracy = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
       } else {
         const sm = Number(user.skill_match_score);
-        if (Number.isFinite(sm) && sm > 0) {
-          matchAccuracy = Math.round(sm);
-        } else {
-          const skills = Array.isArray(user.skills) ? user.skills : [];
-          const profs = skills
-            .map((s) => Number(s.proficiency_level))
-            .filter((n) => Number.isFinite(n) && n > 0);
-          if (profs.length > 0) {
-            const avg = profs.reduce((a, b) => a + b, 0) / profs.length;
-            matchAccuracy = Math.round((avg / 5) * 100);
-          }
-        }
+        if (Number.isFinite(sm) && sm > 0) matchAccuracy = Math.round(sm);
       }
 
       setProjectStats((s) => {
-        const productivityGain =
-          total > 0 ? Math.max(0, Math.min(100, Math.round((activeMine.length / total) * 100))) : 0;
         const next = {
           ...s,
           completionRate,
           matchAccuracy,
           activeProjects,
-          productivityGain,
+          openTasks: activeMine.length,
         };
         try {
           localStorage.setItem(STATS_CACHE_KEY, JSON.stringify(next));
@@ -241,12 +249,7 @@ const Dashboard = () => {
             ...s,
             activeProjects: active,
           };
-          if (isDeveloper) {
-            next.productivityGain =
-              active > 0 ? Math.max(5, Math.min(100, active * 10)) : 0;
-          } else {
-            next.completionRate = completionRate;
-          }
+          if (!isDeveloper) next.completionRate = completionRate;
           try {
             localStorage.setItem(STATS_CACHE_KEY, JSON.stringify(next));
           } catch {
@@ -294,17 +297,13 @@ const Dashboard = () => {
     try {
       const dash = await analyticsService.getDashboard('all');
       const completion = Number(dash?.tasks?.completion_rate_pct || 0);
-      const utilization = Number(dash?.skill_utilization_pct || 0);
       const openActive = Number(dash?.tasks?.open_or_active || 0);
-      const totalTasks = Number(dash?.tasks?.total || 0);
-      const blendedMatch = Math.round(completion * 0.55 + utilization * 0.45);
       setProjectStats((s) => {
         const next = {
           ...s,
           completionRate: Math.round(completion),
-          matchAccuracy:
-            matchFromSummary > 0 ? Math.round(matchFromSummary) : blendedMatch,
-          productivityGain: totalTasks > 0 ? Math.round((openActive / totalTasks) * 100) : 0,
+          matchAccuracy: matchFromSummary > 0 ? Math.round(matchFromSummary) : null,
+          openTasks: openActive,
         };
         try {
           localStorage.setItem(STATS_CACHE_KEY, JSON.stringify(next));
@@ -330,55 +329,47 @@ const Dashboard = () => {
 
   useEffect(() => {
     const id = setInterval(() => {
-      fetchDashboardStats();
+      if (!document.hidden) fetchDashboardStats();
     }, 30000);
     return () => clearInterval(id);
   }, [fetchDashboardStats]);
-
-  const StatCard = ({ title, value, subtitle, icon, color }) => (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 transition-colors duration-300 hover:shadow-md">
-      <div className="flex items-center">
-        <div className={`w-12 h-12 ${color} rounded-lg flex items-center justify-center mr-4`}>
-          {icon}
-        </div>
-        <div>
-          <div className="text-2xl font-bold text-gray-900">{value}</div>
-          <div className="text-sm font-medium text-gray-700 mt-1">{title}</div>
-          {subtitle && <div className="text-xs text-gray-500 mt-1">{subtitle}</div>}
-        </div>
-      </div>
-    </div>
-  );
 
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Welcome Section */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Welcome back, {user?.name || user?.email}!</h1>
-          <p className="text-gray-600 mt-2">AI-Powered Dynamic Skill Matching Platform Dashboard</p>
+          <p className="text-sm font-medium text-blue-600 dark:text-blue-400">
+            {new Date().toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' })}
+          </p>
+          <h1 className="mt-1 text-3xl sm:text-4xl font-bold text-gray-900">
+            Welcome back, <span className="text-gradient">{user?.name || user?.email}</span>
+          </h1>
+          <p className="text-gray-600 mt-2">Here&apos;s what is happening across your projects and teams.</p>
         </div>
 
         {/* Quick Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <StatCard 
-            title="Completion Rate" 
-            value={`${projectStats.completionRate}%`}
-            subtitle="Tasks completed on time"
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 stagger">
+          <StatCard
+            title="Completion Rate"
+            value={projectStats.completionRate}
+            suffix="%"
+            subtitle="Share of tasks marked completed"
             icon={<svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>}
             color="bg-green-50"
           />
           <StatCard 
             title="Match Accuracy" 
-            value={`${projectStats.matchAccuracy}%`}
-            subtitle="AI recommendation accuracy"
+            value={projectStats.matchAccuracy}
+            suffix="%"
+            subtitle={projectStats.matchAccuracy == null ? 'No AI match scores yet' : 'Average AI match score'}
             icon={<svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>}
             color="bg-blue-50"
           />
           <StatCard 
-            title="Productivity Gain" 
-            value={`${projectStats.productivityGain}% faster`}
-            subtitle="Team formation speed"
+            title="Open Tasks"
+            value={projectStats.openTasks ?? 0}
+            subtitle="Assigned or in progress"
             icon={<svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>}
             color="bg-purple-50"
           />
@@ -392,7 +383,7 @@ const Dashboard = () => {
         </div>
 
         {/* Project Overview */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-8 transition-colors duration-300 hover:shadow-md">
+        <div data-reveal className="bg-white rounded-2xl shadow-card border border-gray-200 p-6 sm:p-8 mb-8 transition-shadow duration-300 hover:shadow-card-hover">
           <div className="flex justify-between items-center mb-6">
             <div>
               <h2 className="text-xl font-bold text-gray-900">AI Powered Dynamic Skill Matching Platform</h2>
@@ -408,32 +399,27 @@ const Dashboard = () => {
                 to collaborative projects based on real-time skills, availability, and project requirements.
               </p>
               
-              <h4 className="font-semibold text-gray-900 mb-2 mt-6">Expected Results:</h4>
+              <h4 className="font-semibold text-gray-900 mb-2 mt-6">What the platform does</h4>
               <ul className="text-gray-600 space-y-2">
-                <li className="flex items-center">
-                  <svg className="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                  30% faster team formation compared to manual processes
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                  20% improvement in project success rates
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                  15% reduction in managerial workload via automation
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                  Increased employee satisfaction by aligning work with individual skills
-                </li>
+                {[
+                  'Recommends project teams from developer skills, availability and current workload',
+                  'Extracts required skills and tasks from an uploaded SRS document',
+                  'Tracks tasks from assignment through PM review to completion',
+                  'Answers project and team questions in English or Roman Urdu',
+                ].map((item) => (
+                  <li key={item} className="flex items-start">
+                    <svg className="w-4 h-4 text-green-500 mr-2 mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
 
             <div>
               <h3 className="font-semibold text-gray-900 mb-4">Tools & Technologies</h3>
               <div className="flex flex-wrap gap-2 mb-6">
-                {['React.js', 'Node.js', 'MongoDB', 'Python', 'Scikit-learn', 'Docker', 'AWS EC2', 'Git/GitHub', 'Material-UI', 'Express.js'].map((tool) => (
-                  <span key={tool} className="px-3 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm transition-colors duration-300">
+                {['React', 'Vite', 'Tailwind CSS', 'Material-UI', 'FastAPI', 'Python', 'MongoDB', 'scikit-learn', 'spaCy', 'Docker', 'Git/GitHub'].map((tool) => (
+                  <span key={tool} className="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-lg text-sm transition-all duration-300 ease-smooth hover:-translate-y-0.5 hover:bg-gray-200">
                     {tool}
                   </span>
                 ))}
@@ -451,7 +437,7 @@ const Dashboard = () => {
         </div>
 
         {/* Team Members Section */}
-        <div className="mb-8">
+        <div data-reveal className="mb-8">
           <div className="flex justify-between items-center mb-6 flex-wrap gap-2">
             <h2 className="text-xl font-bold text-gray-900">Team Members</h2>
             <div className="flex items-center gap-3">
@@ -460,28 +446,48 @@ const Dashboard = () => {
               </span>
               <Link
                 to="/developers"
-                className="text-blue-600 hover:text-blue-700 font-medium transition-colors duration-300"
+                className="group inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-300"
               >
-                View all developers →
+                View all developers
+                <span aria-hidden="true" className="ml-1 transition-transform duration-300 ease-smooth group-hover:translate-x-1">→</span>
               </Link>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 stagger">
             {topTeamMembers.map((member) => (
-              <div key={member.id} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-all duration-300">
+              <div key={member.id} className="lift bg-white rounded-2xl shadow-card border border-gray-200 p-6">
                 <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="font-bold text-gray-900">{member.name}</h3>
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="h-11 w-11 shrink-0 rounded-full bg-gradient-to-br from-sky-400 to-indigo-600 text-white flex items-center justify-center text-sm font-semibold shadow-sm">
+                      {String(member.name || '?')
+                        .split(' ')
+                        .map((w) => w[0])
+                        .join('')
+                        .slice(0, 2)
+                        .toUpperCase()}
+                    </div>
+                    <h3 className="font-bold text-gray-900 truncate">{member.name}</h3>
                   </div>
-                  <span className="px-3 py-1 bg-green-50 text-green-700 text-sm rounded-lg transition-colors duration-300">
-                    Active
+                  {/* Badge reflects the developer's stored availability flag. */}
+                  <span
+                    className={`shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-full ring-1 ring-inset ${
+                      member.availability === 'Full Time'
+                        ? 'bg-green-50 text-green-700 ring-green-600/15'
+                        : 'bg-amber-50 text-amber-700 ring-amber-600/20'
+                    }`}
+                  >
+                    <span
+                      className={`h-1.5 w-1.5 rounded-full ${member.availability === 'Full Time' ? 'bg-green-500' : 'bg-amber-500'}`}
+                      aria-hidden="true"
+                    />
+                    {member.availability === 'Full Time' ? 'Available' : 'Limited'}
                   </span>
                 </div>
 
                 <div className="mb-4">
                   <span
-                    className={`inline-flex px-2.5 py-1 rounded-md border text-xs font-semibold tracking-wide ${roleBadgeClass(member.role)}`}
+                    className={`inline-flex mb-2 px-2.5 py-1 rounded-md border text-xs font-semibold tracking-wide ${roleBadgeClass(member.role)}`}
                   >
                     {member.role}
                   </span>
@@ -514,32 +520,36 @@ const Dashboard = () => {
         </div>
 
         {/* Recent projects: active / in-progress only; completed only in section below */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 transition-colors duration-300 hover:shadow-md dark:bg-gray-800 dark:border-gray-700">
+        <div data-reveal className="bg-white rounded-2xl shadow-card border border-gray-200 p-6 sm:p-8 mb-8 dark:bg-gray-800 dark:border-gray-700">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100">Recent Projects</h2>
             <Link
               to={projectsListPath(user?.role)}
-              className="text-blue-600 hover:text-blue-700 dark:text-blue-400 font-medium transition-colors duration-300"
+              className="group inline-flex items-center text-blue-600 hover:text-blue-700 dark:text-blue-400 font-medium transition-colors duration-300"
             >
-              View All Projects →
+              View All Projects
+              <span aria-hidden="true" className="ml-1 transition-transform duration-300 ease-smooth group-hover:translate-x-1">→</span>
             </Link>
           </div>
 
-          {projectsLoading && (
-            <p className="text-gray-600 text-sm py-4">Loading projects…</p>
+          {projectsLoading && !projects.length && (
+            <div className="space-y-4">
+              <CardSkeleton />
+              <CardSkeleton />
+            </div>
           )}
           {projectsError && (
             <p className="text-red-600 text-sm py-2">{projectsError}</p>
           )}
 
-          <div className="space-y-4">
+          <div className="space-y-4 stagger">
             {!projectsLoading && !projects.length && !projectsError && (
               <p className="text-gray-600 text-sm py-4 dark:text-gray-400">
                 No active projects to show yet, or none visible for your account.
               </p>
             )}
             {projects.map((project) => (
-              <div key={project.id} className="border border-gray-100 rounded-lg p-6 hover:bg-gray-50 transition-colors duration-300">
+              <div key={project.id} className="lift border border-gray-200 rounded-xl p-6 hover:border-blue-200 dark:hover:border-blue-800">
                 <div className="flex justify-between items-start mb-4">
                   <div>
                     <h3 className="font-semibold text-gray-900">{project.title}</h3>
@@ -567,9 +577,9 @@ const Dashboard = () => {
                     <div>
                       <div className="text-sm text-gray-600">Progress</div>
                       <div className="flex items-center">
-                        <div className="w-32 bg-gray-200 rounded-full h-2 mr-3">
-                          <div 
-                            className="bg-blue-600 h-2 rounded-full transition-all duration-300"
+                        <div className="w-32 bg-gray-200 rounded-full h-2 mr-3 overflow-hidden">
+                          <div
+                            className="progress-fill bg-gradient-to-r from-blue-500 to-indigo-600 h-2 rounded-full"
                             style={{ width: `${project.progress}%` }}
                           ></div>
                         </div>
@@ -616,7 +626,7 @@ const Dashboard = () => {
         </div>
 
         {['developer', 'manager', 'admin'].includes(normalizeRole(user?.role)) && (
-          <div className="bg-white dark:bg-gray-800/95 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 transition-colors duration-300 hover:shadow-md">
+          <div data-reveal className="bg-white dark:bg-gray-800/95 rounded-2xl shadow-card border border-gray-200 dark:border-gray-700 p-6 sm:p-8">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100">Completed Projects</h2>
               <span className="px-2.5 py-1 min-w-[2rem] text-center bg-emerald-100 dark:bg-emerald-900/45 text-emerald-800 dark:text-emerald-200 text-xs font-semibold rounded-full tabular-nums">
@@ -626,11 +636,11 @@ const Dashboard = () => {
             {!completedProjects.length ? (
               <p className="text-gray-600 dark:text-gray-400 text-sm">No completed projects yet.</p>
             ) : (
-              <div className="space-y-3">
+              <div className="space-y-3 stagger">
                 {completedProjects.map((project) => (
                   <div
                     key={project.id}
-                    className="flex items-center justify-between gap-4 rounded-xl border border-emerald-200/90 dark:border-emerald-800/60 bg-emerald-50/95 dark:bg-emerald-950/40 p-4 shadow-sm"
+                    className="lift flex items-center justify-between gap-4 rounded-xl border border-emerald-200/90 dark:border-emerald-800/60 bg-emerald-50/95 dark:bg-emerald-950/40 p-4 shadow-sm"
                   >
                     <div className="min-w-0 flex-1">
                       <p className="font-semibold text-gray-900 dark:text-gray-100 leading-snug">
@@ -640,7 +650,10 @@ const Dashboard = () => {
                         Deadline: {project.deadline}
                       </p>
                     </div>
-                    <span className="shrink-0 text-xs font-bold text-emerald-800 dark:text-emerald-400">
+                    <span className="shrink-0 inline-flex items-center gap-1 text-xs font-bold text-emerald-800 dark:text-emerald-400">
+                      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
+                      </svg>
                       Completed
                     </span>
                   </div>

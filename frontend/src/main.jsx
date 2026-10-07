@@ -11,7 +11,8 @@ const theme = createTheme({
     primary: { main: '#1565c0' },
     secondary: { main: '#00897b' },
   },
-  typography: { fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif' },
+  typography: { fontFamily: '"Inter", ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif' },
+  shape: { borderRadius: 10 },
 });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

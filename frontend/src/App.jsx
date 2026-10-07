@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext.jsx';
 import { ThemeProvider } from './context/ThemeContext.jsx';
 import ProtectedRoute from './Components/ProtectedRoute.jsx';
 import AppLayout from './Components/AppLayout.jsx';
-import HomeDashboard from './Components/HomeDashboard.jsx';
 import Login from './Components/Login.jsx';
-import Signup from './Components/Signup.jsx';
-import ManagerDashboard from './Components/ManagerDashboard.jsx';
-import DeveloperDashboard from './Components/DeveloperDashboard.jsx';
-import AnalyticsDashboard from './Components/AnalyticsDashboard.jsx';
-import DevelopersDirectory from './Components/DevelopersDirectory.jsx';
-import ProjectsDirectory from './Components/ProjectsDirectory.jsx';
 import { getDefaultRouteForRole } from './utils/auth.js';
+
+// Pages load on demand so the login screen does not ship dashboard / chart code.
+const HomeDashboard = lazy(() => import('./Components/HomeDashboard.jsx'));
+const Signup = lazy(() => import('./Components/Signup.jsx'));
+const ManagerDashboard = lazy(() => import('./Components/ManagerDashboard.jsx'));
+const DeveloperDashboard = lazy(() => import('./Components/DeveloperDashboard.jsx'));
+const AnalyticsDashboard = lazy(() => import('./Components/AnalyticsDashboard.jsx'));
+const DevelopersDirectory = lazy(() => import('./Components/DevelopersDirectory.jsx'));
+const ProjectsDirectory = lazy(() => import('./Components/ProjectsDirectory.jsx'));
 
 const HomeRedirect = () => {
   const { user, loading } = useAuth();
@@ -37,7 +39,7 @@ function App() {
           <div className="min-h-screen bg-gray-50">
             <Routes>
               <Route path="/login" element={<PublicOnlyRoute><Login /></PublicOnlyRoute>} />
-              <Route path="/signup" element={<PublicOnlyRoute><Signup /></PublicOnlyRoute>} />
+              <Route path="/signup" element={<PublicOnlyRoute><Suspense fallback={null}><Signup /></Suspense></PublicOnlyRoute>} />
 
               <Route
                 path="/dashboard"

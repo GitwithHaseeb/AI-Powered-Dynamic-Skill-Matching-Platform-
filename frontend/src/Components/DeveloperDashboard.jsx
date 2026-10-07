@@ -5,6 +5,7 @@ import SkillProfile from './SkillProfile.jsx';
 import { taskService, projectService, userService } from '../services/api';
 import { useAuth } from '../context/AuthContext.jsx';
 import { taskAssignedToUser } from '../utils/tasks.js';
+import AnimatedNumber from './ui/AnimatedNumber.jsx';
 
 const DeveloperDashboard = () => {
   const [tasks, setTasks] = useState([]);
@@ -105,7 +106,7 @@ const DeveloperDashboard = () => {
 
   useEffect(() => {
     const id = setInterval(() => {
-      void fetchTasks({ background: true });
+      if (!document.hidden) void fetchTasks({ background: true });
     }, 10000);
     return () => clearInterval(id);
   }, [fetchTasks]);
@@ -253,8 +254,11 @@ const DeveloperDashboard = () => {
           type="button"
           onClick={() => setShowSkillForm(true)}
           disabled={isLoading}
-          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors shadow-md hover:shadow-lg disabled:opacity-50"
+          className="group inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold py-3 px-6 rounded-xl shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/30 disabled:opacity-50"
         >
+          <svg className="h-5 w-5 transition-transform duration-300 ease-smooth group-hover:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M12 5v14M5 12h14" />
+          </svg>
           Add skills
         </button>
       </div>
@@ -265,9 +269,30 @@ const DeveloperDashboard = () => {
         </div>
       )}
 
-      {/* Developer Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-        {/* ... (keep existing stats cards) ... */}
+      {/* Developer Stats — counted from the tasks and profile already on screen */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8 stagger">
+        {[
+          ['Active tasks', activeTasks.length, 'from-blue-500 to-indigo-600', 'M13 10V3L4 14h7v7l9-11h-7z'],
+          ['Completed tasks', completedTasksList.length, 'from-emerald-500 to-teal-600', 'M5 13l4 4L19 7'],
+          ['Skills on profile', (user?.skills || []).length, 'from-violet-500 to-fuchsia-600', 'M11.48 3.5a.56.56 0 011.04 0l2.12 5.11 5.52.44c.5.04.7.66.32.98l-4.2 3.6 1.28 5.38a.56.56 0 01-.84.61L12 16.73l-4.72 2.89a.56.56 0 01-.84-.61l1.28-5.38-4.2-3.6a.56.56 0 01.32-.98l5.52-.44 2.12-5.11z'],
+        ].map(([label, value, gradient, path]) => (
+          <div
+            key={label}
+            className="lift flex items-center gap-4 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 shadow-card"
+          >
+            <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} text-white shadow-md`}>
+              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={path} />
+              </svg>
+            </span>
+            <div>
+              <div className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+                <AnimatedNumber value={value} />
+              </div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">{label}</div>
+            </div>
+          </div>
+        ))}
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -418,13 +443,13 @@ const DeveloperDashboard = () => {
 
       {showCompletedTasksModal && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60"
+          className="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60"
           role="dialog"
           aria-modal="true"
           onMouseDown={() => setShowCompletedTasksModal(false)}
         >
           <div
-            className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl max-w-3xl w-full max-h-[90vh] overflow-hidden border border-gray-200 dark:border-gray-700"
+            className="modal-panel bg-white dark:bg-gray-900 rounded-2xl shadow-xl max-w-3xl w-full max-h-[90vh] overflow-hidden border border-gray-200 dark:border-gray-700"
             onMouseDown={(e) => e.stopPropagation()}
           >
             <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">

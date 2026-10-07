@@ -118,7 +118,7 @@ const ChatBot = () => {
       {!isOpen && (
         <button
           type="button"
-          className="fixed bottom-6 right-6 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium py-3 px-5 rounded-full shadow-lg flex items-center gap-3 transition-all duration-200 z-40 hover:shadow-xl border border-blue-500/30"
+          className="fixed bottom-6 right-6 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium py-3 px-5 rounded-full shadow-lg shadow-blue-600/30 flex items-center gap-3 z-40 hover:shadow-xl hover:shadow-blue-600/40 hover:-translate-y-0.5 border border-blue-500/30 animate-scale-in"
           onClick={() => setIsOpen(true)}
           aria-label="Open Skill Assistant chat"
         >
@@ -134,7 +134,7 @@ const ChatBot = () => {
       )}
 
       {isOpen && (
-        <div className="fixed bottom-6 right-6 w-[min(100vw-2rem,24rem)] h-[min(100dvh-5rem,32rem)] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 flex flex-col z-50 overflow-hidden">
+        <div className="animate-scale-in origin-bottom-right fixed bottom-6 right-6 w-[min(100vw-2rem,24rem)] h-[min(100dvh-5rem,32rem)] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 flex flex-col z-50 overflow-hidden">
           <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-4 flex justify-between items-center shrink-0">
             <div className="flex items-center gap-3 min-w-0">
               <div className="w-11 h-11 bg-white/15 rounded-full flex items-center justify-center shrink-0 ring-2 ring-white/25">

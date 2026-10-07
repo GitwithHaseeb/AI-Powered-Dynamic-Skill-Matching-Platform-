@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
 import { getDefaultRouteForRole } from '../utils/auth.js';
-import logoIcon from '../assets/skill-mapping-logo.svg';
+import AuthHero from './ui/AuthHero.jsx';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -63,25 +63,28 @@ const Signup = () => {
     }
   };
 
+  const inputClass =
+    'w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50/70 text-slate-900 placeholder-slate-400 transition-all duration-200 ease-smooth hover:border-slate-300 focus:outline-none focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/15 disabled:opacity-60';
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 p-4">
-      <div className="w-full max-w-6xl flex flex-col lg:flex-row bg-white rounded-3xl shadow-xl overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-blue-50/60 p-4">
+      <div className="w-full max-w-6xl flex flex-col lg:flex-row bg-white rounded-3xl shadow-2xl shadow-slate-900/10 ring-1 ring-slate-900/5 overflow-hidden animate-scale-in">
         {/* Left side - Signup Form */}
-        <div className="w-full lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
-          <div className="mb-10">
-            <h1 className="text-4xl font-bold text-gray-900 mb-2">Create an account</h1>
-            <p className="text-gray-600">
+        <div className="w-full lg:w-1/2 p-8 sm:p-12 lg:p-16 flex flex-col justify-center animate-fade-in-up">
+          <div className="mb-8">
+            <h1 className="text-4xl font-bold text-slate-900 mb-2">Create an account</h1>
+            <p className="text-slate-500">
               Already have an account?{' '}
-              <Link to="/login" className="font-medium text-gray-900 hover:text-gray-700 transition-colors">
+              <Link to="/login" className="font-semibold text-blue-600 hover:text-blue-700 transition-colors">
                 Log in
               </Link>
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div>
-                <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-2">
                   First name
                 </label>
                 <input
@@ -90,7 +93,7 @@ const Signup = () => {
                   type="text"
                   value={formData.firstName}
                   onChange={handleChange}
-                  className="w-full px-4 py-4 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-transparent transition-all bg-gray-50"
+                  className={inputClass}
                   placeholder="First name"
                   required
                   disabled={isLoading}
@@ -98,7 +101,7 @@ const Signup = () => {
               </div>
 
               <div>
-                <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-2">
                   Last name
                 </label>
                 <input
@@ -107,7 +110,7 @@ const Signup = () => {
                   type="text"
                   value={formData.lastName}
                   onChange={handleChange}
-                  className="w-full px-4 py-4 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-transparent transition-all bg-gray-50"
+                  className={inputClass}
                   placeholder="Last name"
                   required
                   disabled={isLoading}
@@ -116,7 +119,7 @@ const Signup = () => {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
                 Email
               </label>
               <input
@@ -125,7 +128,7 @@ const Signup = () => {
                 type="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-4 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-transparent transition-all bg-gray-50"
+                className={inputClass}
                 placeholder="Enter your email"
                 required
                 disabled={isLoading}
@@ -133,7 +136,7 @@ const Signup = () => {
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="password" className="block text-sm font-medium text-slate-700 mb-2">
                 Password
               </label>
               <input
@@ -142,7 +145,7 @@ const Signup = () => {
                 type="password"
                 value={formData.password}
                 onChange={handleChange}
-                className="w-full px-4 py-4 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-transparent transition-all bg-gray-50"
+                className={inputClass}
                 placeholder="Create a strong password"
                 required
                 disabled={isLoading}
@@ -150,7 +153,7 @@ const Signup = () => {
             </div>
 
             <div>
-              <label htmlFor="role" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="role" className="block text-sm font-medium text-slate-700 mb-2">
                 Role
               </label>
               <select
@@ -158,7 +161,7 @@ const Signup = () => {
                 name="role"
                 value={formData.role}
                 onChange={handleChange}
-                className="w-full px-4 py-4 border border-gray-300 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-transparent transition-all bg-gray-50"
+                className={inputClass}
                 disabled={isLoading}
               >
                 <option value="developer">Developer</option>
@@ -171,7 +174,7 @@ const Signup = () => {
             </div>
 
             <div>
-              <label htmlFor="department" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="department" className="block text-sm font-medium text-slate-700 mb-2">
                 Department (Optional)
               </label>
               <input
@@ -180,7 +183,7 @@ const Signup = () => {
                 type="text"
                 value={formData.department}
                 onChange={handleChange}
-                className="w-full px-4 py-4 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-transparent transition-all bg-gray-50"
+                className={inputClass}
                 placeholder="e.g., Computer Science, Engineering"
                 disabled={isLoading}
               />
@@ -193,30 +196,28 @@ const Signup = () => {
                 type="checkbox"
                 checked={formData.agreeTerms}
                 onChange={handleChange}
-                className="h-5 w-5 text-gray-900 rounded border-gray-300 focus:ring-gray-800 mt-1"
+                className="h-5 w-5 mt-0.5 rounded border-slate-300 accent-blue-600 cursor-pointer"
                 required
                 disabled={isLoading}
               />
-              <label htmlFor="agreeTerms" className="ml-3 text-sm text-gray-700">
-                <span className="font-medium">I agree to the{' '}</span>
-                <a href="#" className="text-gray-900 hover:text-gray-700 font-medium underline">
+              <label htmlFor="agreeTerms" className="ml-3 text-sm text-slate-600">
+                <span>I agree to the{' '}</span>
+                <a href="#" className="text-blue-600 hover:text-blue-700 font-medium underline-offset-2 hover:underline">
                   Terms & Conditions
                 </a>
               </label>
             </div>
 
             {error && (
-              <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg">
+              <div role="alert" className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm animate-scale-in">
                 {error}
               </div>
             )}
 
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               disabled={isLoading}
-              className={`w-full ${
-                isLoading ? 'bg-gray-400' : 'bg-gray-900 hover:bg-gray-800'
-              } text-white font-semibold py-4 px-4 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center`}
+              className="group relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 py-3.5 px-4 font-semibold text-white shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/30 disabled:opacity-70 flex items-center justify-center"
             >
               {isLoading ? (
                 <>
@@ -230,13 +231,10 @@ const Signup = () => {
           </form>
         </div>
 
-        {/* Right side - Hero Section */}
-        <div className="w-full lg:w-1/2 bg-gradient-to-br from-gray-900 to-gray-800 p-8 lg:p-12 flex flex-col justify-center items-center text-white relative overflow-hidden">
-          <div className="max-w-md text-center space-y-5">
-            <img src={logoIcon} alt="Skill Mapping logo" className="mx-auto h-24 w-24 rounded-2xl" />
-            <h2 className="text-4xl font-bold leading-tight">Join Skill Mapping Platform</h2>
-          </div>
-        </div>
+        <AuthHero
+          title="Join the Skill Mapping platform."
+          subtitle="Set up your profile once — get matched to the projects that fit your skills."
+        />
       </div>
     </div>
   );

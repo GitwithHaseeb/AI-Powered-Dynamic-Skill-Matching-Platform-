@@ -186,8 +186,8 @@ const ReviewSubmissions = ({ onMarkComplete, isLoading: parentLoading }) => {
         </ul>
       )}
       {changeRequestFor && (
-        <div className="fixed inset-0 z-50 bg-black/60 p-4 flex items-center justify-center" role="dialog" aria-modal="true">
-          <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-xl w-full max-w-lg p-5">
+        <div className="modal-backdrop fixed inset-0 z-50 bg-black/60 p-4 flex items-center justify-center" role="dialog" aria-modal="true">
+          <div className="modal-panel bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-xl w-full max-w-lg p-5">
             <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Request changes from developer</h4>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
               Add clear feedback. Task will move back to <span className="font-medium">In Progress</span> so developer can fix and resubmit.

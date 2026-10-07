@@ -71,13 +71,8 @@ export function roleBadgeClass(role) {
   return 'bg-indigo-600 text-white border-indigo-500';
 }
 
+/** Role label inferred purely from the member's skills (no per-name overrides). */
 export function displayRoleFor(member) {
-  const nameKey = String(member?.name || '').trim().toLowerCase();
-  const manual = {
-    'kosain ali': 'Full Stack Developer',
-    aima: 'Backend Developer',
-  };
-  if (manual[nameKey]) return manual[nameKey];
   const inferred = inferDeveloperType(member?.skills || []);
   if (
     ['Full Stack Developer', 'Frontend Developer', 'Backend Developer', 'UI Designer', 'Tester'].includes(

@@ -5,11 +5,12 @@ import ProjectForm from './ProjectForm.jsx';
 import ProjectList from './ProjectList.jsx';
 import DeveloperRecommendations from './DeveloperRecommendations.jsx';
 import ReviewSubmissions from './ReviewSubmissions.jsx';
+import AnimatedNumber from './ui/AnimatedNumber.jsx';
+import { CardSkeleton } from './ui/Skeleton.jsx';
 import {
   projectService,
   mlService,
   recommendationService,
-  analyticsService,
   userService,
   getApiErrorMessage,
   resolveProjectDocumentId,
@@ -22,24 +23,51 @@ function formatMatchAccuracyPercent(percent) {
   return Math.abs(n - Math.round(n)) < 0.05 ? String(Math.round(n)) : n.toFixed(1);
 }
 
+const STAT_CARD =
+  'lift bg-white dark:bg-[var(--bg-secondary)] rounded-2xl shadow-card border border-gray-200 dark:border-[var(--border-color)] p-6';
+
+const STAT_ICONS = {
+  folder: 'M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V7z',
+  bolt: 'M13 10V3L4 14h7v7l9-11h-7z',
+  target: 'M12 21a9 9 0 100-18 9 9 0 000 18zm0-4a5 5 0 100-10 5 5 0 000 10zm0-4a1 1 0 100-2 1 1 0 000 2z',
+  users: 'M17 20h5v-2a3 3 0 00-5.36-1.86M17 20H7m10 0v-2c0-.66-.13-1.28-.36-1.86M7 20H2v-2a3 3 0 015.36-1.86M7 20v-2c0-.66.13-1.28.36-1.86m0 0a5 5 0 019.28 0M15 7a3 3 0 11-6 0 3 3 0 016 0z',
+};
+
+/** Small icon + caption row used on the PM stat cards. */
+function StatLabel({ icon, children }) {
+  return (
+    <div className="flex items-center gap-2.5">
+      <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-blue-600 ring-1 ring-inset ring-blue-600/10 dark:bg-blue-900/30 dark:text-blue-300">
+        <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d={STAT_ICONS[icon]} />
+        </svg>
+      </span>
+      <span className="text-sm font-medium text-gray-600 dark:text-gray-400">{children}</span>
+    </div>
+  );
+}
+
 function MatchAccuracyStatCard({ percent }) {
   const label = formatMatchAccuracyPercent(percent);
+  // 0 means no AI match scores have been recorded yet — show that instead of a made-up number.
+  const hasScore = Number.isFinite(Number(percent)) && Number(percent) > 0;
   return (
     <div
-      className="rounded-xl border p-5 shadow-sm transition-colors duration-300 bg-[var(--bg-secondary)] border-[var(--border-color)] ring-1 ring-slate-900/5 dark:ring-white/10"
+      className={STAT_CARD}
       role="status"
-      aria-label={`Match accuracy ${label} percent`}
+      aria-label={hasScore ? `Match accuracy ${label} percent` : 'Match accuracy not available yet'}
     >
-      <div className="flex items-start">
-        <div className="min-w-0 flex-1">
-          <div className="text-3xl font-bold tabular-nums leading-none text-[var(--text-primary)]">
-            {label}%
-          </div>
-          <div className="mt-2 text-sm font-semibold tracking-tight text-[var(--text-secondary)]">
-            Match Accuracy
-          </div>
-        </div>
+      <StatLabel icon="target">Match accuracy</StatLabel>
+      <div className="text-3xl font-bold text-gray-900 dark:text-gray-100 mt-2">
+        {!hasScore ? (
+          <span className="text-gray-400">—</span>
+        ) : Number.isInteger(Number(label)) ? (
+          <AnimatedNumber value={Number(label)} suffix="%" />
+        ) : (
+          `${label}%`
+        )}
       </div>
+      {!hasScore && <p className="mt-1 text-xs text-gray-500">No AI match scores yet</p>}
     </div>
   );
 }
@@ -186,7 +214,7 @@ const ManagerDashboard = ({ variant = 'manager' }) => {
       totalProjects: 0,
       activeProjects: 0,
       avgMatchScore: 0,
-      teamFormationSpeed: '0% active',
+      teamFormationSpeed: '0%',
     };
   });
   const [isLoading, setIsLoading] = useState(false);
@@ -223,19 +251,19 @@ const ManagerDashboard = ({ variant = 'manager' }) => {
       const activeProjects = activeNonCompleted.length;
 
       let avgMatchScore = 0;
-      let teamFormationSpeed = '0% active';
+      let teamFormationSpeed = '0%';
       try {
         const summary = await projectService.getStatsSummary();
         avgMatchScore = Number(summary?.avg_match_score_pct ?? 0);
         if (!Number.isFinite(avgMatchScore)) avgMatchScore = 0;
         const speed = Math.round(Number(summary?.team_formation_live_pct || 0));
-        teamFormationSpeed = `${speed}% active`;
+        teamFormationSpeed = `${speed}%`;
       } catch (statsErr) {
         const withTeam = activeNonCompleted.filter(projectListHasTeamHint).length;
         const sp = activeNonCompleted.length
           ? Math.round((100 * withTeam) / activeNonCompleted.length)
           : 0;
-        teamFormationSpeed = `${sp}% active`;
+        teamFormationSpeed = `${sp}%`;
         if (import.meta.env.DEV) {
           console.warn('[ManagerDashboard] /projects/stats/summary failed; team % from project list', statsErr);
         }
@@ -244,18 +272,6 @@ const ManagerDashboard = ({ variant = 'manager' }) => {
       const fromProjectRows = averageMatchAccuracyFromProjects(list);
       if (fromProjectRows != null && (avgMatchScore <= 0 || !Number.isFinite(avgMatchScore))) {
         avgMatchScore = fromProjectRows;
-      }
-
-      if ((avgMatchScore <= 0 || !Number.isFinite(avgMatchScore)) && fromProjectRows == null) {
-        try {
-          const dash = await analyticsService.getDashboard('all');
-          const completion = Number(dash?.tasks?.completion_rate_pct || 0);
-          const utilization = Number(dash?.skill_utilization_pct || 0);
-          const blended = Math.round(completion * 0.55 + utilization * 0.45);
-          if (Number.isFinite(blended) && blended > 0) avgMatchScore = blended;
-        } catch {
-          /* keep summary / list value */
-        }
       }
 
       setStats((prev) => {
@@ -282,7 +298,7 @@ const ManagerDashboard = ({ variant = 'manager' }) => {
         totalProjects: 0,
         activeProjects: 0,
         avgMatchScore: 0,
-        teamFormationSpeed: '0% active',
+        teamFormationSpeed: '0%',
       });
     } finally {
       setIsLoading(false);
@@ -305,7 +321,7 @@ const ManagerDashboard = ({ variant = 'manager' }) => {
 
   useEffect(() => {
     const id = setInterval(() => {
-      fetchProjects();
+      if (!document.hidden) fetchProjects();
     }, 30000);
     return () => clearInterval(id);
   }, [fetchProjects]);
@@ -572,7 +588,7 @@ const ManagerDashboard = ({ variant = 'manager' }) => {
   useEffect(() => {
     if (!teamDetailsProject) return undefined;
     const id = setInterval(() => {
-      void openTeamDetails(teamDetailsProject, { forceRefresh: true });
+      if (!document.hidden) void openTeamDetails(teamDetailsProject, { forceRefresh: true });
     }, 10000);
     return () => clearInterval(id);
   }, [teamDetailsProject]);
@@ -768,19 +784,23 @@ const ManagerDashboard = ({ variant = 'manager' }) => {
         </div>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-        <div className="bg-white dark:bg-[var(--bg-secondary)] rounded-xl shadow-sm border border-gray-200 dark:border-[var(--border-color)] p-6">
-          <div className="text-sm font-medium text-gray-600 dark:text-gray-400">Total projects</div>
-          <div className="text-2xl font-bold text-gray-900 dark:text-gray-100 mt-1">{stats.totalProjects}</div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 stagger">
+        <div className={STAT_CARD}>
+          <StatLabel icon="folder">Total projects</StatLabel>
+          <div className="text-3xl font-bold text-gray-900 dark:text-gray-100 mt-2">
+            <AnimatedNumber value={stats.totalProjects} />
+          </div>
         </div>
-        <div className="bg-white dark:bg-[var(--bg-secondary)] rounded-xl shadow-sm border border-gray-200 dark:border-[var(--border-color)] p-6">
-          <div className="text-sm font-medium text-gray-600 dark:text-gray-400">Active (non-completed)</div>
-          <div className="text-2xl font-bold text-gray-900 dark:text-gray-100 mt-1">{stats.activeProjects}</div>
+        <div className={STAT_CARD}>
+          <StatLabel icon="bolt">Active (non-completed)</StatLabel>
+          <div className="text-3xl font-bold text-gray-900 dark:text-gray-100 mt-2">
+            <AnimatedNumber value={stats.activeProjects} />
+          </div>
         </div>
         <MatchAccuracyStatCard percent={stats.avgMatchScore} />
-        <div className="bg-white dark:bg-[var(--bg-secondary)] rounded-xl shadow-sm border border-gray-200 dark:border-[var(--border-color)] p-6">
-          <div className="text-sm font-medium text-gray-600 dark:text-gray-400">Team formation (live)</div>
-          <div className="text-2xl font-bold text-gray-900 dark:text-gray-100 mt-1">{stats.teamFormationSpeed}</div>
+        <div className={STAT_CARD}>
+          <StatLabel icon="users">Active projects with a team</StatLabel>
+          <div className="text-3xl font-bold text-gray-900 dark:text-gray-100 mt-2">{stats.teamFormationSpeed}</div>
         </div>
       </div>
 
@@ -798,8 +818,11 @@ const ManagerDashboard = ({ variant = 'manager' }) => {
         <button 
           onClick={() => setShowProjectForm(true)}
           disabled={isLoading}
-          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+          className="group inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold py-3 px-6 rounded-xl shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/30 disabled:opacity-50 disabled:cursor-not-allowed"
         >
+          <svg className="h-5 w-5 transition-transform duration-300 ease-smooth group-hover:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M12 5v14M5 12h14" />
+          </svg>
           Create New Project
         </button>
       </div>
@@ -816,9 +839,10 @@ const ManagerDashboard = ({ variant = 'manager' }) => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
           {isLoading && !projects.length ? (
-            <div className="text-center py-12">
-              <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-              <div className="text-gray-600">Loading projects...</div>
+            <div className="space-y-4" aria-label="Loading projects">
+              <CardSkeleton />
+              <CardSkeleton />
+              <CardSkeleton lines={1} />
             </div>
           ) : activeProjectsForList.length > 0 ? (
             <ProjectList
@@ -873,8 +897,11 @@ const ManagerDashboard = ({ variant = 'manager' }) => {
               </div>
               
               {recommendationsLoading ? (
-                <div className="text-center py-12">
-                  <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+                <div className="text-center py-12 animate-fade-in">
+                  <div className="relative mx-auto mb-5 h-14 w-14">
+                    <div className="absolute inset-0 rounded-full bg-blue-500/20 animate-ping" />
+                    <div className="relative h-14 w-14 rounded-full border-4 border-blue-600 border-t-transparent animate-spin" />
+                  </div>
                   <div className="text-gray-600 dark:text-gray-400 max-w-md mx-auto px-2 transition-opacity duration-300">
                     {RECOMMENDATIONS_LOADING_HINTS[recLoadHintIdx]}
                   </div>
@@ -905,11 +932,14 @@ const ManagerDashboard = ({ variant = 'manager' }) => {
               )}
             </>
           ) : (
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 text-center">
-              <div className="text-gray-500">
-                <svg className="mx-auto h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
+            <div className="relative overflow-hidden bg-white rounded-2xl shadow-card border border-dashed border-gray-300 p-10 text-center">
+              <div aria-hidden="true" className="pointer-events-none absolute -top-16 left-1/2 h-40 w-40 -translate-x-1/2 rounded-full bg-blue-400/20 blur-3xl" />
+              <div className="relative text-gray-500">
+                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-violet-600 text-white shadow-glow animate-float">
+                  <svg className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
                 <h3 className="mt-6 text-2xl font-bold text-gray-900">Select a Project</h3>
                 <p className="mt-2 text-gray-600">
                   Select a project from the list to view AI-powered developer recommendations
@@ -923,7 +953,7 @@ const ManagerDashboard = ({ variant = 'manager' }) => {
         </div>
       </div>
 
-      <div className="mt-10 bg-white dark:bg-[var(--bg-secondary)] rounded-xl shadow-sm border border-gray-200 dark:border-[var(--border-color)] p-6">
+      <div data-reveal className="mt-10 bg-white dark:bg-[var(--bg-secondary)] rounded-2xl shadow-card border border-gray-200 dark:border-[var(--border-color)] p-6">
         <div className="flex justify-between items-center mb-4">
           <div>
             <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">Completed Projects</h3>
@@ -945,7 +975,7 @@ const ManagerDashboard = ({ variant = 'manager' }) => {
               return (
                 <div
                   key={pid || p.id}
-                  className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 rounded-xl border border-emerald-200/90 dark:border-emerald-800/60 bg-emerald-50/95 dark:bg-emerald-950/35 p-4"
+                  className="lift flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 rounded-xl border border-emerald-200/90 dark:border-emerald-800/60 bg-emerald-50/95 dark:bg-emerald-950/35 p-4"
                 >
                   <div className="min-w-0 flex-1">
                     <p className="font-semibold text-gray-900 dark:text-gray-100">{p.title}</p>
@@ -973,8 +1003,8 @@ const ManagerDashboard = ({ variant = 'manager' }) => {
       </div>
 
       {teamDetailsProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/45 p-4">
-          <div className="w-full max-w-6xl rounded-xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-2xl max-h-[90vh] overflow-auto">
+        <div className="modal-backdrop fixed inset-0 z-50 flex items-center justify-center bg-black/45 p-4">
+          <div className="modal-panel w-full max-w-6xl rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-2xl max-h-[90vh] overflow-auto">
             <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
               <div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">

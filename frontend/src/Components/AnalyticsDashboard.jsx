@@ -400,19 +400,20 @@ const AnalyticsDashboard = () => {
   }, [liveSummary]);
 
   const cardMetrics = useMemo(() => {
-    const completionRate = Number(liveSummary?.tasks?.completion_rate_pct || 0);
+    // null = nothing to measure (no tasks in the window), shown as "—" rather than a misleading 0%.
+    const tasksInScope = Number(liveSummary?.tasks?.total ?? 0);
+    const completionRate = tasksInScope > 0 ? Number(liveSummary?.tasks?.completion_rate_pct || 0) : null;
     const matchAccuracy = Number(liveSummary?.skill_utilization_pct || 0);
-    const teamProductivity =
-      liveSummary?.team_performance?.length > 0
-        ? Math.round(
-            liveSummary.team_performance.reduce(
-              (a, p) => a + Number(p.task_completion_pct || 0),
-              0
-            ) / liveSummary.team_performance.length
-          )
-        : 0;
-    return { completionRate, matchAccuracy, teamProductivity };
+    // Average only over projects that actually have tasks in the window; empty projects are not "0% productive".
+    const withTasks = (liveSummary?.team_performance || []).filter((p) => Number(p.tasks_total || 0) > 0);
+    const teamProductivity = withTasks.length
+      ? Math.round(withTasks.reduce((a, p) => a + Number(p.task_completion_pct || 0), 0) / withTasks.length)
+      : null;
+    return { completionRate, matchAccuracy, teamProductivity, tasksInScope };
   }, [liveSummary]);
+
+  const windowLabel = { week: 'last 7 days', month: 'last 30 days', quarter: 'last 90 days' }[timeFrame] || 'selected window';
+  const noActivityHint = `No task activity in the ${windowLabel} — choose “All time” to see overall numbers`;
 
   const displayedDeveloperCount = useMemo(() => {
     const raw = Number(liveSummary?.users?.developers ?? 0);
@@ -847,11 +848,13 @@ const AnalyticsDashboard = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
         <MetricCard
           title="Completion Rate"
-          value={`${cardMetrics.completionRate}%`}
+          value={cardMetrics.completionRate == null ? '—' : `${cardMetrics.completionRate}%`}
           subtitle={
-            liveSummary?.tasks?.scoped_to_period
-              ? `Tasks completed ÷ tasks touched in this ${timeFrame} window`
-              : 'All-time task completion'
+            cardMetrics.completionRate == null
+              ? noActivityHint
+              : liveSummary?.tasks?.scoped_to_period
+                ? `Tasks completed ÷ tasks touched in the ${windowLabel}`
+                : 'All-time task completion'
           }
           icon={<svg className="w-6 h-6 text-green-600 dark:text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>}
           color="bg-green-50 dark:bg-green-900/30"
@@ -865,8 +868,12 @@ const AnalyticsDashboard = () => {
         />
         <MetricCard
           title="Team productivity"
-          value={`${cardMetrics.teamProductivity}%`}
-          subtitle="Live avg task completion % across projects"
+          value={cardMetrics.teamProductivity == null ? '—' : `${cardMetrics.teamProductivity}%`}
+          subtitle={
+            cardMetrics.teamProductivity == null
+              ? noActivityHint
+              : 'Avg task completion % across projects that have tasks'
+          }
           icon={<svg className="w-6 h-6 text-purple-600 dark:text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>}
           color="bg-purple-50 dark:bg-purple-900/30"
         />

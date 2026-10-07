@@ -21,17 +21,202 @@
 }
 
 @layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply transition-colors duration-300;
+    @apply font-sans transition-colors duration-300;
     background-color: var(--bg-primary);
     color: var(--text-primary);
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  h1, h2, h3 {
+    letter-spacing: -0.015em;
+  }
+
+  ::selection {
+    background-color: rgb(37 99 235 / 0.18);
+  }
+
+  /* Keyboard focus is always visible; mouse clicks don't leave rings behind. */
+  :focus-visible {
+    outline: 2px solid rgb(37 99 235 / 0.7);
+    outline-offset: 2px;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Pressed feel on every button, disabled ones excluded. */
+  button:not(:disabled) {
+    transition-property: color, background-color, border-color, box-shadow, transform, opacity;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  button:not(:disabled):active {
+    transform: scale(0.97);
+  }
+
+  /* Slim scrollbars */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(148 163 184 / 0.5) transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: rgb(148 163 184 / 0.45);
+    border-radius: 9999px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(100 116 139 / 0.6);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Motion system                                                       */
+/* ------------------------------------------------------------------ */
+@layer components {
+  /* Card that lifts on hover. */
+  .lift {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.35s ease, background-color 0.3s ease;
+  }
+  .lift:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 34px -14px rgb(15 23 42 / 0.22), 0 4px 10px -6px rgb(15 23 42 / 0.08);
+  }
+  .dark .lift:hover {
+    box-shadow: 0 14px 34px -14px rgb(0 0 0 / 0.65);
+  }
+
+  /* Page enter. `backwards` (not `both`) so no transform is left on the element afterwards —
+     a lingering transform would make it the containing block for `position: fixed` modals. */
+  .page-enter {
+    animation: fade-in-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+
+  /* Children fade up one after another (same `backwards` rule as .page-enter). */
+  .stagger > * {
+    animation: fade-in-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+  .stagger > *:nth-child(1) { animation-delay: 0.03s; }
+  .stagger > *:nth-child(2) { animation-delay: 0.08s; }
+  .stagger > *:nth-child(3) { animation-delay: 0.13s; }
+  .stagger > *:nth-child(4) { animation-delay: 0.18s; }
+  .stagger > *:nth-child(5) { animation-delay: 0.23s; }
+  .stagger > *:nth-child(6) { animation-delay: 0.28s; }
+  .stagger > *:nth-child(n + 7) { animation-delay: 0.32s; }
+
+  /* Scroll reveal — see src/hooks/useReveal.js. Content stays visible without JS. */
+  .js-reveal [data-reveal] {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .js-reveal [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Progress bar fill grows from the left on mount. */
+  .progress-fill {
+    transform-origin: left center;
+    animation: grow-x 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+    transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Loading placeholder */
+  .skeleton {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background-color: rgb(226 232 240 / 0.8);
+  }
+  .dark .skeleton {
+    background-color: rgb(55 65 81 / 0.7);
+  }
+  .skeleton::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.55), transparent);
+    animation: shimmer 1.6s infinite;
+  }
+  .dark .skeleton::after {
+    background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.08), transparent);
+  }
+
+  /* Modal backdrop + panel */
+  .modal-backdrop {
+    animation: fade-in 0.25s ease-out both;
+    backdrop-filter: blur(4px);
+  }
+  .modal-panel {
+    animation: scale-in 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  /* Text with the brand gradient */
+  .text-gradient {
+    background-image: linear-gradient(120deg, #2563eb 0%, #7c3aed 55%, #db2777 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes grow-x {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
+
+/* Respect the OS "reduce motion" setting everywhere. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .js-reveal [data-reveal] {
+    opacity: 1;
+    transform: none;
   }
 }
 
 @layer components {
   /* Card styles */
   .card {
-    @apply rounded-xl shadow-sm border transition-colors duration-300;
+    @apply rounded-xl shadow-card border transition-colors duration-300;
     background-color: var(--bg-primary);
     border-color: var(--border-color);
     color: var(--text-primary);
@@ -52,7 +237,7 @@
   
   /* Button styles */
   .btn-primary {
-    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300;
+    @apply bg-blue-600 hover:bg-blue-700 hover:shadow-glow text-white font-medium py-2 px-4 rounded-lg transition-all duration-300;
   }
   
   .btn-secondary {

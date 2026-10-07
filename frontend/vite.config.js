@@ -10,6 +10,18 @@ export default defineConfig({
   // Load .env from this folder even if Vite is started from the monorepo root.
   envDir: __dirname,
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      output: {
+        // Long-lived vendor chunks: app changes don't invalidate these in the browser cache.
+        manualChunks: {
+          react: ['react', 'react-dom', 'react-router-dom'],
+          mui: ['@mui/material', '@emotion/react', '@emotion/styled'],
+          charts: ['chart.js', 'react-chartjs-2'],
+        },
+      },
+    },
+  },
   server: {
     host: true,
     port: 5173,

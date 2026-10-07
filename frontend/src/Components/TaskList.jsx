@@ -1,6 +1,7 @@
 // src/components/TaskList.jsx
 import React, { useState } from 'react';
 import TaskDescriptionBody from './TaskDescriptionBody.jsx';
+import { CardSkeleton } from './ui/Skeleton.jsx';
 
 const DESCRIPTION_PREVIEW_CHARS = 320;
 
@@ -127,7 +128,7 @@ const TaskList = ({
     return (
       <div className="space-y-4">
         {[1, 2, 3].map((i) => (
-          <div key={i} className="bg-gray-100 dark:bg-gray-800 animate-pulse rounded-xl p-6 h-32" />
+          <CardSkeleton key={i} />
         ))}
       </div>
     );
@@ -159,13 +160,13 @@ const TaskList = ({
     <div className="space-y-4">
       {submitModalTask && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60"
+          className="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60"
           role="dialog"
           aria-modal="true"
           onMouseDown={closeSubmitModal}
         >
           <div
-            className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl max-w-lg w-full max-h-[90vh] overflow-y-auto border border-gray-200 dark:border-gray-700"
+            className="modal-panel bg-white dark:bg-gray-900 rounded-2xl shadow-xl max-w-lg w-full max-h-[90vh] overflow-y-auto border border-gray-200 dark:border-gray-700"
             onMouseDown={(e) => e.stopPropagation()}
           >
             <form
@@ -268,7 +269,7 @@ const TaskList = ({
         return (
           <div
             key={task.id}
-            className={`min-w-0 rounded-xl shadow-sm p-6 transition-shadow duration-200 hover:shadow-md ${
+            className={`lift min-w-0 rounded-2xl shadow-card p-6 ${
               isDoneCard
                 ? 'bg-gradient-to-br from-emerald-50 via-white to-slate-50/80 dark:from-emerald-950/25 dark:via-gray-800/95 dark:to-gray-800/85 border border-emerald-200/70 dark:border-emerald-800/55 border-l-[5px] border-l-emerald-500 dark:border-l-emerald-400'
                 : 'bg-white dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700'
