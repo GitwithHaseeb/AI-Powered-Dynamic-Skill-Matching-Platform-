@@ -31,3 +31,9 @@ Thumbs.db
 .env.local
 .env.*.local
 db_backups/
+
+# Vite temp config bundles
+*.timestamp-*.mjs
+
+# Poster / standee design files (kept locally, not part of the app)
+assets/

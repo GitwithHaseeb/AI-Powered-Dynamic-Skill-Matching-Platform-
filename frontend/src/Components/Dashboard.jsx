@@ -494,9 +494,6 @@ const Dashboard = () => {
               <h2 className="text-xl font-bold text-gray-900">AI Powered Dynamic Skill Matching Platform</h2>
               <p className="text-gray-600 mt-1">BSCS Final Project | Fall 2025 | Advisor: M. REHAN SALEEM</p>
             </div>
-            <div className="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg font-medium transition-colors duration-300">
-              Progress: 75%
-            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
